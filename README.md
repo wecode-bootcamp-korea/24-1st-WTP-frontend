@@ -26,13 +26,12 @@
 
 <br>
 
+
 ## 적용 기술 및 구현 기능
 
-<br>
 
 ### 적용 기술
 
-<br>
 
 > -Front-End : javascript, React.js framwork, styled-components<br>
 > -Back-End : Python, Django web framework, MySQL, Bcrypt, pyjwt, AWS, S3<br>
@@ -42,26 +41,22 @@
 
 ### 구현 기능
 
-<br>
 
 #### 회원가입 / 로그인페이지
 
 - 로그인페이지 구현
 - 백엔드와 통신, 페이지 데이터 렌더링
 
-<br>
 
 #### 메인페이지
 
 - 메인페이지 레이아웃
 
-<br>
 
 #### 상세페이지
 
 - 상세페이지 레이아웃
 
-<br>
 
 ## Reference
 
