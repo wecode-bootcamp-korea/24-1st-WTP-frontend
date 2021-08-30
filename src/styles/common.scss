@@ -1,3 +1,20 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  // font-size
+  $font-size-large: 16px;
+  $font-size-medium: 15px;
+  $font-size-small: 14px;
+  $font-size-micro: 13px;
+
+  // color
+  $color-pink: #f52f6e;
+  $color-black: #000000;
+  $color-light-black: #292a32;
+  $color-background: #f8f8f8;
+  $color-white: #ffffff;
+  $color-gray: #74747b;
+  $color-light-gray: #d1d1d2;
+}
