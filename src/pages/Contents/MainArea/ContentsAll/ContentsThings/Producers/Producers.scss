@@ -1,0 +1,35 @@
+.producers-all {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 598px;
+  height: 250px;
+  overflow: auto;
+
+  .producer {
+    display: flex;
+    width: 290px;
+    margin: 10px 0;
+
+    .producer-image {
+      width: 55px;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+
+    .producer-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 3px;
+
+      .producer-name {
+        margin: 3px 0;
+      }
+
+      .producer-act {
+        margin: 3px 0;
+      }
+    }
+  }
+}

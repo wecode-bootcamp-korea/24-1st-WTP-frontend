@@ -1,0 +1,31 @@
+.basic-info {
+  margin: 10px;
+  .title {
+    margin: 20px 0;
+    // background-color: gray;
+  }
+
+  .info-summary {
+    width: 598px;
+    margin: 10px 0 10px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .little-summary {
+      width: 598px;
+      margin-top: 8px;
+    }
+
+    .story-summary {
+      width: 598px;
+      margin-top: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* 라인수 */
+      -webkit-box-orient: vertical;
+      word-wrap: break-word;
+      line-height: 22px;
+    }
+  }
+}
