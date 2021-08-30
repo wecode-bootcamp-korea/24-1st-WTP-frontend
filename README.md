@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# 앗차피디아 (왓챠피디아 클론코딩)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 앗차피디아 팀원
 
-## Available Scripts
+- F.E<br>
+  김영현<br>
+  김영호<br>
+  김태수<br>
+  <br>
+- B.E<br>
+  성우진<br>
+  손명희<br>
+  이무현<br>
+  <br>
 
-In the project directory, you can run:
+### 개발 인원 및 기간
 
-### `npm start`
+- 개발기간 : 2021/8/30 ~ 2021/9/10
+- 개발 인원 : 프론트엔드 3명, 백엔드 3명
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 프로젝트 선정이유
 
-### `npm test`
+- 디자인이 깔끔하고 컨텐츠 관련 API 활용이 원활하여 배울 점이 많을 것 같아서 선정되었습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## 적용 기술 및 구현 기능
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 적용 기술
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+> -Front-End : javascript, React.js framwork, styled-components<br>
+> -Back-End : Python, Django web framework, MySQL, Bcrypt, pyjwt, AWS, S3<br>
+> -Common : POSTMAN, RESTful API
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 구현 기능
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### 회원가입 / 로그인페이지
 
-## Learn More
+- 로그인페이지 구현
+- 백엔드와 통신, 페이지 데이터 렌더링
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### 메인페이지
 
-### Code Splitting
+- 메인페이지 레이아웃
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
+#### 상세페이지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 상세페이지 레이아웃
 
-### Making a Progressive Web App
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Reference
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 이 프로젝트는 [왓챠피디아](https://pedia.watcha.com/ko-KR) 사이트를 참조하여 만들었습니다.
+- 실무 수준의 프로젝트이지만 학습용으로 만들었기 때문에 이 코드를 활용하여 이득을 취하거나 무단 배포할 경우 법적으로 문제될 수 있습니다.
