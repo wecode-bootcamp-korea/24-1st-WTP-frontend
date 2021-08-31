@@ -10,6 +10,14 @@ export default class Login extends Component {
     };
   }
 
+  // handleDelete = e => {
+  //   const { name } = e.target;
+  //   console.log(name);
+  //   this.setState({
+  //     [name]: name,
+  //   });
+  // };
+
   handleInput = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -18,7 +26,14 @@ export default class Login extends Component {
   render() {
     const { email, pw } = this.state;
     const { handleInput } = this;
-    const checkPw = pw.length === 0 || pw.length >= 6;
+
+    const isPw = !pw || pw.length >= 6;
+    const isEmail = !email;
+    const checkEmail = email => {
+      const regExp =
+        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+      return regExp.test(email);
+    };
 
     return (
       <div className="login">
@@ -42,13 +57,23 @@ export default class Login extends Component {
                 type="text"
                 onChange={handleInput}
               />
-              <i className={`fas fa-times-circle ${email ? 'none' : ''}`}></i>
               <i
-                className={`fas fa-exclamation-circle ${email ? 'none' : ''}`}
+                className={`fas fa-times-circle ${
+                  isEmail || checkEmail(email) ? 'none' : ''
+                }`}
+              ></i>
+              <i
+                className={`fas fa-exclamation-circle ${
+                  isEmail || checkEmail(email) ? 'none' : ''
+                }`}
               ></i>
             </div>
             <div className="email-validation">
-              <p className={`email-caution ${email ? 'none' : ''}`}>
+              <p
+                className={`email-caution ${
+                  isEmail || checkEmail(email) ? 'none' : ''
+                }`}
+              >
                 정확하지 않은 이메일입니다.
               </p>
             </div>
@@ -61,11 +86,11 @@ export default class Login extends Component {
                 type="text"
                 onChange={handleInput}
               />
-              <i className={`fas fa-times-circle ${checkPw ? 'none' : ''}`}></i>
-              <i className={`far fa-check-circle ${checkPw ? 'none' : ''}`}></i>
+              <i className={`fas fa-times-circle ${isPw ? 'none' : ''}`}></i>
+              <i className={`far fa-check-circle ${isPw ? 'none' : ''}`}></i>
             </div>
             <div className="pw-validation">
-              <p className={`pw-caution ${checkPw ? 'none' : ''}`}>
+              <p className={`pw-caution ${isPw ? 'none' : ''}`}>
                 비밀번호는 최소 6자리 이상이어야 합니다.
               </p>
             </div>
