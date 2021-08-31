@@ -1,0 +1,15 @@
+.gallery {
+  margin: 20px 0;
+
+  .title {
+    margin: 20px 20px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}

@@ -1,13 +1,19 @@
 .process {
-  margin: 20px 10px;
+  margin: 20px 0;
 
   .title {
-    margin: 20px 0;
+    margin: 20px 20px;
   }
 
   .process-all {
-    width: 598px;
     margin: 10px 0 10px;
-    border-bottom: 1px solid #f0f0f0;
+
+    &::after {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 598px;
+      border-bottom: 1px solid #f0f0f0;
+    }
   }
 }

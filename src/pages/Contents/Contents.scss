@@ -1,3 +1,17 @@
+.contents {
+  background-color: #f8f8f8;
+
+  .background {
+    position: relative;
+    z-index: 1;
+  }
+
+  .main {
+    position: relative;
+    z-index: 2;
+  }
+}
+
 //font
 
 .medium-title {

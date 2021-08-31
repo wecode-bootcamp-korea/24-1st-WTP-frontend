@@ -5,14 +5,14 @@ import './SimilarThings.scss';
 class SimilarThings extends Component {
   render() {
     return (
-      <div className="similar-things">
+      <section className="similar-things">
         <header className="title">
           <h2 className="medium-title">비슷한 작품</h2>
         </header>
         <div className="similar-content">
           <SimilarContents />
         </div>
-      </div>
+      </section>
     );
   }
 }

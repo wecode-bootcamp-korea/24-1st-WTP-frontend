@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 598px;
   height: 250px;
   overflow-x: scroll;
 
@@ -12,8 +11,8 @@
 
   .producer {
     display: flex;
-    width: 290px;
-    margin: 10px 0;
+    width: 275px;
+    margin: 9px 0 9px 18px;
 
     .producer-image {
       width: 55px;

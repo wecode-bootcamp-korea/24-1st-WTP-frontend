@@ -1,15 +1,21 @@
 .basic-info {
-  margin: 10px;
+  margin: 20px;
+
   .title {
-    margin: 20px 0;
-    // background-color: gray;
+    margin: 20px 0 20px;
   }
 
   .info-summary {
     width: 598px;
-    margin: 10px 0 10px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #f0f0f0;
+    margin: 10px 0 30px;
+
+    &::after {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 598px;
+      border-bottom: 1px solid #f0f0f0;
+    }
 
     .little-summary {
       width: 598px;
@@ -18,7 +24,7 @@
 
     .story-summary {
       width: 598px;
-      margin-top: 15px;
+      margin: 15px 0 25px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
