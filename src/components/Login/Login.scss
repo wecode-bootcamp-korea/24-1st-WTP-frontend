@@ -1,1 +1,145 @@
-//안녕하세요
+// font-size
+$font-size-huge: 17px;
+$font-size-large: 16px;
+$font-size-medium: 15px;
+$font-size-small: 14px;
+$font-size-micro: 13px;
+
+// color
+$color-background: #f8f8f8;
+$color-red: #e40914;
+$color-pink: #f52f6e;
+$color-black: #000000;
+$color-light-black: #292a32;
+$color-white: #ffffff;
+$color-gray: #74747b;
+$color-light-gray: #ebebeb;
+
+.login {
+  width: 375px;
+  margin: 180px auto 0 auto;
+  border: 1px solid $color-light-black;
+  border-radius: 7px;
+
+  .login-container {
+    padding: 32px 0 48px 0;
+
+    .login-logo {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 150px;
+      }
+    }
+
+    .login-title {
+      display: flex;
+      justify-content: center;
+      margin: 24px 0 20px 0;
+      font-size: $font-size-huge;
+      font-weight: 700;
+    }
+
+    .login-form {
+      .email-container,
+      .pw-container {
+        width: 335px;
+        height: 44px;
+        margin: 0 auto;
+        background-color: $color-background;
+        border-radius: 7px;
+        text-indent: 10px;
+
+        .email {
+          width: 65%;
+          font-size: $font-size-huge;
+          line-height: 44px;
+        }
+
+        .password {
+          width: 65%;
+          font-size: $font-size-huge;
+          line-height: 44px;
+        }
+
+        i {
+          font-size: $font-size-huge;
+          color: #c6c6c6;
+          cursor: pointer;
+
+          &.none {
+            display: none;
+          }
+
+          &:last-child {
+            position: relative;
+            top: 3px;
+            font-size: 24px;
+            margin-left: 25px;
+            cursor: auto;
+          }
+        }
+
+        .fas.fa-exclamation-circle {
+          color: $color-pink;
+        }
+
+        .far.fa-check-circle {
+          color: #4ad3b1;
+        }
+      }
+
+      .email-validation,
+      .pw-validation {
+        margin: 8px 0 12px 0;
+        padding-left: 30px;
+
+        p {
+          justify-content: flex-start;
+          font-size: $font-size-micro;
+          color: $color-pink;
+
+          &.none {
+            display: none;
+          }
+        }
+      }
+
+      .btn-login {
+        display: block;
+        margin: 0 auto;
+        width: 335px;
+        height: 44px;
+        background-color: $color-pink;
+        border-radius: 6px;
+        font-size: $font-size-huge;
+        color: $color-white;
+      }
+    }
+
+    .forget-pw,
+    .have-account {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .forget-pw {
+      color: $color-pink;
+    }
+
+    .have-account {
+      color: $color-gray;
+
+      .none {
+        display: none;
+      }
+
+      span {
+        margin-left: 4px;
+        color: $color-pink;
+      }
+    }
+  }
+}
