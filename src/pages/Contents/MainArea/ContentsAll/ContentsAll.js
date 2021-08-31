@@ -7,7 +7,7 @@ import './ContentsAll.scss';
 class ContentsAll extends Component {
   render() {
     return (
-      <div>
+      <div className="contents-all">
         <BasicInfo />
         <Process />
         <SimilarThings />
