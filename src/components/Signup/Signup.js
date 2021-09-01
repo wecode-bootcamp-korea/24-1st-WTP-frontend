@@ -28,8 +28,6 @@ export default class Signup extends Component {
     const { email, pw, name } = this.state;
     const { handleInput } = this;
 
-    console.log(name.length);
-
     const isName = !name || name.length >= 2;
 
     const checkPw = pw => {
@@ -48,7 +46,7 @@ export default class Signup extends Component {
       <div className="signup">
         <div className="signup-container">
           <div className="signup-logo">
-            <img src="/images/AtchaPediaLogo.png" alt="logo" />
+            <img src="/images/AtchaPedia_Logo_Big.png" alt="logo" />
           </div>
           <div className="signup-title">
             <span>회원가입</span>
@@ -74,7 +72,11 @@ export default class Signup extends Component {
                 정확하지 않은 이름입니다.
               </p>
             </div>
-            <div className="email-container">
+            <div
+              className={`email-container ${
+                !email || checkEmail(email) ? '' : 'invalid'
+              }`}
+            >
               <input
                 id="email"
                 name="email"
@@ -103,7 +105,9 @@ export default class Signup extends Component {
                 정확하지 않은 이메일입니다.
               </p>
             </div>
-            <div className="pw-container">
+            <div
+              className={`pw-container ${!pw || checkPw(pw) ? '' : 'invalid'}`}
+            >
               <input
                 id="pw"
                 name="pw"

@@ -42,18 +42,8 @@
           border: 1px solid $color-red;
         }
 
-        .name {
-          width: 65%;
-          font-size: $font-size-huge;
-          line-height: 44px;
-        }
-
-        .email {
-          width: 65%;
-          font-size: $font-size-huge;
-          line-height: 44px;
-        }
-
+        .name,
+        .email,
         .password {
           width: 65%;
           font-size: $font-size-huge;
