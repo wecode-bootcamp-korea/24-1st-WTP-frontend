@@ -7,12 +7,7 @@ export default class Nav extends Component {
       <nav className="navbar">
         <div className="navbar-container">
           <div className="navbar-left">
-            <div className="atcha-logo">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b8/%EC%99%93%EC%B1%A0_%EB%A1%9C%EA%B3%A0_2021.png"
-                alt="logo"
-              />
-            </div>
+            <img src="/images/AtchaPedia_Logo_Small.png" alt="logo" />
             <div className="sorts-contents">
               <span>영화</span>
               <span>TV 프로그램</span>

@@ -1,17 +1,4 @@
-// font-size
-$font-size-large: 16px;
-$font-size-medium: 15px;
-$font-size-small: 14px;
-$font-size-micro: 13px;
-
-// color
-$color-pink: #f52f6e;
-$color-black: #000000;
-$color-light-black: #292a32;
-$color-background: #f8f8f8;
-$color-white: #ffffff;
-$color-gray: #74747b;
-$color-light-gray: #ebebeb;
+@import '../../styles/variables.scss';
 
 .navbar {
   position: sticky;
@@ -22,7 +9,7 @@ $color-light-gray: #ebebeb;
 
   .navbar-container {
     display: flex;
-    width: 1320px;
+    max-width: 1320px;
     height: 62px;
     margin: 0 auto;
     justify-content: space-between;
@@ -30,9 +17,10 @@ $color-light-gray: #ebebeb;
     .navbar-left {
       display: flex;
 
-      .atcha-logo img {
-        width: 125px;
-        margin-right: 50px;
+      img {
+        width: 140px;
+        height: 30px;
+        margin: auto 30px auto 0;
       }
 
       .sorts-contents {
@@ -51,6 +39,7 @@ $color-light-gray: #ebebeb;
 
     .navbar-right {
       display: flex;
+      font-size: $font-size-medium;
 
       .search-bar {
         position: relative;
@@ -74,14 +63,12 @@ $color-light-gray: #ebebeb;
 
           .search-input {
             width: 100%;
-            font-size: 14px;
           }
         }
       }
 
       .btn-login {
         margin: 0px 18px 0px 18px;
-        font-size: 14px;
         color: #74747a;
         cursor: pointer;
       }
@@ -91,7 +78,6 @@ $color-light-gray: #ebebeb;
         margin: auto 0;
         height: 32px;
         padding: 0 14px;
-        font-size: 14px;
         border: 1px solid #b9b9bc;
         border-radius: 5px;
         cursor: pointer;
