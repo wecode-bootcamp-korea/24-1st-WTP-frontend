@@ -5,7 +5,7 @@ import './InfoAct.scss';
 class InfoAct extends Component {
   render() {
     return (
-      <div>
+      <div className="info-act">
         <button className="act-button">
           <div className="button-contents">
             <span className="button-svg">

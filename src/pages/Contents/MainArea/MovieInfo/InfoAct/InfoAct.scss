@@ -1,37 +1,38 @@
-.act-button {
+.info-act {
   display: flex;
-  width: 250px;
-  height: 45px;
-  background-color: #ff2f6e;
-  border-radius: 7px;
-  cursor: pointer;
+  align-items: flex-end;
 
-  &:hover {
-    .fas {
-      transform: rotate(90deg);
-    }
-  }
+  .act-button {
+    display: flex;
+    width: 250px;
+    height: 45px;
+    background-color: #ff2f6e;
+    border-radius: 7px;
+    cursor: pointer;
 
-  .button-contents {
-    margin: auto;
-
-    .button-svg {
-      margin-right: 6px;
-      font-size: 16px;
-      color: #ffff;
-
+    &:hover {
       .fas {
-        transition: transform 0.3s ease-in-out;
+        transform: rotate(90deg);
+      }
+    }
+
+    .button-contents {
+      margin: auto;
+
+      .button-svg {
+        margin-right: 6px;
+        font-size: 16px;
+        color: #ffff;
+
+        .fas {
+          transition: transform 0.3s ease-in-out;
+        }
       }
 
-      // &:hover {
-      //   transform: rotate(45deg);
-      // }
-    }
-
-    .button-text {
-      font-size: 18px;
-      color: #ffff;
+      .button-text {
+        font-size: 18px;
+        color: #ffff;
+      }
     }
   }
 }
