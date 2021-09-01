@@ -34,7 +34,7 @@ export default class Signup extends Component {
 
     const checkPw = pw => {
       const regExp =
-        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{10,}$/;
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-_])[A-Za-z\d!@#$%^&*-_]{10,}$/;
       return regExp.test(pw);
     };
 
