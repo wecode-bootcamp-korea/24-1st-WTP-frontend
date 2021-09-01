@@ -1,0 +1,39 @@
+.gallery {
+  margin: 20px 0;
+
+  .title {
+    margin: 20px 20px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .gallery-pictures {
+    display: flex;
+    justify-content: flex-start;
+    width: 320px;
+    margin: 10px 0 20px;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery-picture-sec {
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 20px;
+      }
+      .gallery-picture {
+        width: 135px;
+        border-radius: 4px;
+      }
+    }
+  }
+}

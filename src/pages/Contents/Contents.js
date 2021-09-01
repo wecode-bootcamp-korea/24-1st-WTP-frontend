@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Background from './Background/Background';
-import MainArea from './MainArea/MainArea';
+import ContentsAll from './ContentsAll/ContentsAll';
+import MovieInfo from './MovieInfo/MovieInfo';
+import Aside from './Aside/Aside';
 import './Contents.scss';
 
 export default class Contents extends Component {
@@ -8,10 +9,21 @@ export default class Contents extends Component {
     return (
       <div className="contents">
         <div className="background">
-          <Background />
+          <section className="background">
+            <div className="background-gradient"></div>
+            <img
+              src="/images/a4d2dd681002aaf17c39edfb948a217d.jpeg"
+              className="background-image"
+              alt="메인 이미지"
+            />
+          </section>
         </div>
         <div className="main">
-          <MainArea />
+          <MovieInfo />
+          <div className="main-contents">
+            <ContentsAll />
+            <Aside />
+          </div>
         </div>
       </div>
     );

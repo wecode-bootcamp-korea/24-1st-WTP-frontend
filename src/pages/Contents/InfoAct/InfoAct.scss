@@ -2,6 +2,18 @@
   display: flex;
   align-items: flex-end;
 
+  .star-contents {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    > span {
+      font-size: 13px;
+      color: #787878;
+      margin-bottom: 5px;
+    }
+  }
+
   .act-button {
     display: flex;
     width: 250px;
