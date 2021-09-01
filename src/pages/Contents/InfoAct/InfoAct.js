@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
-import { ReactComponent as Star } from '../../../assets/icons/pointed-star.svg';
+import RatingStars from './RatingStars';
 import './InfoAct.scss';
 
 class InfoAct extends Component {
+  state = {
+    setRating: 0,
+    setHoverRating: 0,
+  };
+
+  onClick = index => {
+    this.setState({ setRating: index });
+    // console.log(this.state.setRating);
+  };
+
+  onMouseEnter = index => {
+    this.setState({ setHoverRating: index });
+    // console.log(this.state.setHoverRating);
+  };
+
+  onMouseLeave = () => {
+    this.setState({ setHoverRating: 0 });
+  };
+
   render() {
     return (
       <div className="info-act">
@@ -15,13 +34,25 @@ class InfoAct extends Component {
           </div>
         </button>
         <div className="star-contents">
-          <span>평가하기</span>
+          <span>{this.state.setRating}</span>
           <ul className="stars">
-            <Star width="40px" height="40px" fill="#eeee" />
-            <Star width="40px" height="40px" fill="#eeee" />
-            <Star width="40px" height="40px" fill="#eeee" />
-            <Star width="40px" height="40px" fill="#eeee" />
-            <Star width="40px" height="40px" fill="#eeee" />
+            {[1, 2, 3, 4, 5].map(index => {
+              return (
+                <RatingStars
+                  index={index}
+                  onClick={this.onClick}
+                  onMouseEnter={this.onMouseEnter}
+                  onMouseLeave={this.onMouseLeave}
+                  fill={
+                    this.state.setRating < index
+                      ? this.state.setHoverRating < index
+                        ? '#eeee'
+                        : '#FEDD63'
+                      : '#FEDD63'
+                  }
+                />
+              );
+            })}
           </ul>
         </div>
       </div>
