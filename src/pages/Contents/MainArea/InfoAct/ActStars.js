@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ReactComponent as Star } from '../../../../../assets/icons/pointed-star.svg';
+import { ReactComponent as Star } from '../../../../assets/icons/pointed-star.svg';
 import './ActStars.scss';
 
 class ActStars extends Component {
