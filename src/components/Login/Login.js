@@ -28,7 +28,6 @@ export default class Login extends Component {
     const { handleInput } = this;
 
     const isPw = !pw || pw.length >= 6;
-    const isEmail = !email;
     const checkEmail = email => {
       const regExp =
         /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -59,19 +58,19 @@ export default class Login extends Component {
               />
               <i
                 className={`fas fa-times-circle ${
-                  isEmail || checkEmail(email) ? 'none' : ''
+                  !email || checkEmail(email) ? 'none' : ''
                 }`}
               ></i>
               <i
                 className={`fas fa-exclamation-circle ${
-                  isEmail || checkEmail(email) ? 'none' : ''
+                  !email || checkEmail(email) ? 'none' : ''
                 }`}
               ></i>
             </div>
             <div className="email-validation">
               <p
                 className={`email-caution ${
-                  isEmail || checkEmail(email) ? 'none' : ''
+                  !email || checkEmail(email) ? 'none' : ''
                 }`}
               >
                 정확하지 않은 이메일입니다.

@@ -51,12 +51,7 @@ $color-light-gray: #ebebeb;
         border-radius: 7px;
         text-indent: 10px;
 
-        .email {
-          width: 65%;
-          font-size: $font-size-huge;
-          line-height: 44px;
-        }
-
+        .email,
         .password {
           width: 65%;
           font-size: $font-size-huge;
@@ -86,7 +81,7 @@ $color-light-gray: #ebebeb;
         }
 
         .far.fa-check-circle {
-          color: #4ad3b1;
+          color: #c6c6c6;
         }
       }
 
