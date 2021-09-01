@@ -37,6 +37,11 @@
         border-radius: 7px;
         text-indent: 10px;
 
+        &.invalid {
+          background-color: #fef0f0;
+          border: 1px solid $color-red;
+        }
+
         .name {
           width: 65%;
           font-size: $font-size-huge;

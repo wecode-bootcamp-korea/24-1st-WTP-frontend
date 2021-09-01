@@ -28,9 +28,16 @@ export default class Signup extends Component {
     const { email, pw, name } = this.state;
     const { handleInput } = this;
 
+    console.log(name.length);
+
     const isName = !name || name.length >= 2;
-    const isPw = !pw || pw.length >= 10;
-    const isEmail = !email;
+
+    const checkPw = pw => {
+      const regExp =
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{10,}$/;
+      return regExp.test(pw);
+    };
+
     const checkEmail = email => {
       const regExp =
         /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -47,12 +54,15 @@ export default class Signup extends Component {
             <span>회원가입</span>
           </div>
           <form className="signup-form">
-            <div className="name-container">
+            <div
+              className={`name-container ${name.length === 1 ? 'invalid' : ''}`}
+            >
               <input
                 id="name"
                 name="name"
                 className="name"
                 placeholder="이름"
+                value={name}
                 type="text"
                 onChange={handleInput}
               />
@@ -75,19 +85,19 @@ export default class Signup extends Component {
               />
               <i
                 className={`fas fa-times-circle ${
-                  isEmail || checkEmail(email) ? 'none' : ''
+                  !email || checkEmail(email) ? 'none' : ''
                 }`}
               ></i>
               <i
                 className={`fas fa-exclamation-circle ${
-                  isEmail || checkEmail(email) ? 'none' : ''
+                  !email || checkEmail(email) ? 'none' : ''
                 }`}
               ></i>
             </div>
             <div className="email-validation">
               <p
                 className={`email-caution ${
-                  isEmail || checkEmail(email) ? 'none' : ''
+                  !email || checkEmail(email) ? 'none' : ''
                 }`}
               >
                 정확하지 않은 이메일입니다.
@@ -102,12 +112,20 @@ export default class Signup extends Component {
                 type="password"
                 onChange={handleInput}
               />
-              <i className={`fas fa-times-circle ${isPw ? 'none' : ''}`}></i>
-              <i className={`far fa-check-circle ${isPw ? 'none' : ''}`}></i>
+              <i
+                className={`fas fa-times-circle ${
+                  !pw || checkPw(pw) ? 'none' : ''
+                }`}
+              ></i>
+              <i
+                className={`far fa-check-circle ${
+                  !pw || checkPw(pw) ? 'none' : ''
+                }`}
+              ></i>
             </div>
             <div className="pw-validation">
-              <p className={`pw-caution ${isPw ? 'none' : ''}`}>
-                비밀번호는 영문, 숫자, 특수문자 중 2개 이상을 조합하여
+              <p className={`pw-caution ${!pw || checkPw(pw) ? 'none' : ''}`}>
+                비밀번호는 영문, 숫자, 특수문자 모두 포함하여
                 <br /> 최소 10자리 이상이여야 합니다.
               </p>
             </div>
