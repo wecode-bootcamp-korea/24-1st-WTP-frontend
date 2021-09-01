@@ -1,0 +1,67 @@
+.Movie {
+  margin-right: 23px;
+  cursor: pointer;
+
+  // 왓챠피디아에 없음 추가 구현
+  &:hover {
+    .movie-poster {
+      transform: scale(1.05);
+      transition: transform 4.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  }
+
+  .movie-poster-container {
+    position: relative;
+    height: 380px;
+    width: 275px;
+    overflow: hidden;
+    border: 1px solid #eae9e8;
+    border-radius: 5px;
+
+    .movie-poster {
+      height: 380px;
+      width: 280px;
+      z-index: 1;
+    }
+
+    .movie-rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 29px;
+      height: 29px;
+      top: 5px;
+      left: 5px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      opacity: 0.85;
+      border-radius: 4px;
+      background-color: black;
+      z-index: 2;
+    }
+  }
+
+  .movie-info {
+    margin: 9px 0px;
+
+    .movie-title {
+      margin: 9px 0px;
+      font-size: 19px;
+      font-weight: 540;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 260px;
+    }
+
+    .movie-product-info {
+      margin: 9px 0px;
+    }
+
+    .movie-audience-info {
+      color: #74747b;
+    }
+  }
+}

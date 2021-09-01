@@ -1,0 +1,57 @@
+.Movielist {
+  margin: 30px 0px;
+
+  .movies-list-title {
+    font-size: 26px;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+
+  .movie-list {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .movie-move-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 60px;
+      color: #7b7c82;
+      background-color: white;
+      font-size: 35px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 1px 0px;
+      cursor: pointer;
+    }
+
+    .letf-arrow {
+      left: -20px;
+      z-index: 10;
+    }
+
+    .right-arrow {
+      right: -20px;
+    }
+
+    .movies {
+      width: 1467px;
+      overflow: hidden;
+
+      .slide {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        transition: all 1s ease-in-out;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+}

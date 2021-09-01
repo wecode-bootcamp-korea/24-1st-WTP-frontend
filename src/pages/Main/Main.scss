@@ -1,1 +1,12 @@
-//안녕하세요
+.Main {
+  display: flex;
+  justify-content: center;
+
+  .loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+}
