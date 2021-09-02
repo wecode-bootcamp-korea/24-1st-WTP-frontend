@@ -1,10 +1,11 @@
+@import '../../../styles/variables.scss';
+
 .movielist {
   margin: 30px 0px;
 
   .movies-list-title {
-    font-size: 26px;
-    justify-content: space-between;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 14px;
   }
 
@@ -23,7 +24,7 @@
       margin-bottom: 60px;
       color: #7b7c82;
       background-color: white;
-      font-size: 35px;
+      font-size: 20px;
       border-radius: 50%;
       box-shadow: 0px 0px 1px 0px;
       cursor: pointer;
@@ -43,7 +44,7 @@
     }
 
     .movies {
-      width: 1467px;
+      width: 1339px;
       overflow: hidden;
 
       .slide {

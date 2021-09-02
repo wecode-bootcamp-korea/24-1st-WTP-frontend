@@ -14,6 +14,7 @@ class MovieList extends Component {
     const { movieMoveCount } = this.state;
     const { length } = this.props.data;
     const maxCount = Math.ceil(length / 5 - 1);
+    if (movieMoveCount === 0) return;
     if (movieMoveCount === maxCount) return;
     this.setState({
       movieMoveCount: movieMoveCount + 1,
@@ -29,7 +30,7 @@ class MovieList extends Component {
   };
   render() {
     const { movieMoveCount } = this.state;
-    const marginLeftValue = this.state.movieMoveCount * -1490;
+    const marginLeftValue = this.state.movieMoveCount * -1358;
     const marginLeft = marginLeftValue.toString();
     const { collectionMovies, data } = this.props;
     const { minusMoveCount, plusMoveCount } = this;
@@ -52,7 +53,7 @@ class MovieList extends Component {
                 return (
                   <Movie
                     ranking={index + 1}
-                    key={movie.id}
+                    key={`movie${index}`}
                     id={index}
                     data={movie}
                   />
@@ -60,7 +61,8 @@ class MovieList extends Component {
               })}
             </div>
           </div>
-          {movieMoveCount <= 2 && (
+          {/* 수정 해야함 */}
+          {movieMoveCount <= movieMoveCount - 2 && (
             <div
               className="movie-move-arrow right-arrow"
               onClick={plusMoveCount}
