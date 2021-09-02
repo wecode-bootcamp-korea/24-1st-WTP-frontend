@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import { ReactComponent as Star } from '../../../assets/icons/pointed-star.svg';
+import './RatingStars.scss';
 
 class RatingStars extends Component {
-  // console.log(this.props.hoverRating);
-
   render() {
-    const { index, onMouseEnter, onMouseLeave, onClick, fill } = this.props;
+    const { rating, index, onMouseEnter, onMouseLeave, onClick } = this.props;
 
     return (
-      <Star
+      <div
+        index={index}
+        rating={rating}
+        className="gray-star"
         onClick={() => onClick(index)}
-        onMouseEnter={() => onMouseEnter(index)}
+        onMouseMove={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        width="40px"
-        height="40px"
-        fill={fill}
-      />
+      >
+        {index - rating === 0.5 && (
+          <div className="half-star" index={index} rating={rating} />
+        )}
+        {index <= rating && (
+          <div className="yellow-star" index={index} rating={rating} />
+        )}
+      </div>
     );
   }
 }
