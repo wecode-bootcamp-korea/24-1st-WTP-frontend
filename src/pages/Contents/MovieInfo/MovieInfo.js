@@ -18,6 +18,7 @@ class MovieInfo extends Component {
             <h1 className="title">샹치와 텐 링즈의 전설</h1>
             <p className="text">2021 ・ 액션/모험/판타지 ・ 미국/중국/호주</p>
           </div>{' '}
+          <span className="rating-star">평균 ★4.2(988명)</span>
           <InfoAct />
         </article>
       </section>

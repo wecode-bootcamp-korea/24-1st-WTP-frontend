@@ -1,7 +1,7 @@
 .movie-info {
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: 220px;
   margin: 0 auto 20px;
   padding: 0 200px;
   background-color: #ffff;
@@ -10,7 +10,7 @@
   .movie-poster-all {
     .movie-poster {
       width: 165px;
-      margin-top: -54px;
+      margin-top: -36px;
       border: 2px solid #ffff;
       border-radius: 5px;
     }
@@ -20,20 +20,40 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 22px 0 23px 25px;
+    margin: 16px 0 23px 25px;
     text-align: left;
 
     .movie-title {
       .title {
-        font-size: 33px;
+        font-size: 34px;
         font-weight: 700;
       }
 
       .text {
         width: 780px;
-        margin: 8px 0;
+        margin: 6px 0;
         font-size: 17px;
         color: #7f7f7f;
+      }
+    }
+
+    .rating-star {
+      width: 769px;
+      font-size: 19px;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        border-top: 1px solid #f0f0f0;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        margin-top: 8px;
+        border-bottom: 1px solid #f0f0f0;
       }
     }
   }

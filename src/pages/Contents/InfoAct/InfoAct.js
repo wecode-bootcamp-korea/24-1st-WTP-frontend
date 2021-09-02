@@ -6,16 +6,21 @@ class InfoAct extends Component {
   state = {
     setRating: 0,
     setHoverRating: 0,
+    comments: '',
   };
 
   onClick = index => {
     this.setState({ setRating: index });
-    // console.log(this.state.setRating);
+    if (this.state.setRating === index) {
+      this.setState({ setRating: 0 });
+    }
   };
 
   onMouseEnter = index => {
     this.setState({ setHoverRating: index });
-    // console.log(this.state.setHoverRating);
+    if (this.state.setRating === index) {
+      console.log('삭제하기');
+    }
   };
 
   onMouseLeave = () => {
