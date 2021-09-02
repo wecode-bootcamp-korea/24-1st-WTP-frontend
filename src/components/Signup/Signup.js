@@ -47,7 +47,7 @@ class Signup extends Component {
     const { email, pw, name } = this.state;
     const { handleInput, handleDelete, handleSignup } = this;
 
-    const isName = !name || name.length >= 2;
+    const checkName = !name || name.length >= 2;
 
     const checkEmail = email => {
       const regExp = /^[a-zA-Z\d+-.]+@[a-zA-Z\d+-.]+\.[a-zA-Z]{2,3}$/;
@@ -86,10 +86,15 @@ class Signup extends Component {
                 className={`fas fa-times-circle ${!name ? 'none' : ''}`}
                 onClick={handleDelete}
               ></i>
-              <i className={`far fa-check-circle ${isName ? 'none' : ''}`}></i>
+              <i
+                className={`far fa-check-circle ${!name ? 'none' : ''}`}
+                style={{
+                  color: checkName ? '#4ad3b1' : '#a0a0a0',
+                }}
+              ></i>
             </div>
             <div className="name-validation">
-              <p className={`name-caution ${isName ? 'none' : ''}`}>
+              <p className={`name-caution ${checkName ? 'none' : ''}`}>
                 정확하지 않은 이름입니다.
               </p>
             </div>
