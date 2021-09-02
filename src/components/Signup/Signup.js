@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './Signup.scss';
 
-export default class Signup extends Component {
+class Signup extends Component {
   constructor() {
     super();
     this.state = {
@@ -10,6 +11,25 @@ export default class Signup extends Component {
       pw: '',
     };
   }
+
+  handleSignup = () => {
+    fetch('http://10.58.6.20:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+          this.props.history.push('/');
+        } else {
+          alert('아이디, 비밀번호를 다시 입력해주세요!');
+        }
+      });
+  };
 
   handleInput = e => {
     const { name, value } = e.target;
@@ -29,7 +49,7 @@ export default class Signup extends Component {
 
     const checkPw = pw => {
       const regExp =
-        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-_])[A-Za-z\d!@#$%^&*-_]{10,}$/;
+        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
       return regExp.test(pw);
     };
 
@@ -143,3 +163,5 @@ export default class Signup extends Component {
     );
   }
 }
+
+export default withRouter(Signup);
