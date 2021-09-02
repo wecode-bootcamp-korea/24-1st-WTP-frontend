@@ -13,12 +13,13 @@ class Signup extends Component {
   }
 
   handleSignup = () => {
-    fetch('http://10.58.6.20:8000/users/signup', {
+    fetch('http://10.58.3.64:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         name: this.state.name,
-        email: this.state.id,
+        email: this.state.email,
         password: this.state.pw,
+        introduction: 1,
       }),
     })
       .then(response => response.json())
