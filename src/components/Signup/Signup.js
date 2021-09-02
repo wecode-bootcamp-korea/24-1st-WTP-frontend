@@ -11,22 +11,19 @@ export default class Signup extends Component {
     };
   }
 
-  // handleDelete = e => {
-  //   const { name } = e.target;
-  //   console.log(name);
-  //   this.setState({
-  //     [name]: name,
-  //   });
-  // };
-
   handleInput = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
 
+  handleDelete = e => {
+    const name = e.target.parentNode.childNodes[0].name;
+    this.setState({ [name]: '' });
+  };
+
   render() {
     const { email, pw, name } = this.state;
-    const { handleInput } = this;
+    const { handleInput, handleDelete } = this;
 
     const isName = !name || name.length >= 2;
 
@@ -64,7 +61,10 @@ export default class Signup extends Component {
                 type="text"
                 onChange={handleInput}
               />
-              <i className={`fas fa-times-circle ${isName ? 'none' : ''}`}></i>
+              <i
+                className={`fas fa-times-circle ${!name ? 'none' : ''}`}
+                onClick={handleDelete}
+              ></i>
               <i className={`far fa-check-circle ${isName ? 'none' : ''}`}></i>
             </div>
             <div className="name-validation">
@@ -82,13 +82,13 @@ export default class Signup extends Component {
                 name="email"
                 className="email"
                 placeholder="이메일"
+                value={email}
                 type="text"
                 onChange={handleInput}
               />
               <i
-                className={`fas fa-times-circle ${
-                  !email || checkEmail(email) ? 'none' : ''
-                }`}
+                className={`fas fa-times-circle ${!email ? 'none' : ''}`}
+                onClick={handleDelete}
               ></i>
               <i
                 className={`fas fa-exclamation-circle ${
@@ -114,12 +114,12 @@ export default class Signup extends Component {
                 className="password"
                 placeholder="비밀번호"
                 type="password"
+                value={pw}
                 onChange={handleInput}
               />
               <i
-                className={`fas fa-times-circle ${
-                  !pw || checkPw(pw) ? 'none' : ''
-                }`}
+                className={`fas fa-times-circle ${!pw ? 'none' : ''}`}
+                onClick={handleDelete}
               ></i>
               <i
                 className={`far fa-check-circle ${
