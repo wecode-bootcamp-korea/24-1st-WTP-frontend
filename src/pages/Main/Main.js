@@ -7,7 +7,6 @@ export default class Main extends Component {
     return (
       <div>
         <Nav />
-        <img src="/images/switzerland.jpeg" alt="swiss" />
         <Signup />
       </div>
     );
