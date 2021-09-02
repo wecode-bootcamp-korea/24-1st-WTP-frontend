@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
-import FooterList from './FooterList/FooterList';
+// import FooterList from './FooterList/FooterList';
+import FooterData from './FooterData';
 import './Footer.scss';
 
 export default class Footer extends Component {
   render() {
+    const FooterList = FooterData.map((list, index) => {
+      return (
+        <div className={`footer-content${index}`}>
+          <span className="right-bar right-bar-far">{list.title}</span>
+          <span>{list.description}</span>
+        </div>
+      );
+    });
+
     return (
       <div className="footer">
         <div className="footer-top-star-count-div">
@@ -25,7 +35,7 @@ export default class Footer extends Component {
                   회사 안내
                 </a>
               </div>
-              <FooterList />
+              {FooterList}
               <div className="logo-div">
                 <img
                   className="logo"
