@@ -16,6 +16,7 @@ class Signup extends Component {
     fetch('http://10.58.6.20:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
+        name: this.state.name,
         email: this.state.id,
         password: this.state.pw,
       }),
@@ -43,20 +44,19 @@ class Signup extends Component {
 
   render() {
     const { email, pw, name } = this.state;
-    const { handleInput, handleDelete } = this;
+    const { handleInput, handleDelete, handleSignup } = this;
 
     const isName = !name || name.length >= 2;
 
-    const checkPw = pw => {
-      const regExp =
-        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      return regExp.test(pw);
+    const checkEmail = email => {
+      const regExp = /^[a-zA-Z\d+-.]+@[a-zA-Z\d+-.]+\.[a-zA-Z]{2,3}$/;
+      return regExp.test(email);
     };
 
-    const checkEmail = email => {
+    const checkPw = pw => {
       const regExp =
-        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      return regExp.test(email);
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-_])[A-Za-z\d!@#$%^&*-_]{10,}$/;
+      return regExp.test(pw);
     };
 
     return (
@@ -68,7 +68,7 @@ class Signup extends Component {
           <div className="signup-title">
             <span>회원가입</span>
           </div>
-          <form className="signup-form">
+          <div className="signup-form">
             <div
               className={`name-container ${name.length === 1 ? 'invalid' : ''}`}
             >
@@ -153,8 +153,10 @@ class Signup extends Component {
                 <br /> 최소 10자리 이상이여야 합니다.
               </p>
             </div>
-            <button className="btn-signup">회원가입</button>
-          </form>
+            <button className="btn-signup" onClick={handleSignup}>
+              회원가입
+            </button>
+          </div>
           <p className="have-account">
             이미 가입하셨나요?<span>로그인</span>
           </p>
