@@ -117,9 +117,10 @@ class Signup extends Component {
                 onClick={handleDelete}
               ></i>
               <i
-                className={`fas fa-exclamation-circle ${
-                  !email || checkEmail(email) ? 'none' : ''
-                }`}
+                className={`far fa-check-circle ${!email ? 'none' : ''}`}
+                style={{
+                  color: checkEmail(email) ? '#4ad3b1' : '#a0a0a0',
+                }}
               ></i>
             </div>
             <div className="email-validation">
@@ -148,9 +149,10 @@ class Signup extends Component {
                 onClick={handleDelete}
               ></i>
               <i
-                className={`far fa-check-circle ${
-                  !pw || checkPw(pw) ? 'none' : ''
-                }`}
+                className={`far fa-check-circle ${!pw ? 'none' : ''}`}
+                style={{
+                  color: checkPw(pw) ? '#4ad3b1' : '#a0a0a0',
+                }}
               ></i>
             </div>
             <div className="pw-validation">
