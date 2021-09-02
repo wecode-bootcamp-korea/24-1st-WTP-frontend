@@ -12,10 +12,10 @@ class Login extends Component {
   }
 
   handleLogin = () => {
-    fetch('http://10.58.6.20:8000/users/signup', {
+    fetch('http://172.24.173.9:8000/users/login', {
       method: 'POST',
       body: JSON.stringify({
-        email: this.state.id,
+        email: this.state.email,
         password: this.state.pw,
       }),
     })
@@ -44,16 +44,15 @@ class Login extends Component {
     const { email, pw } = this.state;
     const { handleInput, handleDelete, handleLogin } = this;
 
-    const checkPw = pw => {
-      const regExp =
-        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      return regExp.test(pw);
+    const checkEmail = email => {
+      const regExp = /^[a-zA-Z\d+-.]+@[a-zA-Z\d+-.]+\.[a-zA-Z]{2,3}$/;
+      return regExp.test(email);
     };
 
-    const checkEmail = email => {
+    const checkPw = pw => {
       const regExp =
-        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      return regExp.test(email);
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-_])[A-Za-z\d!@#$%^&*-_]{10,}$/;
+      return regExp.test(pw);
     };
 
     return (
@@ -88,9 +87,10 @@ class Login extends Component {
                 onClick={handleDelete}
               ></i>
               <i
-                className={`far fa-check-circle ${
-                  !email || checkEmail(email) ? 'none' : ''
-                }`}
+                className={`far fa-check-circle ${!email ? 'none' : ''}`}
+                style={{
+                  color: checkEmail(email) ? '#4ad3b1' : '#a0a0a0',
+                }}
               ></i>
             </div>
             <div className="email-validation">
@@ -119,9 +119,10 @@ class Login extends Component {
                 onClick={handleDelete}
               ></i>
               <i
-                className={`far fa-check-circle ${
-                  !pw || checkPw(pw) ? 'none' : ''
-                }`}
+                className={`far fa-check-circle ${!pw ? 'none' : ''}`}
+                style={{
+                  color: checkPw(pw) ? '#4ad3b1' : '#a0a0a0',
+                }}
               ></i>
             </div>
             <div className="pw-validation">
