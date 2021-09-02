@@ -7,12 +7,13 @@ $font-size-micro: 13px;
 
 // color
 $color-background: #f8f8f8;
-$color-red: #e40914;
+$color-red: #f50700;
 $color-pink: #f52f6e;
+$color-light-pink: #fef0f0;
 $color-black: #000000;
 $color-light-black: #292a32;
 $color-white: #ffffff;
-$color-gray: #74747b;
+$color-gray: #a0a0a0;
 $color-light-gray: #ebebeb;
 
 .login {
@@ -51,9 +52,14 @@ $color-light-gray: #ebebeb;
         border-radius: 7px;
         text-indent: 10px;
 
+        &.invalid {
+          background-color: $color-light-pink;
+          border: 1px solid $color-red;
+        }
+
         .email,
         .password {
-          width: 65%;
+          width: 70%;
           font-size: $font-size-huge;
           line-height: 44px;
         }
@@ -71,29 +77,30 @@ $color-light-gray: #ebebeb;
             position: relative;
             top: 3px;
             font-size: 24px;
-            margin-left: 25px;
+            margin-left: 15px;
             cursor: auto;
           }
         }
 
         .fas.fa-exclamation-circle {
-          color: $color-pink;
+          color: $color-red;
         }
 
         .far.fa-check-circle {
-          color: #c6c6c6;
+          color: $color-gray;
         }
       }
 
       .email-validation,
       .pw-validation {
-        margin: 8px 0 12px 0;
+        margin: 8px 0 8px 0;
         padding-left: 30px;
 
         p {
           justify-content: flex-start;
           font-size: $font-size-micro;
-          color: $color-pink;
+          line-height: 1.3;
+          color: $color-red;
 
           &.none {
             display: none;
