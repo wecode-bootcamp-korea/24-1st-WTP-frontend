@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MovieList from '../../components/MovieList/MovieList';
+import MovieList from './MovieList/MovieList';
 import './Main.scss';
 
 export default class Main extends Component {
@@ -12,9 +12,7 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    fetch('https://yts.mx/api/v2/list_movies.json?sort_by=rating', {
-      method: 'GET',
-    })
+    fetch('https://yts.mx/api/v2/list_movies.json?sort_by=rating')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -27,7 +25,7 @@ export default class Main extends Component {
   render() {
     const { movies, isLoading } = this.state;
     return (
-      <div className="Main">
+      <div className="main">
         {/*  // 왓챠피디아에 없음 추가 구현 */}
         {isLoading ? (
           <div className="loading">

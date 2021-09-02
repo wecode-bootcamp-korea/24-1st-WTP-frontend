@@ -9,9 +9,12 @@ class MovieList extends Component {
       movieMoveCount: 0,
     };
   }
+
   plusMoveCount = () => {
     const { movieMoveCount } = this.state;
-    if (movieMoveCount === 3) return;
+    const { length } = this.props.data;
+    const maxCount = Math.ceil(length / 5 - 1);
+    if (movieMoveCount === maxCount) return;
     this.setState({
       movieMoveCount: movieMoveCount + 1,
     });
@@ -25,14 +28,14 @@ class MovieList extends Component {
     });
   };
   render() {
+    const { movieMoveCount } = this.state;
     const marginLeftValue = this.state.movieMoveCount * -1490;
     const marginLeft = marginLeftValue.toString();
-
-    const { movieMoveCount } = this.state;
     const { collectionMovies, data } = this.props;
     const { minusMoveCount, plusMoveCount } = this;
+
     return (
-      <div className="Movielist">
+      <div className="movielist">
         <h1 className="movies-list-title">{collectionMovies}</h1>
         <div className="movie-list">
           {movieMoveCount ? (
@@ -57,14 +60,14 @@ class MovieList extends Component {
               })}
             </div>
           </div>
-          {movieMoveCount <= 2 ? (
+          {movieMoveCount <= 2 && (
             <div
               className="movie-move-arrow right-arrow"
               onClick={plusMoveCount}
             >
               &#62;
             </div>
-          ) : null}
+          )}
         </div>
       </div>
     );

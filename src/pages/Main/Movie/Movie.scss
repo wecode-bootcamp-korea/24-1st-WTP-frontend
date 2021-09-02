@@ -1,3 +1,5 @@
+$movie-text-margin: 9px 0px;
+
 .Movie {
   margin-right: 23px;
   cursor: pointer;
@@ -44,10 +46,10 @@
   }
 
   .movie-info {
-    margin: 9px 0px;
+    margin: $movie-text-margin;
 
     .movie-title {
-      margin: 9px 0px;
+      margin: $movie-text-margin;
       font-size: 19px;
       font-weight: 540;
       overflow: hidden;
@@ -57,7 +59,7 @@
     }
 
     .movie-product-info {
-      margin: 9px 0px;
+      margin: $movie-text-margin;
     }
 
     .movie-audience-info {
