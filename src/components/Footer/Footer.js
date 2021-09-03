@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import FooterList from './FooterList/FooterList';
 import FooterData from './FooterData';
 import './Footer.scss';
 
@@ -7,7 +6,7 @@ export default class Footer extends Component {
   render() {
     const FooterList = FooterData.map((list, index) => {
       return (
-        <div className={`footer-content${index}`}>
+        <div key={`FooterList${index}`} className={`footer-content${index}`}>
           <span className="right-bar right-bar-far">{list.title}</span>
           <span>{list.description}</span>
         </div>
