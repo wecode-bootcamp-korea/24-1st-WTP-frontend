@@ -39,13 +39,13 @@ $movie-text-margin: 9px 0px;
       height: 29px;
       top: 5px;
       left: 5px;
-      color: white;
+      color: $color-white;
       font-weight: bold;
       font-size: $font-size-large;
       font-weight: 700;
       opacity: 0.85;
       border-radius: 4px;
-      background-color: black;
+      background-color: $color-black;
     }
 
     .atcha-logo {
@@ -55,7 +55,8 @@ $movie-text-margin: 9px 0px;
       padding: 3px;
       top: 5px;
       right: 5px;
-      background-color: white;
+      box-shadow: 0px 1px 1px 0px;
+      background-color: $color-white;
       border-radius: 50%;
     }
   }
@@ -64,7 +65,6 @@ $movie-text-margin: 9px 0px;
     margin: $movie-text-margin;
 
     .movie-title {
-      // background-color: red;
       width: 260px;
       margin: $movie-text-margin;
       padding-top: 3px;
