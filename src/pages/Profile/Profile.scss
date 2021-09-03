@@ -4,17 +4,28 @@
   display: flex;
   justify-content: center;
   margin: 27px 0px;
-  height: 622px;
+  height: 620px;
 
   .profile-container {
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
     width: 650px;
     height: 100%;
-    background-color: blue;
+    overflow: hidden;
 
     .profile-container-top {
+      display: flex;
+      justify-content: end;
       height: 200px;
       background-color: #e86e91;
-      box-shadow: 0px 40px 0px rgba(0, 0, 0, 0.1) inset;
+
+      .options {
+        margin-top: 8px;
+        margin-right: 8px;
+        width: 23px;
+        height: 23px;
+        cursor: pointer;
+      }
     }
 
     .profile-container-middle {
@@ -23,31 +34,80 @@
       justify-content: space-around;
       position: relative;
       height: 200px;
+      padding-left: 20px;
       background-color: white;
-      border-bottom: 1px solid black;
 
       .user-picture {
         position: absolute;
-        width: 55px;
-        height: 55px;
+        width: 57px;
+        height: 57px;
         top: -20px;
         left: 20px;
         border: 1px solid #e6dede;
         border-radius: 50%;
       }
-      .profile-name {
-        font-size: 25px;
-        font-weight: 700;
-        margin-top: 50px;
-      }
+      .profile-info {
+        .profile-name {
+          margin-top: 40px;
+          font-size: 25px;
+          font-weight: 700;
+        }
 
-      .profile-detail {
-        font-size: 15px;
-        color: #5f5f5f;
+        .profile-detail {
+          margin-top: 7px;
+          font-size: 15px;
+          color: #5f5f5f;
+        }
       }
 
       .analysis {
-        font-size: 17px;
+        display: flex;
+        border-top: 1px solid #ededed;
+        border-bottom: 1px solid #ededed;
+        margin-right: 20px;
+        cursor: pointer;
+
+        .graph {
+          margin-top: 10px;
+          width: 25px;
+          height: 25px;
+        }
+
+        .analysis-text {
+          margin-left: 15px;
+          padding: 17px 0px;
+          font-size: 17px;
+        }
+      }
+    }
+
+    .profile-container-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px;
+      width: 195px;
+      height: 195px;
+      margin-left: 20px;
+      color: white;
+      background-color: #84d959;
+      border-radius: 10px;
+      cursor: pointer;
+
+      .bottom-top {
+        .bottom-top-movie {
+          font-size: 17px;
+        }
+
+        .bottom-top-star {
+          font-size: 19px;
+        }
+      }
+
+      .bottom-bottom {
+        .bottom-top-like {
+          font-size: 13px;
+        }
       }
     }
   }
