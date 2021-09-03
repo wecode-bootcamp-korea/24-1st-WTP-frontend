@@ -1,1 +1,111 @@
-//안녕하세요
+@import '../../styles/variables.scss';
+
+$font-color: #a5a5a7;
+
+.footer {
+  background-color: #1c1d1f;
+  .footer-top-star-count-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 63px;
+    background-color: $color-black;
+    font-size: 19px;
+    font-weight: 500;
+    color: #d1d1d2;
+
+    .star-count {
+      padding: 0px 10px;
+      font-weight: 600;
+      color: $color-red;
+    }
+  }
+
+  .footer-bottom-container {
+    display: flex;
+    justify-content: space-around;
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      height: 240px;
+      width: 1380px;
+      padding: 30px 20px 45px 20px;
+      color: $font-color;
+
+      .right-bar-far {
+        padding-right: 7px;
+        margin-right: 7px;
+      }
+      .footer-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 90%;
+        font-size: $font-size-micro;
+
+        div {
+          margin: 5px 0px;
+        }
+
+        .footer-content0,
+        .footer-content3 {
+          margin-top: 22px;
+        }
+
+        .logo-div {
+          display: flex;
+          align-items: center;
+
+          .logo {
+            width: 70px;
+            margin-right: 5px;
+          }
+        }
+
+        .right-bar {
+          border-right: 1px solid $font-color;
+          line-height: 1px;
+        }
+      }
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90%;
+
+      .select-language {
+        display: flex;
+        align-items: center;
+        width: 120px;
+        height: 32px;
+        padding-left: 7px;
+        border: 1px solid $font-color;
+        border-radius: 2px;
+        font-size: $font-size-medium;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+          border-color: #cacacf;
+        }
+
+        img {
+          width: 20px;
+        }
+      }
+
+      .footer-right-icons {
+        display: flex;
+        justify-content: space-around;
+
+        img {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}
