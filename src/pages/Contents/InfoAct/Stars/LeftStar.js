@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { ReactComponent as Star } from '../../../assets/icons/star4.svg';
-import './RightStar.scss';
+import { ReactComponent as Star } from '../../../../assets/icons/star4.svg';
 
 class RatingStars extends Component {
   render() {
@@ -8,7 +7,6 @@ class RatingStars extends Component {
 
     return (
       <Star
-        className="right-star"
         onClick={() => onClick(index)}
         onMouseEnter={() => onMouseEnter(index)}
         onMouseLeave={onMouseLeave}
