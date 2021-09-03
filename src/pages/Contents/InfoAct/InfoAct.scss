@@ -13,6 +13,37 @@
       margin-bottom: 5px;
     }
   }
+  .act.act-button {
+    display: flex;
+    width: 250px;
+    height: 45px;
+    background-color: #fbfbfb;
+    border: 1px solid #ebebeb;
+    border-radius: 7px;
+    cursor: pointer;
+
+    &:hover {
+      .fa-plus {
+        transform: rotate(90deg);
+      }
+    }
+    .button-contents {
+      margin: auto;
+
+      > i {
+        margin-right: 10px;
+        font-size: 16px;
+        color: #ff2f6e;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .button-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: #282828;
+      }
+    }
+  }
 
   .act-button {
     display: flex;
@@ -23,7 +54,7 @@
     cursor: pointer;
 
     &:hover {
-      .fas {
+      .fa-plus {
         transform: rotate(90deg);
       }
     }
@@ -31,14 +62,11 @@
     .button-contents {
       margin: auto;
 
-      .button-svg {
-        margin-right: 6px;
+      > i {
+        margin-right: 10px;
         font-size: 16px;
         color: #ffff;
-
-        .fas {
-          transition: transform 0.3s ease-in-out;
-        }
+        transition: transform 0.3s ease-in-out;
       }
 
       .button-text {

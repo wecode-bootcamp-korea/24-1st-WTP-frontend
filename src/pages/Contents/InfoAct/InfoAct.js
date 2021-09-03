@@ -14,20 +14,21 @@ class InfoAct extends Component {
       ratingComment,
       setHoverRating,
       setRating,
+      isClicked,
     } = this.props;
-
-    // console.log(setRating);
 
     return (
       <div className="info-act">
-        <button className="act-button" onClick={onClickBtn}>
+        <button
+          className={isClicked ? 'act act-button' : 'act-button'}
+          onClick={onClickBtn}
+        >
           <div className="button-contents">
-            <span className="button-svg">
-              <i className="fas fa-plus"></i>
-            </span>
+            <i className={isClicked ? 'fas fa-bookmark' : 'fas fa-plus'}></i>
             <span className="button-text">보고싶어요</span>
           </div>
         </button>
+
         <div className="star-contents">
           <span>{ratingComment(setRating)}</span>
           <ul className="stars">

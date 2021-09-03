@@ -1,0 +1,114 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.openModal {
+  display: flex;
+  align-items: center;
+  animation: modal-bg-show 0.3s;
+
+  > section {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffff;
+    animation: modal-show 0.3s;
+
+    > header {
+      position: relative;
+      width: 100%;
+      padding: 5px;
+      border-bottom: 1px solid #dee2e6;
+      background-color: rgba(240, 240, 240, 0.5);
+
+      .close-modal {
+        font-size: 30px;
+        cursor: pointer;
+        color: #ff2f6e;
+      }
+
+      .comment {
+        position: absolute;
+        top: 15px;
+        left: 500px;
+        right: 0px;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      .add-comment {
+        color: #ff2f6e;
+        cursor: pointer;
+      }
+
+      > span {
+        position: absolute;
+        top: 16px;
+        left: 0;
+        right: 0;
+        margin: 0 50px;
+        font-size: 19px;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+
+    > main {
+      padding: 10px 20px;
+
+      > textarea {
+        width: 100%;
+        padding: 10px;
+        overflow: hidden;
+        padding-bottom: 200px;
+        letter-spacing: -0.7px;
+        font-size: 18px;
+        line-height: 26px;
+        color: rgba(0, 0, 0, 0.9);
+
+        &::placeholder {
+          letter-spacing: -0.7px;
+          line-height: 26px;
+          font-size: 18px;
+          color: rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+  }
+}
+
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modal-close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

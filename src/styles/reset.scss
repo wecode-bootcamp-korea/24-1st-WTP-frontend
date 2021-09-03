@@ -135,3 +135,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+  cursor: text;
+}

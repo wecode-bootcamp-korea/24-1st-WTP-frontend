@@ -12,6 +12,7 @@ class MovieInfo extends Component {
       ratingComment,
       setRating,
       setHoverRating,
+      isClicked,
     } = this.props;
 
     return (
@@ -42,6 +43,7 @@ class MovieInfo extends Component {
             ratingComment={ratingComment}
             setRating={setRating}
             setHoverRating={setHoverRating}
+            isClicked={isClicked}
           />
         </article>
       </section>
