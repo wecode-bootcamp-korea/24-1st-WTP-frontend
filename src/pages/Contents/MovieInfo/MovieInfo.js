@@ -13,24 +13,34 @@ class MovieInfo extends Component {
       setRating,
       setHoverRating,
       isClicked,
+      movie_details,
     } = this.props;
+
+    const newDate =
+      movie_details.release_date && movie_details.release_date.slice(0, 4);
+    const genre = movie_details.genre && movie_details.genre.join('/');
+    const country = movie_details.country && movie_details.country.join('/');
+
+    console.log(genre);
 
     return (
       <section className="movie-info">
-        <div className="movie-poster-all">
+        <header>
           <img
-            src="/images/poster.jpeg"
+            src={movie_details.poster_image}
             className="movie-poster"
             alt="영화 포스터"
           />
-        </div>
+        </header>
         <article className="movie-info-all">
           <div className="movie-title">
-            <h1 className="title">샹치와 텐 링즈의 전설</h1>
-            <p className="text">2021 ・ 액션/모험/판타지 ・ 미국/중국/호주</p>
+            <h1 className="title">{movie_details.title}</h1>
+            <p className="text">
+              {newDate} ・ {genre} ・ {country}
+            </p>
           </div>
           <span className="rating-star">
-            평균 ★4.2(988명)
+            평균 ★{movie_details.average_rating}
             <span className="rating-mystar">
               {setRating !== 0 ? `나의 평점 ★${setRating}` : ''}
             </span>

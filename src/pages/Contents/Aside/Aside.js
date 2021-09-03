@@ -7,7 +7,6 @@ class Aside extends Component {
     return (
       <div className="aside-all">
         <Gallery />
-        <Gallery />
       </div>
     );
   }

@@ -3,7 +3,9 @@ import './CommentModal.scss';
 
 class CommentModal extends Component {
   render() {
-    const { open, close, addComment, mycomment, handleChange } = this.props;
+    const { open, close, addComment, mycomment, handleChange, movie_details } =
+      this.props;
+
     return (
       <div className={open ? 'openModal modal' : 'modal'}>
         {open ? (
@@ -12,7 +14,7 @@ class CommentModal extends Component {
               <button className="close-modal" onClick={close}>
                 &times;
               </button>
-              <span>샹치</span>
+              <span>{movie_details.title}</span>
               <button
                 className={mycomment !== '' ? 'add-comment comment' : 'comment'}
                 disabled={mycomment !== '' ? '' : 'disabled'}

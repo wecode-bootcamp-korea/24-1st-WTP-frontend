@@ -28,7 +28,6 @@ class InfoAct extends Component {
             <span className="button-text">보고싶어요</span>
           </div>
         </button>
-
         <div className="star-contents">
           <span>{ratingComment(setRating)}</span>
           <ul className="stars">

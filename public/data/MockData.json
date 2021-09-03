@@ -1,0 +1,11 @@
+{
+  "movieDetail": {
+    "title": "인질",
+    "release_date": "2021-08-18",
+    "genre": ["액션", "스릴러"],
+    "country": ["한국"],
+    "average_rating": "4.0",
+    "poster_image": "https://t1.daumcdn.net/movie/e1285fe4d39de150ca497edf0d91d8b4ad8d8e39",
+    "trailer": "hR4jbkG7pWM"
+  }
+}

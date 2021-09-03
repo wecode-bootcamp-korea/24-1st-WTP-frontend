@@ -7,13 +7,12 @@
   background-color: #ffff;
   border-bottom: 1px solid #e3e3e3;
 
-  .movie-poster-all {
-    .movie-poster {
-      width: 165px;
-      margin-top: -36px;
-      border: 2px solid #ffff;
-      border-radius: 5px;
-    }
+  .movie-poster {
+    width: 165px;
+    height: 234px;
+    margin-top: -36px;
+    border: 2px solid #ffff;
+    border-radius: 5px;
   }
 
   .movie-info-all {

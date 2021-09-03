@@ -9,6 +9,7 @@ import CommentModal from './CommentModal/CommentModal';
 
 export default class Contents extends Component {
   state = {
+    movie_details: [],
     setRating: 0,
     setHoverRating: 0,
     isClicked: false,
@@ -17,14 +18,20 @@ export default class Contents extends Component {
     isComment: false,
   };
 
+  componentDidMount() {
+    fetch('http://10.58.3.64:8000/movies/29', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => this.setState({ movie_details: data.movie_info }));
+  }
+
   onClickBtn = () => {
     this.setState({ isClicked: !this.state.isClicked });
   };
 
   onClick = index => {
     this.setState({ setRating: index });
-    console.log(index);
-    console.log(this.state.setRating);
     if (this.state.setRating === index) {
       this.setState({ setRating: 0 });
     }
@@ -60,7 +67,7 @@ export default class Contents extends Component {
   };
 
   openModal = () => {
-    this.setState({ modalOpen: true });
+    this.setState({ modalOpen: !this.state.modalOpen });
   };
 
   closeModal = () => {
@@ -87,9 +94,9 @@ export default class Contents extends Component {
       modalOpen,
       mycomment,
       isComment,
+      movie_details,
     } = this.state;
 
-    console.log(this.state.mycomment);
     return (
       <div className="contents">
         <div className="background">
@@ -112,13 +119,14 @@ export default class Contents extends Component {
             setRating={setRating}
             setHoverRating={setHoverRating}
             isClicked={isClicked}
+            movie_details={movie_details}
           />
           <div className="main-contents">
             <div className="contents-align">
               <div className={isClicked ? 'comment-contents' : 'disppear'}>
                 {isComment ? (
                   <div className="comment">
-                    <span className="comment-text">김영현 : {mycomment}</span>
+                    <span className="comment-text">{mycomment}</span>
                     <div className="btns">
                       <button className="delete-btn" onClick={this.onDelete}>
                         <i class="fas fa-trash-alt"></i>삭제
@@ -131,7 +139,7 @@ export default class Contents extends Component {
                 ) : (
                   <div className="comment">
                     <span className="comment-text">
-                      이 작품에 대한 김영현 님의 평가를 글로 남겨보세요.
+                      이 작품에 대한 평가를 글로 남겨보세요.
                     </span>
                     <button className="comment-btn" onClick={this.openModal}>
                       코멘트 남기기
@@ -145,9 +153,10 @@ export default class Contents extends Component {
                 mycomment={mycomment}
                 addComment={this.addComment}
                 handleChange={this.handleChange}
+                movie_details={movie_details}
               />
               <div className="contents-all">
-                <BasicInfo />
+                <BasicInfo movie_details={movie_details} />
                 <Process />
                 <SimilarThings />
               </div>
