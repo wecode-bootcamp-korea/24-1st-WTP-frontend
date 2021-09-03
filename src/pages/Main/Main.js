@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieList from './MovieList/MovieList';
 import './Main.scss';
+import { GET_KOREAN_MOVIES, FOREIGN_MOVIES } from '../../config';
 
 export default class Main extends Component {
   constructor() {
@@ -13,7 +14,7 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.3.36:8000/movie?country=외국')
+    fetch('http://10.58.6.107:8000/movie?country=외국')
       .then(res => res.json())
       // .then(data => console.log(data))
       .then(data => {
@@ -23,7 +24,7 @@ export default class Main extends Component {
         });
       });
 
-    fetch('http://10.58.3.36:8000/movie?country=한국')
+    fetch('http://10.58.6.107:8000/movie?country=한국')
       .then(res => res.json())
       .then(data => {
         this.setState({

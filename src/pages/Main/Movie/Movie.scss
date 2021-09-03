@@ -30,7 +30,7 @@ $movie-text-margin: 9px 0px;
       z-index: 1;
     }
 
-    .movie-rating {
+    .movie-ranking {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,7 +46,17 @@ $movie-text-margin: 9px 0px;
       opacity: 0.85;
       border-radius: 4px;
       background-color: black;
-      z-index: 2;
+    }
+
+    .atcha-logo {
+      position: absolute;
+      width: 29px;
+      height: 29px;
+      padding: 3px;
+      top: 5px;
+      right: 5px;
+      background-color: white;
+      border-radius: 50%;
     }
   }
 

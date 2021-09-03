@@ -14,7 +14,7 @@ class MovieList extends Component {
     const { movieMoveCount } = this.state;
     const { length } = this.props.data;
     const maxCount = Math.ceil(length / 5 - 1);
-    if (movieMoveCount === 0) return;
+    if (length === 0) return;
     if (movieMoveCount === maxCount) return;
     this.setState({
       movieMoveCount: movieMoveCount + 1,
@@ -30,18 +30,19 @@ class MovieList extends Component {
   };
   render() {
     const { movieMoveCount } = this.state;
-    const marginLeftValue = this.state.movieMoveCount * -1358;
+    const marginLeftValue = this.state.movieMoveCount * -1350;
     const marginLeft = marginLeftValue.toString();
     const { collectionMovies, data } = this.props;
     const { minusMoveCount, plusMoveCount } = this;
-
+    const { length } = this.props.data;
+    const maxCount = Math.ceil(length / 5 - 1);
     return (
       <div className="movielist">
         <h1 className="movies-list-title">{collectionMovies}</h1>
         <div className="movie-list">
           {movieMoveCount ? (
             <div
-              className="movie-move-arrow letf-arrow"
+              className="movie-move-arrow left-arrow"
               onClick={minusMoveCount}
             >
               &#60;
@@ -61,8 +62,7 @@ class MovieList extends Component {
               })}
             </div>
           </div>
-          {/* 수정 해야함 */}
-          {movieMoveCount <= movieMoveCount - 2 && (
+          {movieMoveCount <= maxCount - 1 && (
             <div
               className="movie-move-arrow right-arrow"
               onClick={plusMoveCount}
