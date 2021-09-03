@@ -3,11 +3,11 @@
 .login {
   width: 375px;
   margin: 180px auto 0 auto;
-  border: 1px solid $color-light-black;
-  border-radius: 7px;
 
   .login-container {
     padding: 32px 0 48px 0;
+    background-color: $color-white;
+    border-radius: 7px;
 
     .login-logo {
       display: flex;
