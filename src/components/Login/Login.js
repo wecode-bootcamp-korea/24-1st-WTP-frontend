@@ -59,10 +59,7 @@ class Login extends Component {
       <div className="login">
         <div className="login-container">
           <div className="login-logo">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/b/b8/%EC%99%93%EC%B1%A0_%EB%A1%9C%EA%B3%A0_2021.png"
-              alt="logo"
-            />
+            <img src="/images/AtchaPedia_Logo_Big.png" alt="logo" />
           </div>
           <div className="login-title">
             <span>로그인</span>

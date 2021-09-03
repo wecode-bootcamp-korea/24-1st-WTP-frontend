@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
+import Modal from './Modal/Modal';
 import './Nav.scss';
 
 export default class Nav extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isModalOn: false,
+    };
+  }
+
+  handleModal = () => {
+    this.setState({
+      isModalOn: !this.state.isModalOn,
+    });
+  };
+
   render() {
     return (
       <nav className="navbar">
@@ -25,8 +39,16 @@ export default class Nav extends Component {
                 />
               </div>
             </div>
-            <button className="btn-login">로그인</button>
-            <button className="btn-signup">회원가입</button>
+            <button className="btn-login" onClick={this.handleModal}>
+              로그인
+            </button>
+            <Modal
+              handleModal={this.handleModal}
+              isModalOn={this.state.isModalOn}
+            />
+            <button className="btn-signup" onClick={this.handleModal}>
+              회원가입
+            </button>
           </div>
         </div>
       </nav>
