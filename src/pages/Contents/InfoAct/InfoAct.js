@@ -8,6 +8,12 @@ class InfoAct extends Component {
   state = {
     setRating: 0,
     setHoverRating: 0,
+    isClicked: false,
+  };
+
+  onClickBtn = () => {
+    this.setState({ isClicked: !this.state.isClicked });
+    console.log(this.state.isClicked);
   };
 
   onClick = index => {
@@ -52,7 +58,7 @@ class InfoAct extends Component {
 
     return (
       <div className="info-act">
-        <button className="act-button">
+        <button className="act-button" onClick={this.onClickBtn}>
           <div className="button-contents">
             <span className="button-svg">
               <i className="fas fa-plus"></i>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import ContentsAll from './ContentsAll/ContentsAll';
 import MovieInfo from './MovieInfo/MovieInfo';
+import BasicInfo from './BasicInfo/BasicInfo';
+import Process from './Process/Process';
+import SimilarThings from './SimilarThings/SimilarThings';
 import Aside from './Aside/Aside';
 import './Contents.scss';
 
@@ -21,7 +23,11 @@ export default class Contents extends Component {
         <div className="main">
           <MovieInfo />
           <div className="main-contents">
-            <ContentsAll />
+            <div className="contents-all">
+              <BasicInfo />
+              <Process />
+              <SimilarThings />
+            </div>
             <Aside />
           </div>
         </div>
