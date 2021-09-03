@@ -1,1 +1,54 @@
-//안녕하세요
+@import '../../styles/variables.scss';
+
+.profile {
+  display: flex;
+  justify-content: center;
+  margin: 27px 0px;
+  height: 622px;
+
+  .profile-container {
+    width: 650px;
+    height: 100%;
+    background-color: blue;
+
+    .profile-container-top {
+      height: 200px;
+      background-color: #e86e91;
+      box-shadow: 0px 40px 0px rgba(0, 0, 0, 0.1) inset;
+    }
+
+    .profile-container-middle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      position: relative;
+      height: 200px;
+      background-color: white;
+      border-bottom: 1px solid black;
+
+      .user-picture {
+        position: absolute;
+        width: 55px;
+        height: 55px;
+        top: -20px;
+        left: 20px;
+        border: 1px solid #e6dede;
+        border-radius: 50%;
+      }
+      .profile-name {
+        font-size: 25px;
+        font-weight: 700;
+        margin-top: 50px;
+      }
+
+      .profile-detail {
+        font-size: 15px;
+        color: #5f5f5f;
+      }
+
+      .analysis {
+        font-size: 17px;
+      }
+    }
+  }
+}
