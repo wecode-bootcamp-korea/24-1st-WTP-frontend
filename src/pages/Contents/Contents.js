@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Comment from './Comment/Comment';
 import MovieInfo from './MovieInfo/MovieInfo';
 import BasicInfo from './BasicInfo/BasicInfo';
 import Process from './Process/Process';
@@ -83,10 +84,15 @@ export default class Contents extends Component {
             isClicked={isClicked}
           />
           <div className="main-contents">
-            <div className="contents-all">
-              <BasicInfo />
-              <Process />
-              <SimilarThings />
+            <div className="contents-align">
+              <div className={isClicked ? 'comment-contents' : 'disppear'}>
+                <Comment />
+              </div>
+              <div className="contents-all">
+                <BasicInfo />
+                <Process />
+                <SimilarThings />
+              </div>
             </div>
             <Aside />
           </div>
