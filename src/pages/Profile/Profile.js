@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 import './Profile.scss';
 
+import ProfileModal from './ProfileModal/ProfileModal';
+
 export default class Profile extends Component {
+  constructor() {
+    super();
+    this.state = {
+      modal: false,
+    };
+  }
+
+  click = e => {
+    const { modal } = this.state;
+    this.setState({
+      modal: !modal,
+    });
+  };
   render() {
+    const { click } = this;
     return (
       <div className="profile">
         <div className="profile-container">
@@ -11,8 +27,10 @@ export default class Profile extends Component {
               <img
                 className="options"
                 alt="options"
-                src="/images/settings.png"
+                src="/images/gear.png"
+                onClick={click}
               />
+              {this.state.modal && <ProfileModal click={click} />}
             </div>
           </div>
           <div className="profile-container-middle">
