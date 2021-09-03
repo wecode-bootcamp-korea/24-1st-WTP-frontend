@@ -18,7 +18,14 @@ export default class Profile extends Component {
           <div className="profile-container-middle">
             <img className="user-picture" alt="user" src="images/user.png" />
             <div className="profile-info">
-              <div className="profile-name">김영호</div>
+              <div className="info-top">
+                <div className="profile-name">위코드</div>
+                <img
+                  className="atcha-logo"
+                  alt="atcha-logo"
+                  src="images/atcha-logo.png"
+                />
+              </div>
               <div className="profile-detail">프로필이 없습니다.</div>
             </div>
             <div className="analysis">
