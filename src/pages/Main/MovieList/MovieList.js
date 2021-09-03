@@ -16,6 +16,8 @@ class MovieList extends Component {
     const maxCount = Math.ceil(length / 5 - 1);
     if (length === 0) return;
     if (movieMoveCount === maxCount) return;
+    // !length || movieMoveCount === maxCount return;
+
     this.setState({
       movieMoveCount: movieMoveCount + 1,
     });
@@ -40,14 +42,14 @@ class MovieList extends Component {
       <div className="movielist">
         <h1 className="movies-list-title">{collectionMovies}</h1>
         <div className="movie-list">
-          {movieMoveCount ? (
+          {movieMoveCount && (
             <div
               className="movie-move-arrow left-arrow"
               onClick={minusMoveCount}
             >
               &#60;
             </div>
-          ) : null}
+          )}
           <div className="movies">
             <div className="slide" style={{ marginLeft: `${marginLeft}px` }}>
               {data.map((movie, index) => {
