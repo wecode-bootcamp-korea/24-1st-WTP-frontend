@@ -3,14 +3,14 @@
 .profile {
   display: flex;
   justify-content: center;
-  margin: 27px 0px;
   height: 625px;
+  margin: 27px 0px;
 
   .profile-container {
-    border: 1px solid #e3e3e3;
-    border-radius: 6px;
     width: 650px;
     height: 100%;
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
     overflow: hidden;
 
     .profile-container-top {
@@ -20,10 +20,10 @@
       background-color: #e86e91;
 
       .options {
-        margin-top: 8px;
-        margin-right: 8px;
         width: 23px;
         height: 23px;
+        margin-top: 8px;
+        margin-right: 8px;
         cursor: pointer;
       }
     }
@@ -56,6 +56,7 @@
         .info-top {
           display: flex;
           align-items: flex-end;
+
           .profile-name {
             margin-top: 40px;
             font-size: 25px;
@@ -65,19 +66,19 @@
           .atcha-logo {
             width: 13px;
             height: 13px;
-            border-radius: 50%;
-            background: black;
             margin-bottom: 7px;
             margin-left: 5px;
+            border-radius: 50%;
+            background: black;
           }
         }
       }
 
       .analysis {
         display: flex;
+        margin-right: 20px;
         border-top: 1px solid #ededed;
         border-bottom: 1px solid #ededed;
-        margin-right: 20px;
         cursor: pointer;
 
         .graph {
