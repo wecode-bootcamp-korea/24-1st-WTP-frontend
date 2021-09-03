@@ -14,7 +14,7 @@ class Gallery extends Component {
               alt="갤러리 사진"
             />
           </li>
-        </ul>{' '}
+        </ul>
       </section>
     );
   }

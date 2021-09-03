@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BasicInfo from '../ContentsThings/BasicInfo';
-import Process from '../Producers/Process';
+import BasicInfo from '../BasicInfo/BasicInfo';
+import Process from '../Process/Process';
 import SimilarThings from '../SimilarThings/SimilarThings';
 import './ContentsAll.scss';
 
