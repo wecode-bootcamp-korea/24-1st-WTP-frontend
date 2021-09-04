@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from '../Form/Form';
+import './Modal.scss';
 
 export class Modal extends Component {
   render() {

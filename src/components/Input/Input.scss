@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.input-container {
+  width: 335px;
+  height: 44px;
+  margin: 0 auto 8px auto;
+  background-color: $color-background;
+  border-radius: 7px;
+  text-indent: 10px;
+
+  .name,
+  .email,
+  .password {
+    width: 70%;
+    font-size: $font-size-huge;
+    line-height: 44px;
+  }
+
+  i {
+    font-size: $font-size-huge;
+    color: #c6c6c6;
+    cursor: pointer;
+
+    &:last-child {
+      position: relative;
+      top: 3px;
+      font-size: 24px;
+      margin-left: 15px;
+      cursor: auto;
+    }
+  }
+}

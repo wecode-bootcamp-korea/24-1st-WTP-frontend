@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
+import './Input.scss';
 
 export class Input extends Component {
   render() {
     const { type, text, value } = this.props;
-    const { handleInput, handleDelete } = this;
+    const { handleInput, handleDelete } = this.props;
 
     return (
-      <div className="container">
+      <div className="input-container">
         <input
-          id={type}
           name={type}
+          type={type}
           className={type}
           placeholder={text}
           value={value}
-          type={type}
           onChange={handleInput}
         />
         <i
-          name={type}
           className="fas fa-times-circle"
+          name={type}
           onClick={handleDelete}
         ></i>
         <i className="far fa-check-circle"></i>

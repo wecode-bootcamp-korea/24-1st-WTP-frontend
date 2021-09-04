@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.modal {
+  width: 375px;
+  height: 600px;
+  margin: 90px auto 0 auto;
+  border: 1px dotted $color-pink;
+  border-radius: 7px;
+  background-color: $color-white;
+}
