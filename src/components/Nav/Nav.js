@@ -45,18 +45,16 @@ export default class Nav extends Component {
                 />
               </div>
             </div>
-            <button className="btn-login" onClick={openModal}>
-              로그인
-            </button>
-            <Modal open={modalOpen} close={closeModal}>
-              <Form type="login" title="로그인" inputData={loginData} />
-            </Modal>
-            <button className="btn-signup" onClick={openModal}>
-              회원가입
-            </button>
-            <Modal open={modalOpen} close={closeModal}>
-              <Form type="signUp" title="회원가입" inputData={signUpData} />
-            </Modal>
+            <div className="btn-container" onClick={openModal}>
+              <button className="btn-login">로그인</button>
+              <Modal open={modalOpen} close={closeModal}>
+                <Form type="login" title="로그인" inputData={loginData} />
+              </Modal>
+              <button className="btn-signup">회원가입</button>
+              <Modal open={modalOpen} close={closeModal}>
+                <Form type="signUp" title="회원가입" inputData={signUpData} />
+              </Modal>
+            </div>
           </div>
         </div>
       </nav>
