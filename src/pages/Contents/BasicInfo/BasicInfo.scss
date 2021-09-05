@@ -6,6 +6,7 @@
   }
 
   .info-summary {
+    position: relative;
     width: 598px;
     margin: 10px 0 30px;
 
@@ -23,15 +24,44 @@
     }
 
     .story-summary {
-      width: 598px;
-      margin: 15px 0 25px;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      position: relative;
       display: -webkit-box;
+      margin: 15px 0;
+      max-height: 4.5rem;
+      line-height: 23px;
+      overflow: hidden;
       -webkit-line-clamp: 3; /* 라인수 */
-      -webkit-box-orient: vertical;
-      word-wrap: break-word;
-      line-height: 22px;
+
+      &.show {
+        display: block;
+        max-height: none;
+        overflow: auto;
+        -webkit-line-clamp: unset;
+      }
+    }
+
+    > button {
+      position: absolute;
+      bottom: 19px;
+      right: 0;
+      max-height: 2rem;
+      line-height: 23px;
+      padding-left: 20px;
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 18%
+      );
+      font-size: 15px;
+      font-weight: 500;
+      color: #ff2f6e;
+      cursor: pointer;
+
+      &.hide {
+        display: none;
+      }
     }
   }
 }

@@ -4,7 +4,6 @@ import './Gallery.scss';
 class Gallery extends Component {
   state = {
     trailer: '',
-    // gallery: '',
   };
 
   componentDidMount() {
@@ -13,7 +12,6 @@ class Gallery extends Component {
     })
       .then(res => res.json())
       .then(data => this.setState({ trailer: data.movie_info.trailer }));
-    // .then(data => this.setState({ trailer: data.movie_info.trailer }))
   }
 
   render() {
