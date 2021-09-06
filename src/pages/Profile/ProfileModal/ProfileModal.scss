@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: space-around;
     width: 380px;
-    height: 90%;
+    height: 900px;
     background-color: $color-white;
     border-radius: 10px;
     left: 50%;
@@ -54,7 +54,8 @@
     }
 
     .modal-close {
-      font-size: 17px;
+      font-size: 30px;
+      margin-bottom: -15px;
       color: #ff2f6e;
       cursor: pointer;
     }

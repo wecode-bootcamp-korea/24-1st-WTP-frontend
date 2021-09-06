@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './Profile.scss';
-
 import ProfileModal from './ProfileModal/ProfileModal';
+import './Profile.scss';
 
 export default class Profile extends Component {
   constructor() {
@@ -11,7 +10,7 @@ export default class Profile extends Component {
     };
   }
 
-  click = e => {
+  click = () => {
     const { modal } = this.state;
     this.setState({
       modal: !modal,
@@ -23,15 +22,13 @@ export default class Profile extends Component {
       <div className="profile">
         <div className="profile-container">
           <div className="profile-container-top">
-            <div className="options-gradation">
-              <img
-                className="options"
-                alt="options"
-                src="/images/gear.png"
-                onClick={click}
-              />
-              {this.state.modal && <ProfileModal click={click} />}
-            </div>
+            <img
+              className="options"
+              alt="options"
+              src="/images/gear.png"
+              onClick={click}
+            />
+            {this.state.modal && <ProfileModal click={click} />}
           </div>
           <div className="profile-container-middle">
             <img className="user-picture" alt="user" src="images/user.png" />

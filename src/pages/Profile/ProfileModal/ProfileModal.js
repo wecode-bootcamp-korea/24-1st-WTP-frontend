@@ -8,7 +8,7 @@ class ProfileModal extends Component {
       <div className="modal" onClick={click}>
         <div className="modal-container" onClick={e => e.stopPropagation()}>
           <div className="margin-left modal-close" onClick={click}>
-            X
+            &#215;
           </div>
           <div className="settings">설정</div>
           <div className="settings-detail">마케팅 정보</div>

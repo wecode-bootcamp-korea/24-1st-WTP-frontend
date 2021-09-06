@@ -14,12 +14,13 @@
     overflow: hidden;
 
     .profile-container-top {
-      display: flex;
-      justify-content: end;
+      position: relative;
       height: 200px;
       background-color: #e86e91;
 
       .options {
+        position: absolute;
+        right: 0px;
         width: 23px;
         height: 23px;
         margin-top: 8px;
@@ -105,7 +106,7 @@
       margin-left: 20px;
       color: $color-white;
       background-color: #84d959;
-      border-radius: 10px;
+      border-radius: 7px;
       cursor: pointer;
 
       .bottom-top {
