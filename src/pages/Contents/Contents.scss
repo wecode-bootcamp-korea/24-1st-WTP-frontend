@@ -1,5 +1,7 @@
+@import '../../styles/variables.scss';
+
 .contents {
-  background-color: #f8f8f8;
+  background-color: $color-background;
 
   .background {
     position: relative;
@@ -48,7 +50,11 @@
           padding: 5px 0;
           border: 1.5px solid #e3e3e3;
           border-radius: 5px;
-          background-color: #ffff;
+          background-color: $color-white;
+
+          .title {
+            margin: 10px 20px 15px;
+          }
 
           .comment {
             display: flex;
@@ -58,6 +64,10 @@
 
             .comment-text {
               font-size: 16.5px;
+
+              > span {
+                font-weight: 700;
+              }
             }
 
             .comment-btn {
@@ -110,7 +120,7 @@
           padding: 5px 0;
           border: 1.5px solid #e3e3e3;
           border-radius: 5px;
-          background-color: #ffff;
+          background-color: $color-white;
         }
       }
     }

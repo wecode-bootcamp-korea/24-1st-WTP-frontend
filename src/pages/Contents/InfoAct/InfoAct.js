@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { ReactComponent as Star } from '../../../assets/icons/star4.svg';
 
-// import LeftStar from './Stars/LeftStar';
-// import RightStar from './Stars/RightStar';
-
 import './InfoAct.scss';
 
 class InfoAct extends Component {
@@ -16,7 +13,7 @@ class InfoAct extends Component {
       ratingComment,
       setHoverRating,
       setRating,
-      isClicked,
+      clickBtn,
     } = this.props;
 
     const rightStyle = { transform: 'scaleX(-1)' };
@@ -24,11 +21,11 @@ class InfoAct extends Component {
     return (
       <div className="info-act">
         <button
-          className={isClicked ? 'act act-button' : 'act-button'}
+          className={clickBtn ? 'act act-button' : 'act-button'}
           onClick={onClickBtn}
         >
           <div className="button-contents">
-            <i className={isClicked ? 'fas fa-bookmark' : 'fas fa-plus'}></i>
+            <i className={clickBtn ? 'fas fa-bookmark' : 'fas fa-plus'}></i>
             <span className="button-text">보고싶어요</span>
           </div>
         </button>
@@ -39,7 +36,7 @@ class InfoAct extends Component {
               return (
                 <React.Fragment key={index.id}>
                   <Star
-                    index={index - 0.5}
+                    index={index}
                     onClick={() => onClick(index - 0.5)}
                     onMouseEnter={() => onMouseEnter(index - 0.5)}
                     onMouseLeave={onMouseLeave}

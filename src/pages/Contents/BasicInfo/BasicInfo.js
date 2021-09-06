@@ -10,16 +10,21 @@ class BasicInfo extends Component {
   };
 
   render() {
+    const { movie_details } = this.props;
+    const { title, country, genre } = movie_details;
+    const newDate =
+      movie_details.release_date && movie_details.release_date.slice(0, 4);
+
     return (
       <section className="basic-info">
         <header className="title">
           <h2 className="medium-title">기본 정보</h2>
         </header>
         <article className="info-summary">
+          <p className="little-summary">{title}</p>
           <p className="little-summary">
-            Shang-Chi and the Legend of the Ten Rings
+            {newDate} · {country && country} · {genre && genre[0]}
           </p>
-          <p className="little-summary">2021 · 미국 · 액션</p>
           <p className="little-summary">2시간 12분 · 12세</p>
           <ellipse ref={this.wrapRef} className="story-summary">
             `텐 링즈`를 차지하는 자, 세상을 지배한다! 초인적인 능력을 가진 텐

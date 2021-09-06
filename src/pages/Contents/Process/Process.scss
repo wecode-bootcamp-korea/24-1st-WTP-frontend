@@ -57,10 +57,11 @@
     .producers-all {
       display: flex;
       flex-direction: column;
+      align-content: flex-start;
       flex-wrap: wrap;
-      height: 170px;
-      overflow-x: scroll;
-      transition: all 0.8s ease-in-out;
+      height: 175px;
+      overflow-x: auto;
+      transition: all 0.8s;
 
       &::-webkit-scrollbar {
         display: none;
@@ -68,7 +69,7 @@
 
       .producer {
         display: flex;
-        width: 275px;
+        width: 186px;
         margin: 9px 0 9px 18px;
 
         .producer-image {

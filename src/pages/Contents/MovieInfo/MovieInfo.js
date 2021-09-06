@@ -3,6 +3,14 @@ import InfoAct from '../InfoAct/InfoAct';
 import './MovieInfo.scss';
 
 class MovieInfo extends Component {
+  toDate = year => {
+    let sYear = year.substring(0, 4);
+    let sMonth = year.substring(5, 7);
+    let sDate = year.substring(8, 10);
+
+    return `${Number(sYear)}년 ${Number(sMonth) - 1}월 ${Number(sDate)}일`;
+  };
+
   render() {
     const {
       onClick,
@@ -13,6 +21,7 @@ class MovieInfo extends Component {
       setRating,
       setHoverRating,
       isClicked,
+      clickBtn,
       movie_details,
     } = this.props;
 
@@ -20,8 +29,6 @@ class MovieInfo extends Component {
       movie_details.release_date && movie_details.release_date.slice(0, 4);
     const genre = movie_details.genre && movie_details.genre.join('/');
     const country = movie_details.country && movie_details.country.join('/');
-
-    console.log(genre);
 
     return (
       <section className="movie-info">
@@ -31,6 +38,13 @@ class MovieInfo extends Component {
             className="movie-poster"
             alt="영화 포스터"
           />
+          <div className="movie-release">
+            <span>개봉 일자 · </span>
+            <span>
+              {movie_details.release_date &&
+                this.toDate(movie_details.release_date)}
+            </span>
+          </div>
         </header>
         <article className="movie-info-all">
           <div className="movie-title">
@@ -54,6 +68,7 @@ class MovieInfo extends Component {
             setRating={setRating}
             setHoverRating={setHoverRating}
             isClicked={isClicked}
+            clickBtn={clickBtn}
           />
         </article>
       </section>

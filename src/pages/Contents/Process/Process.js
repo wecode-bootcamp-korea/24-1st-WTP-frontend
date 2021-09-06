@@ -8,8 +8,8 @@ class Process extends Component {
 
   plusMoveCount = () => {
     const { processCount } = this.state;
-    const length = 6;
-    const maxCount = Math.ceil(length / 3 - 1);
+    const length = this.props.participants.length;
+    const maxCount = Math.ceil(length / 6 - 1);
     if (!length || processCount === maxCount) return;
     this.setState({
       processCount: processCount + 1,
@@ -26,11 +26,11 @@ class Process extends Component {
 
   render() {
     const { processCount } = this.state;
-    const marginLeft = (processCount * -638).toString();
+    const { participants } = this.props;
+    const marginLeft = (processCount * -610).toString();
     const { minusMoveCount, plusMoveCount } = this;
-    // const { length } = this.props.data;
-    const length = 6;
-    const maxCount = Math.ceil(length / 5 - 1);
+    const length = participants && participants.length;
+    const maxCount = Math.ceil(length / 6 - 1);
 
     return (
       <section className="process">
@@ -48,83 +48,22 @@ class Process extends Component {
             className="producers-all"
             style={{ marginLeft: `${marginLeft}px` }}
           >
-            <li className="producer">
-              <img
-                src="/images/3f2c70fa235fcd74e64cacf38230e85d.jpeg"
-                className="producer-image"
-                alt="출연/제작자"
-              />
-              <div className="producer-info">
-                <p className="producer-name main-text">양조위</p>
-                <p className="producer-act sub-text">조연 | 웬우</p>
-              </div>
-            </li>
-            <li className="producer">
-              <img
-                src="/images/3f2c70fa235fcd74e64cacf38230e85d.jpeg"
-                className="producer-image"
-                alt="출연/제작자"
-              />
-              <div className="producer-info">
-                <p className="producer-name main-text">양조위</p>
-                <p className="producer-act sub-text">조연 | 웬우</p>
-              </div>
-            </li>
-            <li className="producer">
-              <img
-                src="/images/3f2c70fa235fcd74e64cacf38230e85d.jpeg"
-                className="producer-image"
-                alt="출연/제작자"
-              />
-              <div className="producer-info">
-                <p className="producer-name main-text">양조위</p>
-                <p className="producer-act sub-text">조연 | 웬우</p>
-              </div>
-            </li>
-            <li className="producer">
-              <img
-                src="/images/3f2c70fa235fcd74e64cacf38230e85d.jpeg"
-                className="producer-image"
-                alt="출연/제작자"
-              />
-              <div className="producer-info">
-                <p className="producer-name main-text">양조위</p>
-                <p className="producer-act sub-text">조연 | 웬우</p>
-              </div>
-            </li>
-            <li className="producer">
-              <img
-                src="/images/3f2c70fa235fcd74e64cacf38230e85d.jpeg"
-                className="producer-image"
-                alt="출연/제작자"
-              />
-              <div className="producer-info">
-                <p className="producer-name main-text">양조위</p>
-                <p className="producer-act sub-text">조연 | 웬우</p>
-              </div>
-            </li>
-            <li className="producer">
-              <img
-                src="/images/3f2c70fa235fcd74e64cacf38230e85d.jpeg"
-                className="producer-image"
-                alt="출연/제작자"
-              />
-              <div className="producer-info">
-                <p className="producer-name main-text">양조위</p>
-                <p className="producer-act sub-text">조연 | 웬우</p>
-              </div>
-            </li>
-            <li className="producer">
-              <img
-                src="/images/3f2c70fa235fcd74e64cacf38230e85d.jpeg"
-                className="producer-image"
-                alt="출연/제작자"
-              />
-              <div className="producer-info">
-                <p className="producer-name main-text">양조위</p>
-                <p className="producer-act sub-text">조연 | 웬우</p>
-              </div>
-            </li>
+            {participants &&
+              participants.map(part => {
+                return (
+                  <li className="producer">
+                    <img
+                      src={part.image}
+                      className="producer-image"
+                      alt="출연/제작자"
+                    />
+                    <div className="producer-info">
+                      <p className="producer-name main-text">{part.name}</p>
+                      <p className="producer-act sub-text">{part.role}</p>
+                    </div>
+                  </li>
+                );
+              })}
           </ul>
           {processCount <= maxCount - 1 && (
             <div

@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .info-act {
   display: flex;
   align-items: flex-end;
@@ -18,7 +20,7 @@
     width: 250px;
     height: 45px;
     background-color: #fbfbfb;
-    border: 1px solid #ebebeb;
+    border: 1px solid $color-light-gray;
     border-radius: 7px;
     cursor: pointer;
 
@@ -33,14 +35,14 @@
       > i {
         margin-right: 10px;
         font-size: 16px;
-        color: #ff2f6e;
+        color: $color-pink;
         transition: transform 0.3s ease-in-out;
       }
 
       .button-text {
         font-size: 18px;
         font-weight: 600;
-        color: #282828;
+        color: $color-light-black;
       }
     }
   }
@@ -49,7 +51,7 @@
     display: flex;
     width: 250px;
     height: 45px;
-    background-color: #ff2f6e;
+    background-color: $color-pink;
     border-radius: 7px;
     cursor: pointer;
 
@@ -65,13 +67,13 @@
       > i {
         margin-right: 10px;
         font-size: 16px;
-        color: #ffff;
+        color: $color-white;
         transition: transform 0.3s ease-in-out;
       }
 
       .button-text {
         font-size: 18px;
-        color: #ffff;
+        color: $color-white;
       }
     }
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GET_MOVIES_LIST } from '../../config';
+// import { GET_MOVIES_LIST } from '../../config';
 import MovieInfo from './MovieInfo/MovieInfo';
 import CommentModal from './CommentModal/CommentModal';
 import BasicInfo from './BasicInfo/BasicInfo';
@@ -14,26 +14,43 @@ export default class Contents extends Component {
     setRating: 0,
     setHoverRating: 0,
     isClicked: false,
+    clickBtn: false,
     modalOpen: false,
     mycomment: '',
     isComment: false,
   };
 
+  //목 데이터 fetch
+
   componentDidMount() {
-    fetch(`${GET_MOVIES_LIST}` / 1)
+    fetch('http://localhost:3000/data/MockData.json', {
+      method: 'GET',
+    })
       .then(res => res.json())
-      .then(data => this.setState({ movie_details: data.movie_info }));
+      .then(data => {
+        this.setState({
+          movie_details: data.movie_info,
+        });
+      });
   }
 
+  // 백엔드 데이터 fetch
+  // componentDidMount() {
+  //   fetch(`${GET_MOVIES_LIST}` / 1)
+  //     .then(res => res.json())
+  //     .then(data => this.setState({ movie_details: data.movie_info }));
+  // }
+
   onClickBtn = () => {
-    this.setState({ isClicked: !this.state.isClicked });
+    this.setState({
+      isClicked: !this.state.isClicked,
+      clickBtn: !this.state.clickBtn,
+    });
   };
 
   onClick = index => {
     this.setState({ setRating: index });
-    if (this.state.setRating === index) {
-      this.setState({ setRating: 0 });
-    }
+    this.state.setRating === index && this.setState({ setRating: 0 });
   };
 
   onMouseEnter = index => {
@@ -88,11 +105,14 @@ export default class Contents extends Component {
       setRating,
       setHoverRating,
       isClicked,
+      clickBtn,
       modalOpen,
       mycomment,
       isComment,
       movie_details,
     } = this.state;
+
+    const { image_url, title } = movie_details;
 
     return (
       <div className="contents">
@@ -100,7 +120,7 @@ export default class Contents extends Component {
           <section className="background">
             <div className="background-gradient"></div>
             <img
-              src="/images/a4d2dd681002aaf17c39edfb948a217d.jpeg"
+              src={image_url && image_url[0]}
               className="background-image"
               alt="메인 이미지"
             />
@@ -116,28 +136,33 @@ export default class Contents extends Component {
             setRating={setRating}
             setHoverRating={setHoverRating}
             isClicked={isClicked}
+            clickBtn={clickBtn}
             movie_details={movie_details}
           />
           <div className="main-contents">
             <div className="contents-align">
               <div className={isClicked ? 'comment-contents' : 'disppear'}>
                 {isComment ? (
-                  <div className="comment">
-                    <span className="comment-text">{mycomment}</span>
-                    <div className="btns">
-                      <button className="delete-btn" onClick={this.onDelete}>
-                        <i class="fas fa-trash-alt"></i>삭제
-                      </button>
-                      <button className="change-btn" onClick={this.openModal}>
-                        <i class="fas fa-pen"></i>수정
-                      </button>
+                  <>
+                    <header className="title">
+                      <h2 className="medium-title">나의 댓글</h2>
+                    </header>
+                    <div className="comment">
+                      <span className="comment-text">{mycomment}</span>
+                      <div className="btns">
+                        <button className="delete-btn" onClick={this.onDelete}>
+                          <i class="fas fa-trash-alt"></i>삭제
+                        </button>
+                        <button className="change-btn" onClick={this.openModal}>
+                          <i class="fas fa-pen"></i>수정
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  </>
                 ) : (
                   <div className="comment">
                     <span className="comment-text">
-                      {this.state.movie_details.title}에 대한 평가를 글로
-                      남겨보세요.
+                      영화<span> {title}</span>에 대한 평가를 글로 남겨보세요.
                     </span>
                     <button className="comment-btn" onClick={this.openModal}>
                       코멘트 남기기
@@ -156,11 +181,14 @@ export default class Contents extends Component {
               )}
               <div className="contents-all">
                 <BasicInfo movie_details={movie_details} />
-                <Process />
+                <Process participants={movie_details.participants} />
                 <SimilarThings />
               </div>
             </div>
-            <Aside />
+            <Aside
+              trailer={movie_details.trailer}
+              image={movie_details.image_url}
+            />
           </div>
         </div>
       </div>
