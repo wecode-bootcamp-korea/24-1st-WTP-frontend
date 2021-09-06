@@ -15,31 +15,8 @@ export default class Main extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch('http://10.58.6.107:8000/movie?country=외국')
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  //     .then(data => {
-  //       this.setState({
-  //         movies1: data.FOREIGN_MOVIES,
-  //         // isLoading: false,
-  //       });
-  //     });
-
-  //   fetch('http://10.58.6.107:8000/movie?country=한국')
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  //     .then(data => {
-  //       this.setState({
-  //         movies2: data.KOREAN_MOVIES,
-  //         // isLoading: false,
-  //       });
-  //     });
-  // }
-
-  // mock data
   componentDidMount() {
-    fetch('data/KoreanMovies.json')
+    fetch('http://10.58.1.85:8000/movie?country=한국')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -47,7 +24,7 @@ export default class Main extends Component {
         });
       });
 
-    fetch('data/ForeignMovies.json')
+    fetch('http://10.58.1.85:8000/movie?country=외국')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -55,7 +32,7 @@ export default class Main extends Component {
         });
       });
 
-    fetch('data/DramaRomanceMovies.json')
+    fetch('http://10.58.1.85:8000/movie?genre1=드라마&genre2=로맨스')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -63,26 +40,61 @@ export default class Main extends Component {
         });
       });
 
-    fetch('data/MoviesRating.json')
+    fetch('http://10.58.1.85:8000/movie?rating=0')
       .then(res => res.json())
       .then(data => {
         this.setState({
           movies4: data.MOVIE_LIST,
         });
       });
-
-    // this.handleFetch('KoreanMovies');
-    // this.handleFetch('ForeignMovies');
-    // this.handleFetch('DramaRomanceMovies');
-    // this.handleFetch('MoviesRating');
   }
+
+  // mock data
+  // componentDidMount() {
+  //   fetch('data/KoreanMovies.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         movies1: data.MOVIE_LIST,
+  //       });
+  //     });
+
+  //   fetch('data/ForeignMovies.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         movies2: data.MOVIE_LIST,
+  //       });
+  //     });
+
+  //   fetch('data/DramaRomanceMovies.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         movies3: data.MOVIE_LIST,
+  //       });
+  //     });
+
+  //   fetch('data/MoviesRating.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         movies4: data.MOVIE_LIST,
+  //       });
+  //     });
+
+  // this.handleFetch('KoreanMovies');
+  // this.handleFetch('ForeignMovies');
+  // this.handleFetch('DramaRomanceMovies');
+  // this.handleFetch('MoviesRating');
+  // }
 
   // handleFetch = api => {
   //   fetch(`data/${api}.json`)
   //     .then(res => res.json())
   //     .then(data => {
   //       this.setState({
-  //         movies: [...this.state.movies, data.MOVIE_LIST],
+  //         {movies}: [...this.state.movies, data.MOVIE_LIST],
   //       });
   //     });
   // };
