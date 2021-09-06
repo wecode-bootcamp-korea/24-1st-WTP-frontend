@@ -1,6 +1,7 @@
 // Login
-const BASE_URL = 'http://10.58.2.10:8000';
-export const LOGIN_API = `${BASE_URL}/users/login`;
+const HM_URL = 'http://10.58.2.10:8000';
+export const LOGIN_API = `${HM_URL}/users`;
 
-// Signup
-export const SIGNUP_API = `${BASE_URL}/users/signup`;
+// SignUp
+const WJ_URL = 'http://10.58.2.94:8000';
+export const SIGNUP_API = `${WJ_URL}/users`;

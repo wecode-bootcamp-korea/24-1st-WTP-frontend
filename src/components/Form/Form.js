@@ -26,6 +26,7 @@ export class Form extends Component {
   };
 
   render() {
+    const { name, email, password } = this.state;
     const { type, title, inputData } = this.props;
 
     return (
@@ -50,7 +51,7 @@ export class Form extends Component {
               />
             </React.Fragment>
           ))}
-          <Button value={title} />
+          <Button name={name} email={email} password={password} value={title} />
           {type === 'signUp' ? (
             <p className="already-signup">
               이미 가입하셨나요? <span>로그인</span>
