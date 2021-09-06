@@ -7,7 +7,7 @@ class Gallery extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.3.64:8000/movies/34', {
+    fetch('http://10.58.2.94:8000/movies/1', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -24,13 +24,17 @@ class Gallery extends Component {
         <section className="gallery">
           <h2 className="title medium-title ">갤러리</h2>
           <ul className="gallery-pictures">
-            <li className="gallery-picture-sec">
-              <img
-                src={thumnail}
-                className="gallery-picture"
-                alt="갤러리 사진"
-              />
-            </li>
+            {[1, 2, 3, 4, 5].map(index => {
+              return (
+                <li className="gallery-picture-sec">
+                  <img
+                    src="/images/3f2c70fa235fcd74e64cacf38230e85d.jpeg"
+                    className="gallery-picture"
+                    alt="갤러리 사진"
+                  />
+                </li>
+              );
+            })}
           </ul>
         </section>
         <section className="gallery">

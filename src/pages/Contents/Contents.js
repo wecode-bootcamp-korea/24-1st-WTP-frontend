@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { GET_MOVIES_LIST } from '../../config';
 import MovieInfo from './MovieInfo/MovieInfo';
+import CommentModal from './CommentModal/CommentModal';
 import BasicInfo from './BasicInfo/BasicInfo';
 import Process from './Process/Process';
 import SimilarThings from './SimilarThings/SimilarThings';
 import Aside from './Aside/Aside';
 import './Contents.scss';
-import CommentModal from './CommentModal/CommentModal';
 
 export default class Contents extends Component {
   state = {
@@ -19,9 +20,7 @@ export default class Contents extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.3.64:8000/movies/29', {
-      method: 'GET',
-    })
+    fetch(`${GET_MOVIES_LIST}` / 1)
       .then(res => res.json())
       .then(data => this.setState({ movie_details: data.movie_info }));
   }
@@ -39,9 +38,7 @@ export default class Contents extends Component {
 
   onMouseEnter = index => {
     this.setState({ setHoverRating: index });
-    if (this.state.setRating === index) {
-      console.log('삭제하기');
-    }
+    console.log(this.state.setHoverRating);
   };
 
   onMouseLeave = () => {
@@ -139,7 +136,8 @@ export default class Contents extends Component {
                 ) : (
                   <div className="comment">
                     <span className="comment-text">
-                      이 작품에 대한 평가를 글로 남겨보세요.
+                      {this.state.movie_details.title}에 대한 평가를 글로
+                      남겨보세요.
                     </span>
                     <button className="comment-btn" onClick={this.openModal}>
                       코멘트 남기기
@@ -147,14 +145,15 @@ export default class Contents extends Component {
                   </div>
                 )}
               </div>
-              <CommentModal
-                open={modalOpen}
-                close={this.closeModal}
-                mycomment={mycomment}
-                addComment={this.addComment}
-                handleChange={this.handleChange}
-                movie_details={movie_details}
-              />
+              {modalOpen && (
+                <CommentModal
+                  close={this.closeModal}
+                  mycomment={mycomment}
+                  addComment={this.addComment}
+                  handleChange={this.handleChange}
+                  movie_details={movie_details}
+                />
+              )}
               <div className="contents-all">
                 <BasicInfo movie_details={movie_details} />
                 <Process />

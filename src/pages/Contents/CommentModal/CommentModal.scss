@@ -1,18 +1,14 @@
 .modal {
-  display: none;
+  display: flex;
   position: fixed;
+  align-items: center;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
   background-color: rgba(0, 0, 0, 0.6);
-}
-
-.openModal {
-  display: flex;
-  align-items: center;
   animation: modal-bg-show 0.3s;
+  z-index: 1;
 
   > section {
     width: 90%;
