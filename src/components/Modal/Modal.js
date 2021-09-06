@@ -7,14 +7,12 @@ export class Modal extends Component {
 
     return (
       <div className={open ? 'openModal modal' : 'modal'}>
-        {open && (
-          <section>
-            <button className="close" onClick={close}>
-              &times;
-            </button>
-            <main>{this.props.children}</main>
-          </section>
-        )}
+        <section>
+          <button className="close" onClick={close}>
+            &times;
+          </button>
+          <main>{this.props.children}</main>
+        </section>
       </div>
     );
   }

@@ -2,21 +2,26 @@ import React, { Component } from 'react';
 import './Nav.scss';
 import Modal from '../Modal/Modal';
 import Form from '../Form/Form';
+// import { LOGIN_API } from '../../config';
 
 export default class Nav extends Component {
   constructor() {
     super();
     this.state = {
-      modalOpen: false,
-      name: '',
+      modalOpen: '',
     };
   }
 
-  openModal = () => {
-    this.setState({ modalOpen: true });
+  openModal = separator => {
+    this.setState({
+      modalOpen: separator,
+    });
   };
+
   closeModal = () => {
-    this.setState({ modalOpen: false });
+    this.setState({
+      modalOpen: '',
+    });
   };
 
   render() {
@@ -45,15 +50,27 @@ export default class Nav extends Component {
                 />
               </div>
             </div>
-            <div className="btn-container" onClick={openModal}>
-              <button className="btn-login">로그인</button>
-              <Modal open={modalOpen} close={closeModal}>
-                <Form type="login" title="로그인" inputData={loginData} />
-              </Modal>
-              <button className="btn-signup">회원가입</button>
-              <Modal open={modalOpen} close={closeModal}>
-                <Form type="signUp" title="회원가입" inputData={signUpData} />
-              </Modal>
+            <div className="btn-container">
+              <button className="btn-login" onClick={() => openModal('login')}>
+                로그인
+              </button>
+              <button
+                className="btn-signup"
+                onClick={() => openModal('signUp')}
+              >
+                회원가입
+              </button>
+              {modalOpen && (
+                <Modal open={modalOpen} close={closeModal}>
+                  <Form
+                    type={modalOpen}
+                    title={modalOpen === 'login' ? '로그인' : '회원가입'}
+                    inputData={
+                      modalOpen === 'login' ? inputData.slice(1, 3) : inputData
+                    }
+                  />
+                </Modal>
+              )}
             </div>
           </div>
         </div>
@@ -62,22 +79,11 @@ export default class Nav extends Component {
   }
 }
 
-const signUpData = [
+const inputData = [
   {
     type: 'name',
     text: '이름',
   },
-  {
-    type: 'email',
-    text: '이메일',
-  },
-  {
-    type: 'password',
-    text: '비밀번호',
-  },
-];
-
-const loginData = [
   {
     type: 'email',
     text: '이메일',

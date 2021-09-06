@@ -67,20 +67,24 @@
         }
       }
 
-      .btn-login {
-        margin: 0px 18px 0px 18px;
-        color: #74747a;
-        cursor: pointer;
-      }
-
-      .btn-signup {
-        display: inline-block;
+      .btn-container {
         margin: auto 0;
-        height: 32px;
-        padding: 0 14px;
-        border: 1px solid #b9b9bc;
-        border-radius: 5px;
-        cursor: pointer;
+
+        .btn-login {
+          margin: 0px 18px 0px 18px;
+          color: #74747a;
+          cursor: pointer;
+        }
+
+        .btn-signup {
+          display: inline-block;
+          margin: auto 0;
+          height: 32px;
+          padding: 0 14px;
+          border: 1px solid #b9b9bc;
+          border-radius: 5px;
+          cursor: pointer;
+        }
       }
     }
   }

@@ -33,9 +33,8 @@ export class Form extends Component {
         <FormLayout>
           <h2 className="title">{title}</h2>
           {inputData.map((input, idx) => (
-            <>
+            <React.Fragment key={idx}>
               <Input
-                key={idx}
                 type={input.type}
                 text={input.text}
                 value={this.state[input.type]}
@@ -44,13 +43,12 @@ export class Form extends Component {
                 handleValid={validator[input.type]}
               />
               <Validation
-                key={idx}
                 type={input.type}
                 text={input.text}
                 value={this.state[input.type]}
                 handleValid={validator[input.type]}
               />
-            </>
+            </React.Fragment>
           ))}
           <Button value={title} />
           {type === 'signUp' ? (
