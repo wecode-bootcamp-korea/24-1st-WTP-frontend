@@ -1,0 +1,179 @@
+{
+  "MOVIE_LIST": [
+    {
+      "country_name": ["미국", "독일", "스페인"],
+      "movie_name": "킹덤 오브 헤븐",
+      "released_date": "2005-05-05",
+      "average_rating": "3.7",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/a/ac/%ED%82%B9%EB%8D%A4%EC%98%A4%EB%B8%8C%ED%97%A4%EB%B8%90_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "조커",
+      "released_date": "2019-10-04",
+      "average_rating": "3.9",
+      "poster_image": "https://t1.daumcdn.net/cfile/tistory/994A84365DA09E1208"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "글래디에이터",
+      "released_date": "2000-06-03",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/7/70/%EA%B8%80%EB%9E%98%EB%94%94%EC%97%90%EC%9D%B4%ED%84%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%EA%B8%80%EB%9E%98%EB%94%94%EC%97%90%EC%9D%B4%ED%84%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "독일", "이탙리아"],
+      "movie_name": "파이트클럽",
+      "released_date": "1999-11-13",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/b/bb/%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "헝가리"],
+      "movie_name": "콘스탄틴",
+      "released_date": "2005-02-08",
+      "average_rating": "3.9",
+      "poster_image": "https://mblogthumb-phinf.pstatic.net/MjAxNjEyMTJfMjEw/MDAxNDgxNTM0ODYzOTE0.sGKg-u4ziXkZnknkYo7njulnsMwN41bj3xXv0TwVOG4g.3Pfc4Nwk8u9xXyFEEBlD2GBmykh8PvRCARfsetpfQkYg.JPEG.vegadora/%EC%BD%98%EC%8A%A4%ED%83%84%ED%8B%B4.jpg?type=w800"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "그래비티",
+      "released_date": "2013-10-17",
+      "average_rating": "4.0",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/2/28/%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "굿 윌 헌팅",
+      "released_date": "1998-03-21",
+      "average_rating": "4.2",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/f/fd/%EA%B5%BF_%EC%9C%8C_%ED%97%8C%ED%8C%85.jpg"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "블레이드 러너 2049",
+      "released_date": "2017-10-06",
+      "average_rating": "3.7",
+      "poster_image": "https://post-phinf.pstatic.net/MjAxNzA5MjhfMTI4/MDAxNTA2NTgzOTE5ODAz.Apde24badSiUEajKiEM-Fu1B24gjesJxJUyQOGb9pYsg.YvVqS-fwnXTTV-kEB-eQH0kvLXPOtHnoEvhzAiuJ-Tkg.JPEG/MV5BMjM3NjcxNDM4Ml5BMl5BanBnXkFtZTgwMjI4NDIzMzI._V1_SY1000_CR0%2C0%2C648%2C1000_AL_.jpg?type=w1200"
+    },
+    {
+      "country_name": ["영국"],
+      "movie_name": "콜드체이싱",
+      "released_date": "2019-02-08",
+      "average_rating": "2.9",
+      "poster_image": "http://t1.daumcdn.net/movie/d35c174b231f4be886f05b889566d34c1551055804076"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "라라랜드",
+      "released_date": "2016-12-09",
+      "average_rating": "4.2",
+      "poster_image": "https://mblogthumb-phinf.pstatic.net/MjAxNjEyMTJfMjA3/MDAxNDgxNTIyNjE2Mzky.fY16g8Cdd5bN19zUL3puDwUkD64aCtT_IvZBVEfGIWAg.ojPp0dh9ZvkE82gHCRqckC0w6OfUxSHmHQLs7ayADXIg.JPEG.entombed/2307.jpg?type=w800"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "검은사제들",
+      "released_date": "2015-11-05",
+      "average_rating": "3.6",
+      "poster_image": "http://t1.daumcdn.net/movie/8344003aa589eefbff38adeba79fd8b8c2c895e7"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "오세암",
+      "released_date": "2003-04-25",
+      "average_rating": "2.5",
+      "poster_image": "http://t1.daumcdn.net/cfile/12444010B062E8D843"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "킹덤: 아신전",
+      "released_date": "2021-07-23",
+      "average_rating": "3.0",
+      "poster_image": "https://file.mk.co.kr/meet/neds/2021/06/image_readtop_2021_611352_16245117254692749.jpg"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "건축학개론",
+      "released_date": "2012-03-22",
+      "average_rating": "3.6",
+      "poster_image": "http://t1.daumcdn.net/cfile/1141944C4F4B753125"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "8월의 크리스마스",
+      "released_date": "1998-01-24",
+      "average_rating": "4.5",
+      "poster_image": "http://t1.daumcdn.net/cfile/21358D4C52695E1204"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "쉬리",
+      "released_date": "1999-02-13",
+      "average_rating": "5.0",
+      "poster_image": "http://t1.daumcdn.net/cfile/12110210A9176D6FEC"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "엽기적인 그녀",
+      "released_date": "2001-07-27",
+      "average_rating": "4.5",
+      "poster_image": "https://t1.daumcdn.net/movie/b3e490cb512acb3b582b97815825eed87bfd45cf"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "곡성",
+      "released_date": "2016-05-12",
+      "average_rating": "3.8",
+      "poster_image": "https://w.namu.la/s/c06b884b0995d9a61f4e538674ab5fea243af525504f62289e1aeb78a0903f37b161955f699b82dda669b2dec2bc5a49f90950593027695510638725a87725362c6c3e4c49593f8bac8fd259b3d04ebfcf713a2d273453d424e7a8543bfa56824cec81495a4db2210ea5c3a1ea21fa0c"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "밀양",
+      "released_date": "2007-05-23",
+      "average_rating": "4.5",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/7/79/%EB%B0%80%EC%96%91_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "도둑들",
+      "released_date": "2012-07-25",
+      "average_rating": "3.9",
+      "poster_image": "http://t1.daumcdn.net/cfile/192F9A4850062F8230"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "국가부도의 날",
+      "released_date": "2018-01-01",
+      "average_rating": "2.5",
+      "poster_image": "http://t1.daumcdn.net/movie/274291ad9da34893b93fa702335536501540800387124"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "더킹",
+      "released_date": "2017-01-18",
+      "average_rating": "3.5",
+      "poster_image": "http://t1.daumcdn.net/movie/90aa5b236258047ee1eeffdabc9573ec18c598f6"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "미녀는 괴로워",
+      "released_date": "2006-12-14",
+      "average_rating": "5.0",
+      "poster_image": "http://t1.daumcdn.net/cfile/126F1B10AAF8947C3C"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "신세계",
+      "released_date": "2013-02-21",
+      "average_rating": "4.2",
+      "poster_image": "https://w.namu.la/s/51a3b5241602094bcd15e96cfb942b6e2e2c8dd37aca32efb8c442e90179778b9a731223bc32977e7a7d4a6f9dbeef4814bc825d58524d69bcace9afe8ef807c911efc1de6d762eb7dbc268c2b89e9ecfac2a63831e596a43d351d9ad1bf4b0e22ccec6328996d8612a4c689e92719c8"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "달콤한 인생",
+      "released_date": "2005-04-01",
+      "average_rating": "4.5",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/3/3a/%EB%8B%AC%EC%BD%A4%ED%95%9C_%EC%9D%B8%EC%83%9D_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    }
+  ]
+}

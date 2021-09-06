@@ -1,0 +1,179 @@
+{
+  "MOVIE_LIST": [
+    {
+      "country_name": ["한국"],
+      "movie_name": "쉬리",
+      "released_date": "1999-02-13",
+      "average_rating": "5.0",
+      "poster_image": "http://t1.daumcdn.net/cfile/12110210A9176D6FEC"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "범죄도시",
+      "released_date": "2017-10-03",
+      "average_rating": "5.0",
+      "poster_image": "https://mblogthumb-phinf.pstatic.net/MjAxOTA5MDZfMTM3/MDAxNTY3NzcwNjE0ODM3.N-BCMssNCWTI_kqQbPMH5bi2JEVkE7TIPijMSMULkhAg.yPXuLrHmAkyVXe089qz7gAYwcuZhOsKvRRWn-JCWVlog.JPEG.bonbonfd/02.jpg?type=w800"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "미녀는 괴로워",
+      "released_date": "2006-12-14",
+      "average_rating": "5.0",
+      "poster_image": "http://t1.daumcdn.net/cfile/126F1B10AAF8947C3C"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "귀향",
+      "released_date": "2016-02-24",
+      "average_rating": "5.0",
+      "poster_image": "https://t1.daumcdn.net/cfile/blog/2663C53556C83EA015"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "엽기적인 그녀",
+      "released_date": "2001-07-27",
+      "average_rating": "4.5",
+      "poster_image": "https://t1.daumcdn.net/movie/b3e490cb512acb3b582b97815825eed87bfd45cf"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "부산행",
+      "released_date": "2016-07-20",
+      "average_rating": "4.5",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/f/fd/%EB%B6%80%EC%82%B0%ED%96%89.jpg"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "기생충",
+      "released_date": "2019-05-30",
+      "average_rating": "4.5",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/6/60/%EA%B8%B0%EC%83%9D%EC%B6%A9_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "8월의 크리스마스",
+      "released_date": "1998-01-24",
+      "average_rating": "4.5",
+      "poster_image": "http://t1.daumcdn.net/cfile/21358D4C52695E1204"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "달콤한 인생",
+      "released_date": "2005-04-01",
+      "average_rating": "4.5",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/3/3a/%EB%8B%AC%EC%BD%A4%ED%95%9C_%EC%9D%B8%EC%83%9D_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "밀양",
+      "released_date": "2007-05-23",
+      "average_rating": "4.5",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/7/79/%EB%B0%80%EC%96%91_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "굿 윌 헌팅",
+      "released_date": "1998-03-21",
+      "average_rating": "4.2",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/f/fd/%EA%B5%BF_%EC%9C%8C_%ED%97%8C%ED%8C%85.jpg"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "신세계",
+      "released_date": "2013-02-21",
+      "average_rating": "4.2",
+      "poster_image": "https://w.namu.la/s/51a3b5241602094bcd15e96cfb942b6e2e2c8dd37aca32efb8c442e90179778b9a731223bc32977e7a7d4a6f9dbeef4814bc825d58524d69bcace9afe8ef807c911efc1de6d762eb7dbc268c2b89e9ecfac2a63831e596a43d351d9ad1bf4b0e22ccec6328996d8612a4c689e92719c8"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "라라랜드",
+      "released_date": "2016-12-09",
+      "average_rating": "4.2",
+      "poster_image": "https://mblogthumb-phinf.pstatic.net/MjAxNjEyMTJfMjA3/MDAxNDgxNTIyNjE2Mzky.fY16g8Cdd5bN19zUL3puDwUkD64aCtT_IvZBVEfGIWAg.ojPp0dh9ZvkE82gHCRqckC0w6OfUxSHmHQLs7ayADXIg.JPEG.entombed/2307.jpg?type=w800"
+    },
+    {
+      "country_name": ["미국", "독일", "이탙리아"],
+      "movie_name": "파이트클럽",
+      "released_date": "1999-11-13",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/b/bb/%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "글래디에이터",
+      "released_date": "2000-06-03",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/7/70/%EA%B8%80%EB%9E%98%EB%94%94%EC%97%90%EC%9D%B4%ED%84%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%EA%B8%80%EB%9E%98%EB%94%94%EC%97%90%EC%9D%B4%ED%84%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "글래디에이터",
+      "released_date": "2000-06-03",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/7/70/%EA%B8%80%EB%9E%98%EB%94%94%EC%97%90%EC%9D%B4%ED%84%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%EA%B8%80%EB%9E%98%EB%94%94%EC%97%90%EC%9D%B4%ED%84%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "독일", "이탙리아"],
+      "movie_name": "파이트클럽",
+      "released_date": "1999-11-13",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/b/bb/%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "독일", "이탙리아"],
+      "movie_name": "파이트클럽",
+      "released_date": "1999-11-13",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/b/bb/%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "해리포터와 아즈카반의 죄수",
+      "released_date": "2004-07-16",
+      "average_rating": "4.1",
+      "poster_image": "https://w.namu.la/s/e3adb04ece82d807ff8a67bcdd7f4fb684dbcd16919abaf4febfe94d1a509506d3bfce10050fce63515ce685d286031d52880a306079b9fbb5d174de43c44afd2731879dccd3c08b814d20fe218a060eb2fea374c3fdf0ba89f068463117b032"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "해리포터와 아즈카반의 죄수",
+      "released_date": "2004-07-16",
+      "average_rating": "4.1",
+      "poster_image": "https://w.namu.la/s/e3adb04ece82d807ff8a67bcdd7f4fb684dbcd16919abaf4febfe94d1a509506d3bfce10050fce63515ce685d286031d52880a306079b9fbb5d174de43c44afd2731879dccd3c08b814d20fe218a060eb2fea374c3fdf0ba89f068463117b032"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "캐치미",
+      "released_date": "2013-12-18",
+      "average_rating": "4.0",
+      "poster_image": "http://t1.daumcdn.net/cfile/2614494D52A565F20D"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "마이너리티 리포트",
+      "released_date": "2002-07-26",
+      "average_rating": "4.0",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/b/be/%EB%A7%88%EC%9D%B4%EB%84%88%EB%A6%AC%ED%8B%B0_%EB%A6%AC%ED%8F%AC%ED%8A%B8_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "그래비티",
+      "released_date": "2013-10-17",
+      "average_rating": "4.0",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/2/28/%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["일본"],
+      "movie_name": "러브레터",
+      "released_date": "1999-11-20",
+      "average_rating": "4.0",
+      "poster_image": "https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/rsA/image/irhST_oCcWdkmqoU-3hsjHONgN4.jpg"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "그래비티",
+      "released_date": "2013-10-17",
+      "average_rating": "4.0",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/2/28/%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    }
+  ]
+}

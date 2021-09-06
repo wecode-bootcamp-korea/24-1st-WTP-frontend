@@ -13,12 +13,13 @@ class Movie extends Component {
     } = this.props.data;
     const released_year = released_date.substring(0, 4);
     const average_rating_number = Number(average_rating);
+    const country = country_name[0];
     return (
       <div className={`Movie ${ranking}`}>
         <div className="movie-poster-container">
           <img className="movie-poster" alt={movie_name} src={poster_image} />
           <div className="movie-ranking">{ranking}</div>
-          {average_rating_number > 4 && (
+          {average_rating_number >= 4 && (
             <img
               className="atcha-logo"
               alt="atcha-logo"
@@ -31,7 +32,7 @@ class Movie extends Component {
           <div className="movie-product-info">
             <span>{released_year}</span>
             <span> ・ </span>
-            <span>{country_name ? country_name : '한국'}</span>
+            <span>{country}</span>
           </div>
           <div className="movie-audience-info">
             <span>평균</span>

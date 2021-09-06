@@ -14,10 +14,7 @@ class MovieList extends Component {
     const { movieMoveCount } = this.state;
     const { length } = this.props.data;
     const maxCount = Math.ceil(length / 5 - 1);
-    if (length === 0) return;
-    if (movieMoveCount === maxCount) return;
-    // !length || movieMoveCount === maxCount return;
-
+    if (!length || movieMoveCount === maxCount) return;
     this.setState({
       movieMoveCount: movieMoveCount + 1,
     });
@@ -25,15 +22,14 @@ class MovieList extends Component {
 
   minusMoveCount = () => {
     const { movieMoveCount } = this.state;
-    if (movieMoveCount === 0) return;
+    if (!movieMoveCount) return;
     this.setState({
       movieMoveCount: movieMoveCount - 1,
     });
   };
   render() {
     const { movieMoveCount } = this.state;
-    const marginLeftValue = this.state.movieMoveCount * -1350;
-    const marginLeft = marginLeftValue.toString();
+    const marginLeft = (movieMoveCount * -1350).toString();
     const { collectionMovies, data } = this.props;
     const { minusMoveCount, plusMoveCount } = this;
     const { length } = this.props.data;
@@ -42,7 +38,7 @@ class MovieList extends Component {
       <div className="movielist">
         <h1 className="movies-list-title">{collectionMovies}</h1>
         <div className="movie-list">
-          {movieMoveCount && (
+          {!!movieMoveCount && (
             <div
               className="movie-move-arrow left-arrow"
               onClick={minusMoveCount}
