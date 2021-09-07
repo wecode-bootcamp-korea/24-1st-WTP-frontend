@@ -9,6 +9,7 @@ export default class Nav extends Component {
     super();
     this.state = {
       modalOpen: '',
+      logined: true,
     };
   }
 
@@ -30,6 +31,9 @@ export default class Nav extends Component {
 
     const handleLogout = () => {
       localStorage.removeItem('login-token');
+      this.setState({
+        logined: false,
+      });
     };
 
     return (
