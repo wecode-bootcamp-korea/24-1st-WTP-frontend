@@ -33,6 +33,15 @@ export default class Contents extends Component {
     fetch(`${GET_MOVIES_COMMENTS}`)
       .then(res => res.json())
       .then(data => this.setState({ comments: data.MESSAGE }));
+    // fetch(`${GET_MOVIES_COMMENTS}`)
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     const newMessage = data.MESSAGE.map(item => {
+    //       item.isLiked = false;
+    //       return item;
+    //     });
+    //     this.setState({ comments: newMessage });
+    //   });
   }
 
   // 백엔드 데이터 fetch
@@ -101,6 +110,18 @@ export default class Contents extends Component {
     this.setState({ isComment: false, mycomment: '' });
   };
 
+  onLikeClick = comments => {
+    const isLiked = this.state.comments.map(message => {
+      if (comments.user_name === message.user_name) {
+        console.log(!message.isLiked);
+        return { ...message, isLiked: !message.isLiked };
+      } else {
+        return message;
+      }
+    });
+    this.setState({ comments: isLiked });
+  };
+
   render() {
     const {
       setRating,
@@ -116,6 +137,7 @@ export default class Contents extends Component {
 
     const { image_url, title } = movie_details;
 
+    // console.log(this.state.comments);
     return (
       <div className="contents">
         <div className="background">
@@ -184,7 +206,7 @@ export default class Contents extends Component {
               <div className="contents-all">
                 <BasicInfo movie_details={movie_details} />
                 <Process participants={movie_details.participants} />
-                <Comments comments={comments} />
+                <Comments comments={comments} onClick={this.onLikeClick} />
                 <SimilarThings />
               </div>
             </div>

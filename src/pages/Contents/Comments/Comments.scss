@@ -1,15 +1,52 @@
+@import '../../../styles/variables.scss';
+
 .comments {
+  position: relative;
+  width: 638px;
+  overflow: hidden;
+
+  .process-move-arrow {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: #7b7c82;
+    background-color: $color-white;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 0px;
+    cursor: pointer;
+    opacity: 0.2;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: $color-black;
+      opacity: 0.8;
+    }
+  }
+
+  .left-arrow {
+    left: 10px;
+    top: 175px;
+    z-index: 10;
+  }
+
+  .right-arrow {
+    right: 10px;
+    top: 175px;
+  }
+
   .title {
-    margin: 30px 20px 20px;
+    margin: 10px 20px 20px;
   }
 
   > ul {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: nowrap;
-    width: 638px;
     margin: 14px 0px 30px;
-    overflow-x: scroll;
+    transition: all 0.8s;
 
     &::-webkit-scrollbar {
       display: none;
@@ -33,7 +70,7 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          width: 290px;
+          width: 265px;
 
           > h3 {
             font-size: 17px;
@@ -57,14 +94,28 @@
       }
 
       .comment {
-        height: 150px;
+        display: -webkit-box;
+        height: 9rem;
         margin: 15px 0;
-        line-height: 1.45rem;
+        font-size: 15px;
+        line-height: 1.5rem;
+        word-wrap: break-word;
+        -webkit-box-orient: vertical;
+
+        -webkit-line-clamp: 6; /* 라인수 */
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .comment-good {
-        > i {
+        .fa-thumbs-up {
+          margin-right: 5px;
           color: #787878;
+          cursor: pointer;
+        }
+
+        .like {
+          color: $color-pink;
         }
 
         &::before {
