@@ -20,12 +20,13 @@
     align-items: center;
     margin-top: 30px;
     color: $color-gray;
+    font-size: $font-size-large;
 
     button {
       display: inline-block;
-      font-size: $font-size-large;
       margin-left: 4px;
       color: $color-pink;
+      font-size: $font-size-large;
     }
   }
 
@@ -34,6 +35,7 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    font-size: $font-size-large;
   }
 
   .forget-pw {

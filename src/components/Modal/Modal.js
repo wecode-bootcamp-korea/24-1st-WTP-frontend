@@ -3,10 +3,10 @@ import './Modal.scss';
 
 export class Modal extends Component {
   render() {
-    const { open, close } = this.props;
+    const { close } = this.props;
 
     return (
-      <div className={open ? 'openModal modal' : 'modal'}>
+      <div className="openModal modal">
         <section>
           <button className="close" onClick={close}>
             &times;

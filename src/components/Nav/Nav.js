@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './Nav.scss';
 import Modal from '../Modal/Modal';
 import Form from '../Form/Form';
-// import { LOGIN_API } from '../../config';
+import SearchBar from '../SearchBar/SearchBar';
+import './Nav.scss';
 
 export default class Nav extends Component {
   constructor() {
@@ -10,6 +10,7 @@ export default class Nav extends Component {
     this.state = {
       modalOpen: '',
       logined: true,
+      searchClicked: false,
     };
   }
 
@@ -36,68 +37,81 @@ export default class Nav extends Component {
       });
     };
 
+    const handleSearch = () => {
+      this.setState({
+        searchClicked: !this.state.searchClicked,
+      });
+    };
+
     return (
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="navbar-left">
-            <img src="/images/AtchaPedia_Logo_Small.png" alt="logo" />
-            <div className="sorts-contents">
-              <span>영화</span>
-              <span>TV 프로그램</span>
-              <span>책</span>
-            </div>
-          </div>
-          <div className="navbar-right">
-            <div className="search-bar">
-              <div className="search-container">
-                <i class="fas fa-search"></i>
-                <input
-                  className="search-input"
-                  placeholder="작품 제목, 배우, 감독을 검색해보세요."
-                  type="text"
-                />
+      <>
+        <nav className="navbar">
+          <div className="navbar-container">
+            <div className="navbar-left">
+              <img src="/images/AtchaPedia_Logo_Small.png" alt="logo" />
+              <div className="sorts-contents">
+                <span>영화</span>
+                <span>TV 프로그램</span>
+                <span>책</span>
               </div>
             </div>
-            <div className="btn-container">
-              {localStorage.length === 0 ||
-              localStorage.getItem('login-token') ? (
-                <>
-                  <button
-                    className="btn-login"
-                    onClick={() => openModal('login')}
-                  >
-                    로그인
-                  </button>
-                  <button
-                    className="btn-signup"
-                    onClick={() => openModal('signUp')}
-                  >
-                    회원가입
-                  </button>
-                </>
-              ) : (
-                <>
-                  <button className="btn-logout" onClick={handleLogout}>
-                    로그아웃
-                  </button>
-                  <i className="far fa-user-circle"></i>
-                </>
-              )}
-              {modalOpen && (
-                <Modal open={modalOpen} close={closeModal}>
-                  <Form
-                    type={modalOpen}
-                    title={modalOpen === 'login' ? '로그인' : '회원가입'}
-                    inputData={
-                      modalOpen === 'login' ? inputData.slice(1, 3) : inputData
-                    }
+            <div className="navbar-right">
+              <div className="search-bar">
+                <div className="search-container">
+                  <i class="fas fa-search"></i>
+                  <input
+                    className="search-input"
+                    placeholder="작품 제목, 배우, 감독을 검색해보세요."
+                    type="text"
+                    onClick={handleSearch}
                   />
-                </Modal>
-              )}
+                  {this.state.searchClicked && (
+                    <SearchBar onClick={this.onClick} />
+                  )}
+                </div>
+              </div>
+              <div className="btn-container">
+                {localStorage.length === 0 ||
+                !localStorage.getItem('login-token') ? (
+                  <>
+                    <button
+                      className="btn-login"
+                      onClick={() => openModal('login')}
+                    >
+                      로그인
+                    </button>
+                    <button
+                      className="btn-signup"
+                      onClick={() => openModal('signUp')}
+                    >
+                      회원가입
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button className="btn-logout" onClick={handleLogout}>
+                      로그아웃
+                    </button>
+                    <i className="far fa-user-circle"></i>
+                  </>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+        {modalOpen && (
+          <Modal open={modalOpen} close={closeModal}>
+            <Form
+              type={modalOpen}
+              title={modalOpen === 'login' ? '로그인' : '회원가입'}
+              inputData={
+                modalOpen === 'login' ? inputData.slice(1, 3) : inputData
+              }
+              openModal={openModal}
+            />
+          </Modal>
+        )}
+      </>
     );
   }
 }
