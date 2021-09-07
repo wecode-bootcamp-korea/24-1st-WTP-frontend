@@ -19,11 +19,11 @@
       .similarcontent {
         display: flex;
         flex-direction: column;
-        padding: 0 5px;
         margin-bottom: 20px;
 
         .similarcontent-poster {
           width: 139px;
+          max-height: 200px;
           border-radius: 4px;
         }
 

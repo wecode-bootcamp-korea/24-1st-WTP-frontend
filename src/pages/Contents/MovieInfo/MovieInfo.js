@@ -25,6 +25,9 @@ class MovieInfo extends Component {
       movie_details,
     } = this.props;
 
+    const { poster_image, title, release_date, average_rating, rating_users } =
+      movie_details;
+
     const newDate =
       movie_details.release_date && movie_details.release_date.slice(0, 4);
     const genre = movie_details.genre && movie_details.genre.join('/');
@@ -33,28 +36,21 @@ class MovieInfo extends Component {
     return (
       <section className="movie-info">
         <header>
-          <img
-            src={movie_details.poster_image}
-            className="movie-poster"
-            alt="영화 포스터"
-          />
+          <img src={poster_image} className="movie-poster" alt="영화 포스터" />
           <div className="movie-release">
             <span>개봉 일자 · </span>
-            <span>
-              {movie_details.release_date &&
-                this.toDate(movie_details.release_date)}
-            </span>
+            <span>{release_date && this.toDate(release_date)}</span>
           </div>
         </header>
         <article className="movie-info-all">
           <div className="movie-title">
-            <h1 className="title">{movie_details.title}</h1>
+            <h1 className="title">{title}</h1>
             <p className="text">
               {newDate} ・ {genre} ・ {country}
             </p>
           </div>
           <span className="rating-star">
-            평균 ★{movie_details.average_rating}
+            평균 ★{average_rating} ({rating_users}명)
             <span className="rating-mystar">
               {setRating !== 0 ? `나의 평점 ★${setRating}` : ''}
             </span>

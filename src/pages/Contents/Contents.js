@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { GET_MOVIES_INFO } from '../../config';
 import { GET_MOVIES_COMMENTS } from '../../config';
+import { GET_MOVIES_GENRE } from '../../config';
 // import { GET_MOVIES_LIST } from '../../config';
 import MovieInfo from './MovieInfo/MovieInfo';
 import CommentModal from './CommentModal/CommentModal';
@@ -15,6 +16,7 @@ export default class Contents extends Component {
   state = {
     movie_details: [],
     comments: [],
+    related_movies: [],
     setRating: 0,
     setHoverRating: 0,
     isClicked: false,
@@ -33,6 +35,11 @@ export default class Contents extends Component {
     fetch(`${GET_MOVIES_COMMENTS}`)
       .then(res => res.json())
       .then(data => this.setState({ comments: data.MESSAGE }));
+
+    fetch(`${GET_MOVIES_GENRE}`)
+      .then(res => res.json())
+      .then(data => this.setState({ related_movies: data.related_movies }));
+
     // fetch(`${GET_MOVIES_COMMENTS}`)
     //   .then(res => res.json())
     //   .then(data => {
@@ -61,6 +68,16 @@ export default class Contents extends Component {
   onClick = index => {
     this.setState({ setRating: index });
     this.state.setRating === index && this.setState({ setRating: 0 });
+    fetch('http://10.58.4.196:8000/details/rate/2', {
+      method: 'POST',
+      headers: {
+        authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.WQDe7Cg7P7pDNjqT_G6LHLO6zsVpkJvCbqdeSJM5jws',
+      },
+      body: JSON.stringify({ rate: index }),
+    })
+      .then(response => response.json())
+      .then(res => console.log(res));
   };
 
   onMouseEnter = index => {
@@ -133,6 +150,7 @@ export default class Contents extends Component {
       isComment,
       movie_details,
       comments,
+      related_movies,
     } = this.state;
 
     const { image_url, title } = movie_details;
@@ -207,7 +225,7 @@ export default class Contents extends Component {
                 <BasicInfo movie_details={movie_details} />
                 <Process participants={movie_details.participants} />
                 <Comments comments={comments} onClick={this.onLikeClick} />
-                <SimilarThings />
+                <SimilarThings related_movies={related_movies} />
               </div>
             </div>
             <Aside

@@ -4,13 +4,13 @@
     "release_date": "2006-09-28",
     "genre": ["범죄", "드라마"],
     "country": ["한국"],
-    "average_rating": "3.0",
     "poster_image": "http://t1.daumcdn.net/cfile/15110210A90BA7A14E",
     "trailer": "DrkVNd3lfJw",
     "image_url": [
       "https://an2-img.amz.wtchn.net/image/v2/874ca4833ded227d47e936828125a448.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKaVlXTnJaM0p2ZFc1a0lqcDdJbklpT2pJMU5Td2laeUk2TWpVMUxDSmlJam95TlRWOUxDSmpjbTl3SWpwMGNuVmxMQ0pvWldsbmFIUWlPak0yTUN3aWNHRjBhQ0k2SWk5Mk1TOTFkMlpvWW0xNWVXNW9kbXB6Ykc1amFqVnpieUlzSW5GMVlXeHBkSGtpT2pnd0xDSjNhV1IwYUNJNk5qUXdmUS5JQXJzWHpRZVdrSnMwQVl0a1pYNGhJdmhvY1g1M2RWd3NOeEtQVmVsTnZJ&quot;",
       "https://an2-img.amz.wtchn.net/image/v2/c1e305cee9feee4b3dc3c84a936b5000.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKaVlXTnJaM0p2ZFc1a0lqcDdJbklpT2pJMU5Td2laeUk2TWpVMUxDSmlJam95TlRWOUxDSmpjbTl3SWpwMGNuVmxMQ0pvWldsbmFIUWlPak0yTUN3aWNHRjBhQ0k2SWk5Mk1TOXRjREZ4ZVc0dE1TSXNJbkYxWVd4cGRIa2lPamd3TENKM2FXUjBhQ0k2TmpRd2ZRLlNFbmpGR2Q3dnMzYWVNYWRpNzhaZHYzRF9aWmdNTnRTYXNkaTEtSGpNckE&quot"
     ],
+    "description": "가구공장에서 일하며 남루한 삶을 사는 고니는 대학보다 가난을 벗어나게 해줄 돈이 우선인 청년. 어느 날 고니는 가구공장 한 켠에서 박무석 일행이 벌이는 화투판에 끼게 되지만, 고니는 그 판에서 3년 동안 모아두었던 돈 전부를 날리고 만다. 그것이 전문 도박꾼들이 짜고 친 판이었단 사실을 뒤늦게 안 고니는 박무석 일행을 찾아 나서고, 도박으로 시비가 붙은 한 창고에서 우연인 듯 필연처럼 전설의 타짜 평경장을 만난다. 그리고 잃었던 돈의 다섯 배를 따면 화투를 그만두겠단 약속을 하고, 그와 함께 본격적인 꽃싸움에 몸을 던지기 위한 동행길에 오른다.",
     "participants": [
       {
         "name": "최동훈",
@@ -57,6 +57,8 @@
         "role": "조연",
         "image": "https://an2-img.amz.wtchn.net/image/v2/00407dcf1bc935e4d59a361a77b7748a.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKamNtOXdJanAwY25WbExDSm9aV2xuYUhRaU9qSTBNQ3dpY0dGMGFDSTZJaTkyTVM5d1pXOXdiR1V2YldWa2FYVnRMMkl4T0RZeE0ySmpZMlUyWm1NM01XVXlPV05tTG1wd1p5SXNJbmRwWkhSb0lqb3lOREI5LjJfNlpJamU4Tmg2bW9vTWVDbzJzRXVoSDlBQWk5S1lzaVo0bTk1d0xxZnM"
       }
-    ]
+    ],
+    "average_rating": "3.6",
+    "rating_users": 5
   }
 }
