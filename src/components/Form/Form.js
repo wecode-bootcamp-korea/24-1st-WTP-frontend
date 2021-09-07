@@ -54,13 +54,13 @@ export class Form extends Component {
           <Button name={name} email={email} password={password} value={title} />
           {type === 'signUp' ? (
             <p className="already-signup">
-              이미 가입하셨나요? <span>로그인</span>
+              이미 가입하셨나요? <button>로그인</button>
             </p>
           ) : (
             <>
               <p className="forget-pw">비밀번호를 잊어버리셨나요?</p>
               <p className="have-account">
-                계정이 없으신가요?<span>회원가입</span>
+                계정이 없으신가요?<button>회원가입</button>
               </p>
             </>
           )}

@@ -28,6 +28,10 @@ export default class Nav extends Component {
     const { modalOpen } = this.state;
     const { openModal, closeModal } = this;
 
+    const handleLogout = () => {
+      localStorage.removeItem('login-token');
+    };
+
     return (
       <nav className="navbar">
         <div className="navbar-container">
@@ -51,15 +55,30 @@ export default class Nav extends Component {
               </div>
             </div>
             <div className="btn-container">
-              <button className="btn-login" onClick={() => openModal('login')}>
-                로그인
-              </button>
-              <button
-                className="btn-signup"
-                onClick={() => openModal('signUp')}
-              >
-                회원가입
-              </button>
+              {localStorage.length === 0 ||
+              localStorage.getItem('login-btn') ? (
+                <>
+                  <button
+                    className="btn-login"
+                    onClick={() => openModal('login')}
+                  >
+                    로그인
+                  </button>
+                  <button
+                    className="btn-signup"
+                    onClick={() => openModal('signUp')}
+                  >
+                    회원가입
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button className="btn-logout" onClick={handleLogout}>
+                    로그아웃
+                  </button>
+                  <i className="far fa-user-circle"></i>
+                </>
+              )}
               {modalOpen && (
                 <Modal open={modalOpen} close={closeModal}>
                   <Form

@@ -53,7 +53,7 @@
         .search-container {
           padding: 7px 10px 8px 32px;
 
-          i {
+          .fas.fa-search {
             position: absolute;
             width: 16px;
             top: 10px;
@@ -63,15 +63,18 @@
 
           .search-input {
             width: 100%;
+            font-size: 14.5px;
           }
         }
       }
 
       .btn-container {
-        margin: auto 0;
+        position: relative;
 
         .btn-login {
+          height: 100%;
           margin: 0px 18px 0px 18px;
+          font-size: 14.5px;
           color: #74747a;
           cursor: pointer;
         }
@@ -83,6 +86,23 @@
           padding: 0 14px;
           border: 1px solid #b9b9bc;
           border-radius: 5px;
+          font-size: 14.5px;
+          cursor: pointer;
+        }
+
+        .btn-logout {
+          height: 100%;
+          margin: 0px 18px 0px 18px;
+          font-size: 14.5px;
+          color: #74747a;
+          cursor: pointer;
+        }
+
+        .far.fa-user-circle {
+          position: absolute;
+          top: 18px;
+          font-size: 24px;
+          color: $color-gray;
           cursor: pointer;
         }
       }
