@@ -70,6 +70,7 @@
 
       .btn-container {
         position: relative;
+        display: flex;
 
         .btn-login {
           height: 100%;
@@ -99,8 +100,7 @@
         }
 
         .far.fa-user-circle {
-          position: absolute;
-          top: 18px;
+          margin: auto 0;
           font-size: 24px;
           color: $color-gray;
           cursor: pointer;

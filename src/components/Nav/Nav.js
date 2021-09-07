@@ -60,7 +60,7 @@ export default class Nav extends Component {
             </div>
             <div className="btn-container">
               {localStorage.length === 0 ||
-              localStorage.getItem('login-btn') ? (
+              localStorage.getItem('login-token') ? (
                 <>
                   <button
                     className="btn-login"
