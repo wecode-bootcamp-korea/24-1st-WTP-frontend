@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { GET_MOVIES_INFO } from '../../config';
+import { GET_MOVIES_COMMENTS } from '../../config';
 // import { GET_MOVIES_LIST } from '../../config';
 import MovieInfo from './MovieInfo/MovieInfo';
 import CommentModal from './CommentModal/CommentModal';
@@ -7,10 +9,12 @@ import Process from './Process/Process';
 import SimilarThings from './SimilarThings/SimilarThings';
 import Aside from './Aside/Aside';
 import './Contents.scss';
+import Comments from './Comments/Comments';
 
 export default class Contents extends Component {
   state = {
     movie_details: [],
+    comments: [],
     setRating: 0,
     setHoverRating: 0,
     isClicked: false,
@@ -20,18 +24,15 @@ export default class Contents extends Component {
     isComment: false,
   };
 
-  //목 데이터 fetch
-
+  // 목 데이터 fetch
   componentDidMount() {
-    fetch('http://localhost:3000/data/MockData.json', {
-      method: 'GET',
-    })
+    fetch(`${GET_MOVIES_INFO}`)
       .then(res => res.json())
-      .then(data => {
-        this.setState({
-          movie_details: data.movie_info,
-        });
-      });
+      .then(data => this.setState({ movie_details: data.movie_info }));
+
+    fetch(`${GET_MOVIES_COMMENTS}`)
+      .then(res => res.json())
+      .then(data => this.setState({ comments: data.MESSAGE }));
   }
 
   // 백엔드 데이터 fetch
@@ -110,6 +111,7 @@ export default class Contents extends Component {
       mycomment,
       isComment,
       movie_details,
+      comments,
     } = this.state;
 
     const { image_url, title } = movie_details;
@@ -182,6 +184,7 @@ export default class Contents extends Component {
               <div className="contents-all">
                 <BasicInfo movie_details={movie_details} />
                 <Process participants={movie_details.participants} />
+                <Comments comments={comments} />
                 <SimilarThings />
               </div>
             </div>

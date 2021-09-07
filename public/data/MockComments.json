@@ -1,0 +1,29 @@
+{
+  "MESSAGE": [
+    {
+      "user_name": "peter",
+      "user_rating": "3.5",
+      "comment": "댓글을 작성해주세요!"
+    },
+    {
+      "user_name": "김축구",
+      "user_rating": "3.0",
+      "comment": "댓글을 작성해주세요!"
+    },
+    {
+      "user_name": "김농구",
+      "user_rating": "3.0",
+      "comment": "댓글을 작성해주세요!"
+    },
+    {
+      "user_name": "김탁구",
+      "user_rating": "3.0",
+      "comment": "댓글을 작성해주세요!"
+    },
+    {
+      "user_name": "두두두",
+      "user_rating": "3.0",
+      "comment": "댓글을 작성해주세요!"
+    }
+  ]
+}
