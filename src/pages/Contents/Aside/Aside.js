@@ -54,7 +54,7 @@ class Aside extends Component {
               {image &&
                 image.map(image => {
                   return (
-                    <li className="gallery-picture-sec">
+                    <li className="gallery-picture-sec" key={image.id}>
                       <img
                         src={image}
                         className="gallery-picture"

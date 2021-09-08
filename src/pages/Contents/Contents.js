@@ -61,8 +61,6 @@ export default class Contents extends Component {
   };
 
   onClick = index => {
-    this.setState({ setRating: index });
-    this.state.setRating === index && this.setState({ setRating: 0 });
     fetch('http://10.58.4.196:8000/details/rate/2', {
       method: 'POST',
       headers: {
@@ -70,7 +68,10 @@ export default class Contents extends Component {
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.WQDe7Cg7P7pDNjqT_G6LHLO6zsVpkJvCbqdeSJM5jws',
       },
       body: JSON.stringify({ rate: index }),
-    }).then(response => response.json());
+    })
+      .then(response => response.json())
+      .then(this.setState({ setRating: index }))
+      .then(this.state.setRating === index && this.setState({ setRating: 0 }));
   };
 
   onMouseEnter = index => {

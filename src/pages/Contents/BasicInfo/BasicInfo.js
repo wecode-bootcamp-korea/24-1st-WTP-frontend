@@ -25,9 +25,9 @@ class BasicInfo extends Component {
           <p className="little-summary">
             {newDate} · {country && country} · {genre && genre[0]}
           </p>
-          <ellipse ref={this.wrapRef} className="story-summary">
+          <div ref={this.wrapRef} className="story-summary">
             {description}
-          </ellipse>
+          </div>
           <button onClick={this.onClickMore}>...더보기</button>
         </article>
       </section>
