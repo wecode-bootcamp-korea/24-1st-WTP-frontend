@@ -26,8 +26,15 @@ export default class Nav extends Component {
     });
   };
 
+  searchTitle = e => {
+    const { value } = e.target;
+    this.setState({
+      userInput: value,
+    });
+  };
+
   render() {
-    const { modalOpen } = this.state;
+    const { modalOpen, searchClicked } = this.state;
     const { openModal, closeModal } = this;
 
     const handleLogout = () => {
@@ -65,9 +72,7 @@ export default class Nav extends Component {
                     type="text"
                     onClick={handleSearch}
                   />
-                  {this.state.searchClicked && (
-                    <SearchBar onClick={this.onClick} />
-                  )}
+                  {searchClicked && <SearchBar onClick={this.onClick} />}
                 </div>
               </div>
               <div className="btn-container">

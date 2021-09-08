@@ -21,6 +21,7 @@
         width: 140px;
         height: 30px;
         margin: auto 30px auto 0;
+        cursor: pointer;
       }
 
       .sorts-contents {
@@ -29,6 +30,7 @@
           padding: 25px 12px 25px 12px;
           font-size: $font-size-medium;
           color: #7e7e7e;
+          cursor: pointer;
 
           &:first-child {
             color: #353535;

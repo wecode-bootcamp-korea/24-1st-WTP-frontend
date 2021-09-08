@@ -15,9 +15,10 @@ export class Button extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.token) {
-          localStorage.setItem('login-token', response.token);
-          alert('환영합니다.');
+        if (response.auth_token) {
+          localStorage.setItem('login-token', response.auth_token);
+          localStorage.setItem('username', response.user_name);
+          alert(`${response.user_name}님 환영합니다.`);
         } else {
           alert('이메일, 비밀번호를 다시 입력해주세요.');
         }
@@ -36,7 +37,7 @@ export class Button extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.token) {
+        if (response.MESSAGE) {
           alert('앗차피디아에 오신 것을 환영합니다.');
         } else {
           alert('이름, 이메일, 비밀번호를 다시 입력해주세요.');
