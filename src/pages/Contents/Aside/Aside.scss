@@ -9,6 +9,44 @@
   background-color: $color-white;
 
   .gallery {
+    position: relative;
+    width: 323px;
+    overflow: hidden;
+
+    .process-move-arrow {
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 60px;
+      color: #7b7c82;
+      background-color: $color-white;
+      font-size: 20px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 1px 0px;
+      cursor: pointer;
+      opacity: 0.2;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        color: $color-black;
+        opacity: 0.8;
+      }
+    }
+
+    .left-arrow {
+      left: 10px;
+      top: 68px;
+      z-index: 10;
+    }
+
+    .right-arrow {
+      right: 10px;
+      top: 68px;
+    }
+
     .title {
       margin: 15px 20px;
     }
@@ -28,7 +66,7 @@
       justify-content: flex-start;
       width: 323px;
       margin: 10px 0 20px;
-      overflow-x: scroll;
+      transition: all 0.8s;
 
       &::-webkit-scrollbar {
         display: none;

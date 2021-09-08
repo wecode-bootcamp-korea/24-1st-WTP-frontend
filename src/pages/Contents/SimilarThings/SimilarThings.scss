@@ -1,5 +1,5 @@
 .similar-things {
-  margin: 20px 0;
+  margin: 10px 0;
 
   .title {
     margin: 30px 20px;
@@ -12,18 +12,19 @@
 
     .similarcontent-all {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
       width: 598px;
 
       .similarcontent {
         display: flex;
         flex-direction: column;
-        margin-bottom: 20px;
+        margin: 0 5px 20px;
+        cursor: pointer;
 
         .similarcontent-poster {
           width: 139px;
-          max-height: 200px;
+          height: 200px;
           border-radius: 4px;
         }
 

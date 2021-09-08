@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { GET_MOVIES_INFO } from '../../config';
-import { GET_MOVIES_COMMENTS } from '../../config';
+import { GET_MOVIES_BASIC } from '../../config';
 import { GET_MOVIES_GENRE } from '../../config';
-// import { GET_MOVIES_LIST } from '../../config';
+import { GET_MOVIES_COMMENTS } from '../../config';
 import MovieInfo from './MovieInfo/MovieInfo';
 import CommentModal from './CommentModal/CommentModal';
 import BasicInfo from './BasicInfo/BasicInfo';
@@ -15,8 +14,8 @@ import Comments from './Comments/Comments';
 export default class Contents extends Component {
   state = {
     movie_details: [],
-    comments: [],
     related_movies: [],
+    comments: [],
     setRating: 0,
     setHoverRating: 0,
     isClicked: false,
@@ -26,37 +25,33 @@ export default class Contents extends Component {
     isComment: false,
   };
 
-  // 목 데이터 fetch
   componentDidMount() {
-    fetch(`${GET_MOVIES_INFO}`)
-      .then(res => res.json())
-      .then(data => this.setState({ movie_details: data.movie_info }));
-
     fetch(`${GET_MOVIES_COMMENTS}`)
       .then(res => res.json())
-      .then(data => this.setState({ comments: data.MESSAGE }));
+      .then(data => {
+        const newMessage = data.MESSAGE.map(item => {
+          item.isLiked = false;
+          return item;
+        });
+        this.setState({ comments: newMessage });
+      });
 
-    fetch(`${GET_MOVIES_GENRE}`)
+    fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}`)
       .then(res => res.json())
-      .then(data => this.setState({ related_movies: data.related_movies }));
+      .then(res =>
+        this.setState({
+          movie_details: res.movie_info,
+        })
+      );
 
-    // fetch(`${GET_MOVIES_COMMENTS}`)
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     const newMessage = data.MESSAGE.map(item => {
-    //       item.isLiked = false;
-    //       return item;
-    //     });
-    //     this.setState({ comments: newMessage });
-    //   });
+    fetch(`${GET_MOVIES_GENRE}${this.props.match.params.id}`)
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          related_movies: res.related_movies,
+        })
+      );
   }
-
-  // 백엔드 데이터 fetch
-  // componentDidMount() {
-  //   fetch(`${GET_MOVIES_LIST}` / 1)
-  //     .then(res => res.json())
-  //     .then(data => this.setState({ movie_details: data.movie_info }));
-  // }
 
   onClickBtn = () => {
     this.setState({
@@ -75,9 +70,7 @@ export default class Contents extends Component {
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.WQDe7Cg7P7pDNjqT_G6LHLO6zsVpkJvCbqdeSJM5jws',
       },
       body: JSON.stringify({ rate: index }),
-    })
-      .then(response => response.json())
-      .then(res => console.log(res));
+    }).then(response => response.json());
   };
 
   onMouseEnter = index => {
@@ -115,8 +108,19 @@ export default class Contents extends Component {
     this.setState({ modalOpen: false });
   };
 
-  addComment = () => {
+  addComment = mycomment => {
     this.setState({ modalOpen: false, isComment: true });
+    fetch(
+      `http://10.58.0.58:8000/movies/${this.props.match.params.id}/comments`,
+      {
+        method: 'POST',
+        headers: {
+          authorization:
+            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.W9-3lURyw0K9piGHr-L-Kdfc6UkMpSwwYeV9iggRQTs',
+        },
+        body: JSON.stringify({ comment: mycomment }),
+      }
+    ).then(response => response.json());
   };
 
   handleChange = e => {
@@ -155,7 +159,6 @@ export default class Contents extends Component {
 
     const { image_url, title } = movie_details;
 
-    // console.log(this.state.comments);
     return (
       <div className="contents">
         <div className="background">

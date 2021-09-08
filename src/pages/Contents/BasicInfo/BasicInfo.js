@@ -25,7 +25,6 @@ class BasicInfo extends Component {
           <p className="little-summary">
             {newDate} · {country && country} · {genre && genre[0]}
           </p>
-          {/* <p className="little-summary">2시간 12분 · 12세</p> */}
           <ellipse ref={this.wrapRef} className="story-summary">
             {description}
           </ellipse>

@@ -32,12 +32,7 @@ class Comments extends Component {
     const length = comments && comments.length;
     const maxCount = Math.ceil(length / 2 - 1);
 
-    // console.log(this.props.comments[0].isLiked);
-
     console.log(this.props.comments.isLiked);
-
-    // console.log(comments.length);
-    // console.log(processCount);
 
     return (
       <section className="comments">
