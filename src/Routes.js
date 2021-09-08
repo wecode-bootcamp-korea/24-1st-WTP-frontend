@@ -5,6 +5,7 @@ import Main from './pages/Main/Main';
 import Contents from './pages/Contents/Contents';
 import Profile from './pages/Profile/Profile';
 import Nav from './components/Nav/Nav';
+import Footer from './components/Footer/Footer';
 
 class Routes extends Component {
   render() {
@@ -16,6 +17,7 @@ class Routes extends Component {
           <Route exact path="/details/:id" component={Contents} />
           <Route exact path="/profile" component={Profile} />
         </Switch>
+        <Footer />
       </Router>
     );
   }
