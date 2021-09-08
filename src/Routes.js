@@ -9,17 +9,14 @@ import Nav from './components/Nav/Nav';
 class Routes extends Component {
   render() {
     return (
-      <>
+      <Router>
         <Nav />
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/contents" component={Contents} />
-            <Route exact path="/details/:id" component={Contents} />
-            <Route exact path="/profile" component={Profile} />
-          </Switch>
-        </Router>
-      </>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/details/:id" component={Contents} />
+          <Route exact path="/profile" component={Profile} />
+        </Switch>
+      </Router>
     );
   }
 }
