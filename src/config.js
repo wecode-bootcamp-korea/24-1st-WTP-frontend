@@ -1,7 +1,9 @@
-// Login
-const MH_URL = 'http://10.58.0.58:8000';
-export const LOGIN_API = `${MH_URL}/users`;
+const SMH_URL = 'http://10.58.0.58:8000';
+// const SWJ_URL = 'http://10.58.0.52:8000';
+// const LMH_URL = 'http://10.58.7.127:8000';
 
-// SignUp
-const WJ_URL = 'http://10.58.0.58:8000';
-export const SIGNUP_API = `${WJ_URL}/users`;
+// Login, Signup
+export const USERS_LIST = `${SMH_URL}/users`;
+
+// Search
+export const MOVIES_LIST = `${SMH_URL}/movies`;

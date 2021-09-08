@@ -27,7 +27,7 @@ export class Form extends Component {
 
   render() {
     const { name, email, password } = this.state;
-    const { type, title, inputData } = this.props;
+    const { type, title, inputData, openModal } = this.props;
 
     return (
       <>
@@ -60,14 +60,15 @@ export class Form extends Component {
             />
             {type === 'signUp' ? (
               <p className="already-signup">
-                이미 가입하셨나요? <button>로그인</button>
+                이미 가입하셨나요?{' '}
+                <button onClick={() => openModal('login')}>로그인</button>
               </p>
             ) : (
               <>
                 <p className="forget-pw">비밀번호를 잊어버리셨나요?</p>
                 <p className="have-account">
                   계정이 없으신가요?
-                  <button>회원가입</button>
+                  <button onClick={() => openModal('signUp')}>회원가입</button>
                 </p>
               </>
             )}

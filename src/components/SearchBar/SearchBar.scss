@@ -11,11 +11,29 @@
     background-color: $color-white;
     font-size: $font-size-small;
 
+    .related-search,
     .popular-search {
       margin: 4px 0 0 4px;
       padding: 5px;
       color: $color-pink;
       font-size: $font-size-micro;
+    }
+
+    .popular-search {
+      border-top: 1px solid $color-light-gray;
+    }
+
+    .related-movie {
+      margin-left: 4px;
+
+      .pTag {
+        padding: 5px;
+
+        &:hover {
+          background-color: $color-background;
+          cursor: pointer;
+        }
+      }
     }
 
     .popular-movie {

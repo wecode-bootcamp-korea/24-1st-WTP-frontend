@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { LOGIN_API } from '../../config';
-import { SIGNUP_API } from '../../config';
+import { USERS_LIST } from '../../config';
 import './Button.scss';
 
 export class Button extends Component {
   handleLogin = () => {
-    fetch(`${LOGIN_API}/login`, {
+    fetch(`${USERS_LIST}/login`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.props.email,
@@ -26,7 +25,7 @@ export class Button extends Component {
   };
 
   handleSignup = () => {
-    fetch(`${SIGNUP_API}/signup`, {
+    fetch(`${USERS_LIST}/signup`, {
       method: 'POST',
       body: JSON.stringify({
         name: this.props.name,

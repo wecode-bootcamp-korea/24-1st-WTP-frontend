@@ -3,9 +3,18 @@ import './SearchBar.scss';
 
 class SearchBar extends Component {
   render() {
+    const { movies, filteredMovies } = this.props;
+
     return (
       <div className="navmodal" onClick={this.props.onClick}>
         <div className="wrapper">
+          <div className="related-search">연관 검색어</div>
+          <div className="related-movie">
+            {filteredMovies.length !== movies.length &&
+              filteredMovies.map(movie => {
+                return <p className="pTag">{movie.movie_name}</p>;
+              })}
+          </div>
           <div className="popular-search">인기 검색어</div>
           <div className="popular-movie">D.P.</div>
           <div className="popular-movie">인간실격</div>

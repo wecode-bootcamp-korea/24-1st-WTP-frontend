@@ -101,11 +101,14 @@
           cursor: pointer;
         }
 
-        .far.fa-user-circle {
+        .profile-container {
           margin: auto 0;
-          font-size: 24px;
-          color: $color-gray;
-          cursor: pointer;
+
+          .far.fa-user-circle {
+            font-size: 24px;
+            color: $color-gray;
+            cursor: pointer;
+          }
         }
       }
     }

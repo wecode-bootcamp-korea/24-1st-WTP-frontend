@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Modal from '../Modal/Modal';
 import Form from '../Form/Form';
-import SearchBar from '../SearchBar/SearchBar';
+import SearchInput from '../SearchInput/SearchInput';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 
 export default class Nav extends Component {
@@ -9,6 +10,7 @@ export default class Nav extends Component {
     super();
     this.state = {
       modalOpen: '',
+      userInput: '',
       logined: true,
       searchClicked: false,
     };
@@ -27,17 +29,18 @@ export default class Nav extends Component {
   };
 
   searchTitle = e => {
-    const { value } = e.target;
+    const { name, value } = e.target;
     this.setState({
-      userInput: value,
+      [name]: value,
     });
   };
 
   render() {
-    const { modalOpen, searchClicked } = this.state;
-    const { openModal, closeModal } = this;
+    const { modalOpen, userInput, searchClicked } = this.state;
+    const { openModal, closeModal, searchTitle } = this;
 
     const handleLogout = () => {
+      alert('로그아웃 되었습니다.');
       localStorage.removeItem('login-token');
       this.setState({
         logined: false,
@@ -66,13 +69,12 @@ export default class Nav extends Component {
               <div className="search-bar">
                 <div className="search-container">
                   <i class="fas fa-search"></i>
-                  <input
-                    className="search-input"
-                    placeholder="작품 제목, 배우, 감독을 검색해보세요."
-                    type="text"
-                    onClick={handleSearch}
+                  <SearchInput
+                    userInput={userInput}
+                    searchClicked={searchClicked}
+                    handleSearch={handleSearch}
+                    searchTitle={searchTitle}
                   />
-                  {searchClicked && <SearchBar onClick={this.onClick} />}
                 </div>
               </div>
               <div className="btn-container">
@@ -97,7 +99,9 @@ export default class Nav extends Component {
                     <button className="btn-logout" onClick={handleLogout}>
                       로그아웃
                     </button>
-                    <i className="far fa-user-circle"></i>
+                    <Link to="/profile" className="profile-container">
+                      <i className="far fa-user-circle"></i>
+                    </Link>
                   </>
                 )}
               </div>
