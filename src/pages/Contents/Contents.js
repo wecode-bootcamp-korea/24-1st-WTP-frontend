@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { GET_MOVIES_BASIC } from '../../config';
 import { GET_MOVIES_GENRE } from '../../config';
-import { GET_MOVIES_COMMENTS } from '../../config';
 import MovieInfo from './MovieInfo/MovieInfo';
 import CommentModal from './CommentModal/CommentModal';
 import BasicInfo from './BasicInfo/BasicInfo';
@@ -26,16 +25,36 @@ export default class Contents extends Component {
   };
 
   componentDidMount() {
-    fetch(`${GET_MOVIES_COMMENTS}`)
-      .then(res => res.json())
-      .then(data => {
-        const newMessage = data.MESSAGE.map(item => {
-          item.isLiked = false;
-          return item;
-        });
-        this.setState({ comments: newMessage });
+    this.getData();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.getData();
+      this.setState({
+        mycomment: '',
+        clickBtn: false,
+        isClicked: false,
+        isComment: false,
+        setRating: this.state.movie_details.rate,
+        setHoverRating: 0,
       });
 
+      // if (prevProps.mycomment !== this.state.mycomment) {
+      //   fetch(
+      //     `http://10.58.0.58:8000/movies/${this.props.match.params.id}/comments`
+      //   )
+      //     .then(res => res.json())
+      //     .then(res =>
+      //       this.setState({
+      //         comments: res.MESSAGE,
+      //       })
+      //     );
+      // }
+    }
+  }
+
+  getData = () => {
     fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}`)
       .then(res => res.json())
       .then(res =>
@@ -51,17 +70,26 @@ export default class Contents extends Component {
           related_movies: res.related_movies,
         })
       );
-  }
+
+    fetch(
+      `http://10.58.0.58:8000/movies/${this.props.match.params.id}/comments`
+    )
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          comments: res.MESSAGE,
+        })
+      );
+  };
 
   onClickBtn = () => {
     this.setState({
-      isClicked: !this.state.isClicked,
       clickBtn: !this.state.clickBtn,
     });
   };
 
   onClick = index => {
-    fetch('http://10.58.4.196:8000/details/rate/2', {
+    fetch('http://10.58.7.127:8000/details/rate/2', {
       method: 'POST',
       headers: {
         authorization:
@@ -70,8 +98,11 @@ export default class Contents extends Component {
       body: JSON.stringify({ rate: index }),
     })
       .then(response => response.json())
-      .then(this.setState({ setRating: index }))
-      .then(this.state.setRating === index && this.setState({ setRating: 0 }));
+      .then(this.setState({ isClicked: !this.state.isClicked }))
+      .then(
+        this.state.setRating === index &&
+          this.setState({ setRating: 0, mycomment: '', isComment: false })
+      );
   };
 
   onMouseEnter = index => {
@@ -110,7 +141,6 @@ export default class Contents extends Component {
   };
 
   addComment = mycomment => {
-    this.setState({ modalOpen: false, isComment: true });
     fetch(
       `http://10.58.0.58:8000/movies/${this.props.match.params.id}/comments`,
       {
@@ -121,7 +151,9 @@ export default class Contents extends Component {
         },
         body: JSON.stringify({ comment: mycomment }),
       }
-    ).then(response => response.json());
+    )
+      .then(response => response.json())
+      .then(this.setState({ modalOpen: false, isComment: true }));
   };
 
   handleChange = e => {

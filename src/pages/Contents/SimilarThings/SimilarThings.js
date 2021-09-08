@@ -4,8 +4,8 @@ import './SimilarThings.scss';
 
 class SimilarThings extends Component {
   goToDetail = genre => {
-    console.log(genre.movie_id);
-    window.location.replace(`/details/${genre.movie_id}`);
+    this.props.history.push(`/details/${genre.movie_id}`);
+    // window.location.replace(`/details/${genre.movie_id}`);
   };
 
   render() {

@@ -95,13 +95,13 @@
 
       .comment {
         display: -webkit-box;
+        max-width: 270px;
         height: 9rem;
         margin: 15px 0;
         font-size: 15px;
         line-height: 1.5rem;
         word-wrap: break-word;
         -webkit-box-orient: vertical;
-
         -webkit-line-clamp: 6; /* 라인수 */
         overflow: hidden;
         text-overflow: ellipsis;
