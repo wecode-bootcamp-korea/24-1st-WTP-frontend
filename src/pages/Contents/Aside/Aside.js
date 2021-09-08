@@ -27,10 +27,10 @@ class Aside extends Component {
   render() {
     const { processCount } = this.state;
     const { trailer, image } = this.props;
+    const { minusMoveCount, plusMoveCount } = this;
     const thumnail = `https://img.youtube.com/vi/${trailer}/0.jpg`;
     const linkVideo = `https://www.youtube.com/watch?v=${trailer}`;
     const marginLeft = (processCount * -290).toString();
-    const { minusMoveCount, plusMoveCount } = this;
     const length = image && image.length;
     const maxCount = Math.ceil(length / 2 - 1);
 

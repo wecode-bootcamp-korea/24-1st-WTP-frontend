@@ -7,8 +7,9 @@ import BasicInfo from './BasicInfo/BasicInfo';
 import Process from './Process/Process';
 import SimilarThings from './SimilarThings/SimilarThings';
 import Aside from './Aside/Aside';
-import './Contents.scss';
 import Comments from './Comments/Comments';
+import { ReactComponent as OneStar } from '../../assets/icons/pointed-star.svg';
+import './Contents.scss';
 
 export default class Contents extends Component {
   state = {
@@ -22,6 +23,7 @@ export default class Contents extends Component {
     modalOpen: false,
     mycomment: '',
     isComment: false,
+    goLogin: false,
   };
 
   componentDidMount() {
@@ -36,9 +38,7 @@ export default class Contents extends Component {
         clickBtn: false,
         isClicked: false,
         isComment: false,
-        setRating: this.state.movie_details.rate,
-        setHoverRating: 0,
-      });
+      }).then(() => window.scrollTo(0, 0));
 
       // if (prevProps.mycomment !== this.state.mycomment) {
       //   fetch(
@@ -54,15 +54,8 @@ export default class Contents extends Component {
     }
   }
 
+  //getData 함수를 통한 DidMount,DidUpdate 접근
   getData = () => {
-    fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}`)
-      .then(res => res.json())
-      .then(res =>
-        this.setState({
-          movie_details: res.movie_info,
-        })
-      );
-
     fetch(`${GET_MOVIES_GENRE}${this.props.match.params.id}`)
       .then(res => res.json())
       .then(res =>
@@ -71,9 +64,32 @@ export default class Contents extends Component {
         })
       );
 
-    fetch(
-      `http://10.58.0.58:8000/movies/${this.props.match.params.id}/comments`
-    )
+    //로그인을 해서 토큰이 있을 시 setRating에 별점 등록
+    if (localStorage.getItem('login-token')) {
+      fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/rate`, {
+        headers: {
+          Authorization: localStorage.getItem('login-token'),
+        },
+      })
+        .then(res => res.json())
+        .then(res =>
+          this.setState({
+            movie_details: res.movie_info,
+            setRating: res.movie_info.user_rate,
+          })
+        );
+      //로그인이 안되어있으면 setRating:0
+    } else {
+      fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}`)
+        .then(res => res.json())
+        .then(res =>
+          this.setState({
+            movie_details: res.movie_info,
+          })
+        );
+    }
+
+    fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/comments`)
       .then(res => res.json())
       .then(res =>
         this.setState({
@@ -82,34 +98,44 @@ export default class Contents extends Component {
       );
   };
 
+  //보고싶어요 버튼 클릭 이벤트
   onClickBtn = () => {
     this.setState({
       clickBtn: !this.state.clickBtn,
     });
   };
 
+  //별점 클릭 이벤트
   onClick = index => {
-    fetch('http://10.58.7.127:8000/details/rate/2', {
-      method: 'POST',
-      headers: {
-        authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.WQDe7Cg7P7pDNjqT_G6LHLO6zsVpkJvCbqdeSJM5jws',
-      },
-      body: JSON.stringify({ rate: index }),
-    })
-      .then(response => response.json())
-      .then(this.setState({ isClicked: !this.state.isClicked }))
-      .then(
-        this.state.setRating === index &&
-          this.setState({ setRating: 0, mycomment: '', isComment: false })
-      );
+    if (localStorage.getItem('login-token')) {
+      fetch('http://10.58.7.127:8000/details/rate/', {
+        method: 'POST',
+        headers: {
+          authorization:
+            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjJ9.mXKzpLEKc5mJTCU6dPE60LQiaz0ZLo7pAyQ4zI25fgw',
+        },
+        body: JSON.stringify({ rate: index }),
+      })
+        .then(response => response.json())
+        .then(
+          this.setState({ setRating: index, isClicked: !this.state.isClicked })
+        )
+        .then(
+          this.state.setRating === index &&
+            this.setState({ setRating: 0, mycomment: '', isComment: false })
+        );
+    } else {
+      this.setState({ goLogin: !this.state.goLogin });
+    }
   };
 
+  //별점 마우스 엔터 이벤트
   onMouseEnter = index => {
     this.setState({ setHoverRating: index });
     console.log(this.state.setHoverRating);
   };
 
+  //별점 마우스 리브 이벤트
   onMouseLeave = () => {
     this.setState({ setHoverRating: 0 });
   };
@@ -137,12 +163,13 @@ export default class Contents extends Component {
   };
 
   closeModal = () => {
-    this.setState({ modalOpen: false });
+    this.setState({ modalOpen: false, goLogin: false });
   };
 
+  //코멘트 작성 버튼 클릭 이벤트
   addComment = mycomment => {
     fetch(
-      `http://10.58.0.58:8000/movies/${this.props.match.params.id}/comments`,
+      `http://10.58.0.52:8000/movies/${this.props.match.params.id}/comments`,
       {
         method: 'POST',
         headers: {
@@ -164,6 +191,7 @@ export default class Contents extends Component {
     this.setState({ isComment: false, mycomment: '' });
   };
 
+  //코멘트 별 좋아요 클릭 이벤트
   onLikeClick = comments => {
     const isLiked = this.state.comments.map(message => {
       if (comments.user_name === message.user_name) {
@@ -188,6 +216,7 @@ export default class Contents extends Component {
       movie_details,
       comments,
       related_movies,
+      goLogin,
     } = this.state;
 
     const { image_url, title } = movie_details;
@@ -248,6 +277,33 @@ export default class Contents extends Component {
                   </div>
                 )}
               </div>
+              {goLogin && (
+                <div className="modal">
+                  <section>
+                    <button className="close-modal" onClick={this.closeModal}>
+                      &times;
+                    </button>
+                    <article>
+                      {[1, 2, 3, 4, 5].map(index => {
+                        return (
+                          <>
+                            <OneStar
+                              key={index.id}
+                              fill={'#FEDD63'}
+                              className="onestar"
+                            />
+                          </>
+                        );
+                      })}
+                      <p>평가하시려면 로그인이 필요해요.</p>
+                      <p>
+                        <span>회원가입 또는 로그인</span>
+                        하고 별점을 기록해보세요.
+                      </p>
+                    </article>
+                  </section>
+                </div>
+              )}
               {modalOpen && (
                 <CommentModal
                   close={this.closeModal}
