@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.btn {
+  display: block;
+  margin: 16px auto 0 auto;
+  width: 335px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  background-color: $color-pink;
+  border-radius: 6px;
+  font-size: $font-size-huge;
+  color: $color-white;
+  cursor: pointer;
+}

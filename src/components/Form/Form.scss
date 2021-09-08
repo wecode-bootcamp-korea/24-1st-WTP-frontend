@@ -1,0 +1,69 @@
+@import '../../styles/variables.scss';
+
+.form {
+  width: 375px;
+  margin: 0 auto 0 auto;
+  border-radius: 7px;
+  background-color: $color-white;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0 20px 0;
+    font-size: $font-size-huge;
+    font-weight: 700;
+  }
+
+  .already-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    color: $color-gray;
+    font-size: $font-size-large;
+
+    button {
+      display: inline-block;
+      margin-left: 4px;
+      color: $color-pink;
+      font-size: $font-size-large;
+    }
+  }
+
+  .forget-pw,
+  .have-account {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: $font-size-large;
+  }
+
+  .forget-pw {
+    color: $color-pink;
+  }
+
+  .have-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-gray;
+
+    button {
+      margin-left: 4px;
+      font-size: $font-size-large;
+      color: $color-pink;
+    }
+  }
+
+  .btn-login {
+    display: block;
+    margin: 0 auto;
+    width: 335px;
+    height: 44px;
+    background-color: $color-pink;
+    border-radius: 6px;
+    font-size: $font-size-huge;
+    color: $color-white;
+    cursor: pointer;
+  }
+}
