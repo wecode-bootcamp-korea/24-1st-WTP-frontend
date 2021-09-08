@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import './Movie.scss';
 
 class Movie extends Component {
@@ -10,12 +11,16 @@ class Movie extends Component {
       released_date,
       country_name,
       average_rating,
+      movie_id,
     } = this.props.data;
     const released_year = released_date.substring(0, 4);
     const average_rating_number = Number(average_rating);
     const country = country_name[0];
     return (
-      <div className={`Movie ${ranking}`}>
+      <div
+        className={`Movie ${ranking}`}
+        onClick={() => this.props.history.push(`/detail/${movie_id}`)}
+      >
         <div className="movie-poster-container">
           <img className="movie-poster" alt={movie_name} src={poster_image} />
           <div className="movie-ranking">{ranking}</div>
@@ -45,4 +50,4 @@ class Movie extends Component {
   }
 }
 
-export default Movie;
+export default withRouter(Movie);
