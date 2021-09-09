@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MovieList from './MovieList/MovieList';
 import './Main.scss';
 import { GET_MOVIES_LIST } from '../../config';
-// import Modal from '../../components/Modal/Modal';
 
 export default class Main extends Component {
   constructor() {

@@ -1,6 +1,6 @@
 @import '../../../styles/variables.scss';
 
-.modal {
+.profile-modal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: space-around;
     width: 380px;
-    height: 900px;
+    height: 90%;
     background-color: $color-white;
     border-radius: 10px;
     left: 50%;
