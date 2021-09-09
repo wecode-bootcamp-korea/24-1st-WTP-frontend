@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import MovieList from './MovieList/MovieList';
 import './Main.scss';
 import { GET_MOVIES_LIST } from '../../config';
-=======
 // import Modal from '../../components/Modal/Modal';
->>>>>>> main
 
 export default class Main extends Component {
   constructor() {
@@ -54,7 +51,6 @@ export default class Main extends Component {
   // }
 
   render() {
-<<<<<<< HEAD
     const { movies1, movies2, movies3, movies4 } = this.state;
     return (
       <main className="main">
@@ -64,8 +60,5 @@ export default class Main extends Component {
         <MovieList collectionMovies="별점 높은 영화" data={movies4} />
       </main>
     );
-=======
-    return <div></div>;
->>>>>>> main
   }
 }
