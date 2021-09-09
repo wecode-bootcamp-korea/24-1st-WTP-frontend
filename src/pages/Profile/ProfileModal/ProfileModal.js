@@ -5,7 +5,7 @@ class ProfileModal extends Component {
   render() {
     const { click } = this.props;
     return (
-      <div className="modal" onClick={click}>
+      <div className="profile-modal" onClick={click}>
         <div className="modal-container" onClick={e => e.stopPropagation()}>
           <div className="margin-left modal-close" onClick={click}>
             &#215;
