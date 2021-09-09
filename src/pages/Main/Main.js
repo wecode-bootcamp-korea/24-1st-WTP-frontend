@@ -25,34 +25,18 @@ export default class Main extends Component {
       });
   };
 
-  // getMockData = (key, api) => {
-  //   fetch(`data/${api}.json`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         [key]: data.MOVIE_LIST,
-  //       });
-  //     });
-  // };
-
   componentDidMount() {
     this.getData('movies1', 'country=한국');
     this.getData('movies2', 'country=외국');
     this.getData('movies3', 'genre1=드라마&genre2=로맨스');
     this.getData('movies4', 'rating=0');
   }
+
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       window.scrollTo(0, 0);
     }
   }
-  // mock data
-  // componentDidMount() {
-  //   this.getMockData('movies1', 'KoreanMovies');
-  //   this.getMockData('movies2', 'ForeignMovies');
-  //   this.getMockData('movies3', 'DramaRomanceMovies');
-  //   this.getMockData('movies4', 'MoviesRating');
-  // }
 
   render() {
     const { movies1, movies2, movies3, movies4 } = this.state;

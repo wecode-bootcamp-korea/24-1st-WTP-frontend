@@ -36,10 +36,10 @@ export class Button extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.MESSAGE) {
+        if (response.MESSAGE === 'User Registered!') {
           alert('앗차피디아에 오신 것을 환영합니다.');
         } else {
-          alert('이름, 이메일, 비밀번호를 다시 입력해주세요.');
+          alert('중복된 이메일입니다.');
         }
       });
   };

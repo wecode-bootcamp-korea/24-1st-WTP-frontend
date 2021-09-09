@@ -5,9 +5,6 @@ import './SimilarThings.scss';
 class SimilarThings extends Component {
   goToDetail = genre => {
     this.props.history.push(`/details/${genre.movie_id}`);
-
-    // window.location.replace 메소드를 사용하게 되면 페이지 자체가 새로고침 되기 때문에 효율적이지 않다.
-    // window.location.replace(`/details/${genre.movie_id}`);
   };
 
   render() {

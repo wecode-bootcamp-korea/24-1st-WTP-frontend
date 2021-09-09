@@ -7,7 +7,7 @@ export class Validation extends Component {
     const isValid = handleValid(value);
 
     return (
-      <div className="validation">
+      <div className="input-validation">
         {type !== 'password' ? (
           <p
             className="alert"

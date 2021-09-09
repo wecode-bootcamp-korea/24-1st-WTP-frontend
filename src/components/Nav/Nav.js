@@ -58,9 +58,17 @@ export default class Nav extends Component {
         <nav className="navbar">
           <div className="navbar-container">
             <div className="navbar-left">
-              <img src="/images/AtchaPedia_Logo_Small.png" alt="logo" />
+              <Link to="/">
+                <img
+                  className="atcha-logo"
+                  src="/images/AtchaPedia_Logo_Small.png"
+                  alt="logo"
+                />
+              </Link>
               <div className="sorts-contents">
-                <span>영화</span>
+                <Link to="/">
+                  <span>영화</span>
+                </Link>
                 <span>TV 프로그램</span>
                 <span>책</span>
               </div>
@@ -68,7 +76,7 @@ export default class Nav extends Component {
             <div className="navbar-right">
               <div className="search-bar">
                 <div className="search-container">
-                  <i class="fas fa-search"></i>
+                  <i className="fas fa-search"></i>
                   <SearchInput
                     userInput={userInput}
                     searchClicked={searchClicked}
