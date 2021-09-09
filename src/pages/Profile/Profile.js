@@ -51,7 +51,7 @@ export default class Profile extends Component {
           <div className="profile-container-bottom">
             <div className="bottom-top">
               <div className="bottom-top-movie">영화</div>
-              <div className="bottom-top-star">★ 42</div>
+              <div className="bottom-top-star">★ 39</div>
             </div>
             <div className="bottom-bottom">
               <div className="bottom-top-like">보고 싶어요 32</div>
