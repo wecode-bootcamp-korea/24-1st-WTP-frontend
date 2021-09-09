@@ -24,7 +24,7 @@ class MoviesCarousel extends Component {
   };
 
   render() {
-    const marginTopValue = (this.state.carouselNumber * -800).toString();
+    const marginTopValue = (this.state.carouselNumber * -680).toString();
     const { minusCarouselNumber, plusCarouselNumber } = this;
     const Carousel = CarouselData.map((Data, index) => {
       return (

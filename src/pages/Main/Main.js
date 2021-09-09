@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieList from './MovieList/MovieList';
+import MoviesCarousel from './MoviesCarousel/MoviesCarousel';
 import './Main.scss';
 import { GET_MOVIES_LIST } from '../../config';
 
@@ -53,6 +54,7 @@ export default class Main extends Component {
     const { movies1, movies2, movies3, movies4 } = this.state;
     return (
       <main className="main">
+        <MoviesCarousel />
         <MovieList collectionMovies="한국 영화 순위" data={movies1} />
         <MovieList collectionMovies="외국 영화 순위" data={movies2} />
         <MovieList collectionMovies="드라마 로맨스 순위" data={movies3} />
