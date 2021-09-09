@@ -105,7 +105,7 @@ export default class Contents extends Component {
       fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/user-rate`, {
         method: 'POST',
         headers: {
-          authorization: localStorage.getItem('login-token'), // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjJ9.mXKzpLEKc5mJTCU6dPE60LQiaz0ZLo7pAyQ4zI25fgw',
+          authorization: localStorage.getItem('login-token'),
         },
         body: JSON.stringify({ rate: index }),
       })
@@ -163,16 +163,13 @@ export default class Contents extends Component {
 
   //코멘트 작성 버튼 클릭 이벤트
   addComment = mycomment => {
-    fetch(
-      `http://10.58.2.252:8000/movies/${this.props.match.params.id}/comments`,
-      {
-        method: 'POST',
-        headers: {
-          authorization: localStorage.getItem('login-token'),
-        },
-        body: JSON.stringify({ comment: mycomment }),
-      }
-    )
+    fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/comments`, {
+      method: 'POST',
+      headers: {
+        authorization: localStorage.getItem('login-token'),
+      },
+      body: JSON.stringify({ comment: mycomment }),
+    })
       .then(response => response.json())
       .then(this.setState({ modalOpen: false, isComment: true }));
   };
@@ -189,7 +186,6 @@ export default class Contents extends Component {
   onLikeClick = comments => {
     const isLiked = this.state.comments.map(message => {
       if (comments.user_name === message.user_name) {
-        console.log(!message.isLiked);
         return { ...message, isLiked: !message.isLiked };
       } else {
         return message;
