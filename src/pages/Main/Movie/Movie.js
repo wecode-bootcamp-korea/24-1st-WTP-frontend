@@ -19,7 +19,7 @@ class Movie extends Component {
     return (
       <div
         className={`Movie ${ranking}`}
-        onClick={() => this.props.history.push(`/detail/${movie_id}`)}
+        onClick={() => this.props.history.push(`/details/${movie_id}`)}
       >
         <div className="movie-poster-container">
           <img className="movie-poster" alt={movie_name} src={poster_image} />

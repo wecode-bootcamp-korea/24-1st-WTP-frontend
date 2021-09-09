@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MovieList from './MovieList/MovieList';
 import './Main.scss';
 import { GET_MOVIES_LIST } from '../../config';
-// import Modal from '../../components/Modal/Modal';
 
 export default class Main extends Component {
   constructor() {
@@ -41,7 +40,11 @@ export default class Main extends Component {
     this.getData('movies3', 'genre1=드라마&genre2=로맨스');
     this.getData('movies4', 'rating=0');
   }
-
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      window.scrollTo(0, 0);
+    }
+  }
   // mock data
   // componentDidMount() {
   //   this.getMockData('movies1', 'KoreanMovies');

@@ -1,8 +1,9 @@
 @import '../../../styles/variables.scss';
 
-.movie-info {
+.movie-infos {
   display: flex;
   justify-content: center;
+  width: 100vw;
   height: 220px;
   margin: 0 auto 20px;
   padding: 0 200px;

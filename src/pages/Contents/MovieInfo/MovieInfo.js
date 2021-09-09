@@ -34,7 +34,7 @@ class MovieInfo extends Component {
     const country = movie_details.country && movie_details.country.join('/');
 
     return (
-      <section className="movie-info">
+      <section className="movie-infos">
         <header>
           <img src={poster_image} className="movie-poster" alt="영화 포스터" />
           <div className="movie-release">

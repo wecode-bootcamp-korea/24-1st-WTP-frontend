@@ -18,7 +18,6 @@ export default class Contents extends Component {
     comments: [],
     setRating: 0,
     setHoverRating: 0,
-    isClicked: false,
     clickBtn: false,
     modalOpen: false,
     mycomment: '',
@@ -27,18 +26,20 @@ export default class Contents extends Component {
   };
 
   componentDidMount() {
+    console.log(12);
     this.getData();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
+      window.scrollTo(0, 0);
       this.getData();
       this.setState({
         mycomment: this.state.mycomment,
         clickBtn: false,
-        isClicked: false,
         isComment: false,
       });
+
       // .then(window.scrollTo(0, 0));
 
       // if (prevProps.mycomment !== this.state.mycomment) {
@@ -67,7 +68,7 @@ export default class Contents extends Component {
 
     //로그인을 해서 토큰이 있을 시 setRating에 별점 등록
     if (localStorage.getItem('login-token')) {
-      fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/rate`, {
+      fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/user-rate`, {
         headers: {
           authorization: localStorage.getItem('login-token'),
         },
@@ -75,7 +76,7 @@ export default class Contents extends Component {
         .then(res => res.json())
         .then(res =>
           this.setState({
-            setRating: res.movie_info.user_rate,
+            setRating: res.user_rate,
           })
         );
       fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}`)
@@ -115,22 +116,21 @@ export default class Contents extends Component {
   //별점 클릭 이벤트
   onClick = index => {
     if (localStorage.getItem('login-token')) {
-      fetch(
-        `http://10.58.2.252:8000/details/rate/${this.props.match.params.id}`,
-        {
-          method: 'POST',
-          headers: {
-            authorization: localStorage.getItem('login-token'), // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjJ9.mXKzpLEKc5mJTCU6dPE60LQiaz0ZLo7pAyQ4zI25fgw',
-          },
-          body: JSON.stringify({ rate: index }),
-        }
-      )
+      fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/user-rate`, {
+        method: 'POST',
+        headers: {
+          authorization: localStorage.getItem('login-token'), // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjJ9.mXKzpLEKc5mJTCU6dPE60LQiaz0ZLo7pAyQ4zI25fgw',
+        },
+        body: JSON.stringify({ rate: index }),
+      })
         .then(response => response.json())
         .then(
-          this.setState({ setRating: index, isClicked: !this.state.isClicked })
+          this.setState({
+            setRating: index.toFixed(1),
+          })
         )
         .then(
-          this.state.setRating === index &&
+          this.state.setRating === index.toFixed(1) &&
             this.setState({ setRating: 0, mycomment: '', isComment: false })
         );
     } else {
@@ -153,15 +153,15 @@ export default class Contents extends Component {
     const rating = {
       0: '평가하기',
       0.5: '최악이에요',
-      1: '싫어요',
+      '1.0': '싫어요',
       1.5: '별로예요',
-      2: '재미없어요',
+      '2.0': '재미없어요',
       2.5: '부족해요',
-      3: '보통이에요',
+      '3.0': '보통이에요',
       3.5: '볼만해요',
-      4: '재밌어요',
+      '4.0': '재밌어요',
       4.5: '훌륭해요!',
-      5: '최고예요!',
+      '5.0': '최고예요!',
     };
 
     return rating[setRating];
@@ -216,7 +216,6 @@ export default class Contents extends Component {
     const {
       setRating,
       setHoverRating,
-      isClicked,
       clickBtn,
       modalOpen,
       mycomment,
@@ -250,13 +249,14 @@ export default class Contents extends Component {
             ratingComment={this.ratingComment}
             setRating={setRating}
             setHoverRating={setHoverRating}
-            isClicked={isClicked}
             clickBtn={clickBtn}
             movie_details={movie_details}
           />
           <div className="main-contents">
             <div className="contents-align">
-              <div className={isClicked ? 'comment-contents' : 'disppear'}>
+              <div
+                className={setRating !== 0 ? 'comment-contents' : 'disppear'}
+              >
                 {isComment ? (
                   <>
                     <header className="title">
