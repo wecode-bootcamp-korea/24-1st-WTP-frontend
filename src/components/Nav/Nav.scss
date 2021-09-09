@@ -21,6 +21,7 @@
         width: 140px;
         height: 30px;
         margin: auto 30px auto 0;
+        cursor: pointer;
       }
 
       .sorts-contents {
@@ -29,6 +30,7 @@
           padding: 25px 12px 25px 12px;
           font-size: $font-size-medium;
           color: #7e7e7e;
+          cursor: pointer;
 
           &:first-child {
             color: #353535;
@@ -53,7 +55,7 @@
         .search-container {
           padding: 7px 10px 8px 32px;
 
-          i {
+          .fas.fa-search {
             position: absolute;
             width: 16px;
             top: 10px;
@@ -63,24 +65,51 @@
 
           .search-input {
             width: 100%;
+            font-size: 14.5px;
           }
         }
       }
 
-      .btn-login {
-        margin: 0px 18px 0px 18px;
-        color: #74747a;
-        cursor: pointer;
-      }
+      .btn-container {
+        position: relative;
+        display: flex;
 
-      .btn-signup {
-        display: inline-block;
-        margin: auto 0;
-        height: 32px;
-        padding: 0 14px;
-        border: 1px solid #b9b9bc;
-        border-radius: 5px;
-        cursor: pointer;
+        .btn-login {
+          height: 100%;
+          margin: 0px 18px 0px 18px;
+          font-size: 14.5px;
+          color: #74747a;
+          cursor: pointer;
+        }
+
+        .btn-signup {
+          display: inline-block;
+          margin: auto 0;
+          height: 32px;
+          padding: 0 14px;
+          border: 1px solid #b9b9bc;
+          border-radius: 5px;
+          font-size: 14.5px;
+          cursor: pointer;
+        }
+
+        .btn-logout {
+          height: 100%;
+          margin: 0px 18px 0px 18px;
+          font-size: 14.5px;
+          color: #74747a;
+          cursor: pointer;
+        }
+
+        .profile-container {
+          margin: auto 0;
+
+          .far.fa-user-circle {
+            font-size: 24px;
+            color: $color-gray;
+            cursor: pointer;
+          }
+        }
       }
     }
   }

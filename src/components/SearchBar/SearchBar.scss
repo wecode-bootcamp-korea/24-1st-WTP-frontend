@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.navmodal {
+  margin-top: 13px;
+  margin-left: -32px;
+
+  .wrapper {
+    width: 300px;
+    border: 1px solid $color-light-gray;
+    box-shadow: 0px 0px 1px $color-light-gray;
+    background-color: $color-white;
+    font-size: $font-size-small;
+
+    .related-search,
+    .popular-search {
+      margin: 4px 0 0 4px;
+      padding: 5px;
+      color: $color-pink;
+      font-size: $font-size-micro;
+    }
+
+    .popular-search {
+      border-top: 1px solid $color-light-gray;
+    }
+
+    .related-movie {
+      margin-left: 4px;
+
+      .pTag {
+        padding: 5px;
+
+        &:hover {
+          background-color: $color-background;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .popular-movie {
+      margin-left: 4px;
+      padding: 5px;
+
+      &:hover {
+        background-color: $color-background;
+        cursor: pointer;
+      }
+    }
+  }
+}
