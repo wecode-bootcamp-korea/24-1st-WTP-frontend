@@ -5,7 +5,7 @@ import SearchInput from '../SearchInput/SearchInput';
 import { Link } from 'react-router-dom';
 import './Nav.scss';
 
-export default class Nav extends Component {
+class Nav extends Component {
   constructor() {
     super();
     this.state = {
@@ -58,9 +58,17 @@ export default class Nav extends Component {
         <nav className="navbar">
           <div className="navbar-container">
             <div className="navbar-left">
-              <img src="/images/AtchaPedia_Logo_Small.png" alt="logo" />
+              <Link to="/">
+                <img
+                  className="atcha-logo"
+                  src="/images/AtchaPedia_Logo_Small.png"
+                  alt="logo"
+                />
+              </Link>
               <div className="sorts-contents">
-                <span>영화</span>
+                <Link to="/">
+                  <span>영화</span>
+                </Link>
                 <span>TV 프로그램</span>
                 <span>책</span>
               </div>
@@ -68,7 +76,7 @@ export default class Nav extends Component {
             <div className="navbar-right">
               <div className="search-bar">
                 <div className="search-container">
-                  <i class="fas fa-search"></i>
+                  <i className="fas fa-search"></i>
                   <SearchInput
                     userInput={userInput}
                     searchClicked={searchClicked}
@@ -96,9 +104,11 @@ export default class Nav extends Component {
                   </>
                 ) : (
                   <>
-                    <button className="btn-logout" onClick={handleLogout}>
-                      로그아웃
-                    </button>
+                    <Link to="/">
+                      <button className="btn-logout" onClick={handleLogout}>
+                        로그아웃
+                      </button>
+                    </Link>
                     <Link to="/profile" className="profile-container">
                       <i className="far fa-user-circle"></i>
                     </Link>
@@ -139,3 +149,5 @@ const inputData = [
     text: '비밀번호',
   },
 ];
+
+export default Nav;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { USERS_LIST } from '../../config';
 import ProfileModal from './ProfileModal/ProfileModal';
 import './Profile.scss';
 import { Link } from 'react-router-dom';
@@ -8,7 +9,22 @@ export default class Profile extends Component {
     super();
     this.state = {
       modal: false,
+      mymovies: [],
     };
+  }
+
+  componentDidMount() {
+    fetch(`${USERS_LIST}/mypage`, {
+      headers: {
+        authorization: localStorage.getItem('login-token'),
+      },
+    })
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          mymovies: res.movies,
+        })
+      );
   }
 
   click = () => {
@@ -19,6 +35,7 @@ export default class Profile extends Component {
   };
   render() {
     const { click } = this;
+    const { mymovies } = this.state;
     return (
       <div className="profile">
         <div className="profile-container">
@@ -34,7 +51,9 @@ export default class Profile extends Component {
             <img className="user-picture" alt="user" src="images/user.png" />
             <div className="profile-info">
               <div className="info-top">
-                <div className="profile-name">위코드</div>
+                <div className="profile-name">
+                  {localStorage.getItem('username')}
+                </div>
                 <img
                   className="atcha-logo"
                   alt="atcha-logo"
@@ -52,11 +71,10 @@ export default class Profile extends Component {
             <div className="profile-container-bottom">
               <div className="bottom-top">
                 <div className="bottom-top-movie">영화</div>
-                <div className="bottom-top-star">★ 39</div>
+                <br />
+                <div className="bottom-top-star">★ {mymovies.length}</div>
               </div>
-              <div className="bottom-bottom">
-                <div className="bottom-top-like">보고 싶어요 7</div>
-              </div>
+              <div className="bottom-bottom"></div>
             </div>
           </Link>
         </div>

@@ -17,7 +17,8 @@
     .navbar-left {
       display: flex;
 
-      img {
+      > a,
+      .atcha-logo {
         width: 140px;
         height: 30px;
         margin: auto 30px auto 0;

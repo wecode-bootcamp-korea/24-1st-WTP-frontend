@@ -26,7 +26,7 @@ export default class Contents extends Component {
   };
 
   componentDidMount() {
-    console.log(12);
+    window.scrollTo(0, 0);
     this.getData();
   }
 
@@ -39,20 +39,6 @@ export default class Contents extends Component {
         clickBtn: false,
         isComment: false,
       });
-
-      // .then(window.scrollTo(0, 0));
-
-      // if (prevProps.mycomment !== this.state.mycomment) {
-      //   fetch(
-      //     `http://10.58.0.58:8000/movies/${this.props.match.params.id}/comments`
-      //   )
-      //     .then(res => res.json())
-      //     .then(res =>
-      //       this.setState({
-      //         comments: res.MESSAGE,
-      //       })
-      //     );
-      // }
     }
   }
 

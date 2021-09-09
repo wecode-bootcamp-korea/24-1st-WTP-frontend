@@ -18,8 +18,10 @@ export class Button extends Component {
           localStorage.setItem('login-token', response.auth_token);
           localStorage.setItem('username', response.user_name);
           alert(`${response.user_name}님 환영합니다.`);
+        } else if (response.message === '존재하지 않는 아이디입니다!') {
+          alert('존재하지 않는 아이디입니다.');
         } else {
-          alert('이메일, 비밀번호를 다시 입력해주세요.');
+          alert('비밀번호가 일치하지 않습니다.');
         }
       });
   };
@@ -36,10 +38,16 @@ export class Button extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.MESSAGE) {
+        if (response.MESSAGE === 'User Registered!') {
           alert('앗차피디아에 오신 것을 환영합니다.');
+        } else if (response.MESSAGE === 'Existed E-Mail') {
+          alert('중복된 이메일입니다.');
+        } else if (response.MESSAGE === 'Wrong Name Form') {
+          alert('잘못된 이름 형식입니다.');
+        } else if (response.MESSAGE === 'Wrong Password Form') {
+          alert('잘못된 비밀번호 형식입니다.');
         } else {
-          alert('이름, 이메일, 비밀번호를 다시 입력해주세요.');
+          alert('잘못된 이메일 형식입니다.');
         }
       });
   };

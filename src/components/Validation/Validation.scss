@@ -1,8 +1,7 @@
 @import '../../styles/variables.scss';
 
-.validation {
-  margin: 8px 0 8px 0;
-  padding-left: 30px;
+.input-validation {
+  margin: 8px 0 8px 10px;
 
   .alert {
     justify-content: flex-start;
