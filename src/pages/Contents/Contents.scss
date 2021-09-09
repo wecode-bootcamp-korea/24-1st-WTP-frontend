@@ -122,7 +122,7 @@
           right: 0;
           bottom: 0;
           left: 0;
-          background-color: rgba(0, 0, 0, 0.6);
+          background-color: rgba(0, 0, 0, 0.3);
           animation: modal-bg-show 0.3s;
           z-index: 1;
 
@@ -131,7 +131,7 @@
             max-width: 550px;
             margin: 0 auto;
             border-radius: 0.3rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
             background-color: #ffff;
             animation: modal-show 0.3s;
 

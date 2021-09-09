@@ -30,15 +30,16 @@ export default class Contents extends Component {
     this.getData();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.getData();
       this.setState({
-        mycomment: '',
+        mycomment: this.state.mycomment,
         clickBtn: false,
         isClicked: false,
         isComment: false,
-      }).then(() => window.scrollTo(0, 0));
+      });
+      // .then(window.scrollTo(0, 0));
 
       // if (prevProps.mycomment !== this.state.mycomment) {
       //   fetch(
@@ -68,14 +69,20 @@ export default class Contents extends Component {
     if (localStorage.getItem('login-token')) {
       fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/rate`, {
         headers: {
-          Authorization: localStorage.getItem('login-token'),
+          authorization: localStorage.getItem('login-token'),
         },
       })
         .then(res => res.json())
         .then(res =>
           this.setState({
-            movie_details: res.movie_info,
             setRating: res.movie_info.user_rate,
+          })
+        );
+      fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}`)
+        .then(res => res.json())
+        .then(res =>
+          this.setState({
+            movie_details: res.movie_info,
           })
         );
       //로그인이 안되어있으면 setRating:0
@@ -108,14 +115,16 @@ export default class Contents extends Component {
   //별점 클릭 이벤트
   onClick = index => {
     if (localStorage.getItem('login-token')) {
-      fetch('http://10.58.7.127:8000/details/rate/', {
-        method: 'POST',
-        headers: {
-          authorization:
-            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjJ9.mXKzpLEKc5mJTCU6dPE60LQiaz0ZLo7pAyQ4zI25fgw',
-        },
-        body: JSON.stringify({ rate: index }),
-      })
+      fetch(
+        `http://10.58.2.252:8000/details/rate/${this.props.match.params.id}`,
+        {
+          method: 'POST',
+          headers: {
+            authorization: localStorage.getItem('login-token'), // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjJ9.mXKzpLEKc5mJTCU6dPE60LQiaz0ZLo7pAyQ4zI25fgw',
+          },
+          body: JSON.stringify({ rate: index }),
+        }
+      )
         .then(response => response.json())
         .then(
           this.setState({ setRating: index, isClicked: !this.state.isClicked })
@@ -169,12 +178,11 @@ export default class Contents extends Component {
   //코멘트 작성 버튼 클릭 이벤트
   addComment = mycomment => {
     fetch(
-      `http://10.58.0.52:8000/movies/${this.props.match.params.id}/comments`,
+      `http://10.58.2.252:8000/movies/${this.props.match.params.id}/comments`,
       {
         method: 'POST',
         headers: {
-          authorization:
-            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.W9-3lURyw0K9piGHr-L-Kdfc6UkMpSwwYeV9iggRQTs',
+          authorization: localStorage.getItem('login-token'),
         },
         body: JSON.stringify({ comment: mycomment }),
       }
@@ -219,13 +227,13 @@ export default class Contents extends Component {
       goLogin,
     } = this.state;
 
-    const { image_url, title } = movie_details;
+    const { image_url, title, trailer, participants } = movie_details;
 
     return (
       <div className="contents">
         <div className="background">
           <section className="background">
-            <div className="background-gradient"></div>
+            {/* <div className="background-gradient"></div> */}
             <img
               src={image_url && image_url[0]}
               className="background-image"
@@ -304,6 +312,7 @@ export default class Contents extends Component {
                   </section>
                 </div>
               )}
+
               {modalOpen && (
                 <CommentModal
                   close={this.closeModal}
@@ -315,15 +324,12 @@ export default class Contents extends Component {
               )}
               <div className="contents-all">
                 <BasicInfo movie_details={movie_details} />
-                <Process participants={movie_details.participants} />
+                <Process participants={participants} />
                 <Comments comments={comments} onClick={this.onLikeClick} />
                 <SimilarThings related_movies={related_movies} />
               </div>
             </div>
-            <Aside
-              trailer={movie_details.trailer}
-              image={movie_details.image_url}
-            />
+            <Aside trailer={trailer} image={image_url} />
           </div>
         </div>
       </div>
