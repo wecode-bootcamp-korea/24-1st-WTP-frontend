@@ -51,7 +51,9 @@ export default class Profile extends Component {
             <img className="user-picture" alt="user" src="images/user.png" />
             <div className="profile-info">
               <div className="info-top">
-                <div className="profile-name">위코드</div>
+                <div className="profile-name">
+                  {localStorage.getItem('username')}
+                </div>
                 <img
                   className="atcha-logo"
                   alt="atcha-logo"

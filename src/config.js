@@ -1,4 +1,4 @@
-const MOVIES_INFO = 'http://10.58.2.252:8000';
+const MOVIES_INFO = 'http://10.58.2.193:8000';
 
 //login,signup
 export const USERS_LIST = `${MOVIES_INFO}/users`;

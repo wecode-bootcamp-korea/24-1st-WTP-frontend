@@ -45,7 +45,7 @@ export default class Main extends Component {
         <MoviesCarousel />
         <MovieList collectionMovies="한국 영화 순위" data={movies1} />
         <MovieList collectionMovies="외국 영화 순위" data={movies2} />
-        <MovieList collectionMovies="드라마 로맨스 순위" data={movies3} />
+        <MovieList collectionMovies="드라마 액션 순위" data={movies3} />
         <MovieList collectionMovies="별점 높은 영화" data={movies4} />
       </main>
     );

@@ -5,7 +5,7 @@ import SearchInput from '../SearchInput/SearchInput';
 import { Link } from 'react-router-dom';
 import './Nav.scss';
 
-export default class Nav extends Component {
+class Nav extends Component {
   constructor() {
     super();
     this.state = {
@@ -104,9 +104,11 @@ export default class Nav extends Component {
                   </>
                 ) : (
                   <>
-                    <button className="btn-logout" onClick={handleLogout}>
-                      로그아웃
-                    </button>
+                    <Link to="/">
+                      <button className="btn-logout" onClick={handleLogout}>
+                        로그아웃
+                      </button>
+                    </Link>
                     <Link to="/profile" className="profile-container">
                       <i className="far fa-user-circle"></i>
                     </Link>
@@ -147,3 +149,5 @@ const inputData = [
     text: '비밀번호',
   },
 ];
+
+export default Nav;
