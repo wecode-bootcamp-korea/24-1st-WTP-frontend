@@ -163,16 +163,13 @@ export default class Contents extends Component {
 
   //코멘트 작성 버튼 클릭 이벤트
   addComment = mycomment => {
-    fetch(
-      `http://10.58.2.252:8000/movies/${this.props.match.params.id}/comments`,
-      {
-        method: 'POST',
-        headers: {
-          authorization: localStorage.getItem('login-token'),
-        },
-        body: JSON.stringify({ comment: mycomment }),
-      }
-    )
+    fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/comments`, {
+      method: 'POST',
+      headers: {
+        authorization: localStorage.getItem('login-token'),
+      },
+      body: JSON.stringify({ comment: mycomment }),
+    })
       .then(response => response.json())
       .then(this.setState({ modalOpen: false, isComment: true }));
   };
