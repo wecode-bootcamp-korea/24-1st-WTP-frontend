@@ -1,0 +1,88 @@
+@import '../../../styles/variables.scss';
+
+$movie-text-margin: 9px 0px;
+
+.Movie {
+  margin-right: 10px;
+  cursor: pointer;
+
+  // 왓챠피디아에 없음 추가 구현
+  &:hover {
+    .movie-poster {
+      transform: scale(1.05);
+      transition: transform 4.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  }
+
+  .movie-poster-container {
+    position: relative;
+    // height: 380px;
+    // width: 275px;
+    height: 358px;
+    width: 258px;
+    overflow: hidden;
+    border: 1px solid #eae9e8;
+    border-radius: 5px;
+
+    .movie-poster {
+      height: 358px;
+      width: 258px;
+      z-index: 1;
+    }
+
+    .movie-ranking {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 29px;
+      height: 29px;
+      top: 5px;
+      left: 5px;
+      color: $color-white;
+      font-weight: bold;
+      font-size: $font-size-large;
+      font-weight: 700;
+      opacity: 0.85;
+      border-radius: 4px;
+      background-color: $color-black;
+    }
+
+    .atcha-logo {
+      position: absolute;
+      width: 29px;
+      height: 29px;
+      padding: 3px;
+      top: 5px;
+      right: 5px;
+      box-shadow: 0px 1px 1px 0px;
+      background-color: $color-white;
+      border-radius: 50%;
+    }
+  }
+
+  .movie-info {
+    margin: $movie-text-margin;
+
+    .movie-title {
+      width: 260px;
+      margin: $movie-text-margin;
+      padding-top: 3px;
+      overflow: hidden;
+      font-size: $font-size-large;
+      font-weight: 500;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .movie-product-info {
+      margin: $movie-text-margin;
+      font-size: $font-size-small;
+    }
+
+    .movie-audience-info {
+      font-size: $font-size-small;
+      color: #74747b;
+    }
+  }
+}
