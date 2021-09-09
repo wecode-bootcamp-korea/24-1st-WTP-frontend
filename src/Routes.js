@@ -6,6 +6,7 @@ import Contents from './pages/Contents/Contents';
 import Profile from './pages/Profile/Profile';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
+import MoviesCarousel from './pages/Main/MoviesCarousel/MoviesCarousel';
 
 class Routes extends Component {
   render() {
