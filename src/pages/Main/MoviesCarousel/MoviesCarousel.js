@@ -26,9 +26,9 @@ class MoviesCarousel extends Component {
   render() {
     const marginTopValue = (this.state.carouselNumber * -800).toString();
     const { minusCarouselNumber, plusCarouselNumber } = this;
-    const Carousel = CarouselData.map(Data => {
+    const Carousel = CarouselData.map((Data, index) => {
       return (
-        <div className="carousel-container">
+        <div className="carousel-container" key={index}>
           <div className="carousel-content">
             <div className="arrow-left" onClick={minusCarouselNumber}>
               &#60;
