@@ -105,7 +105,7 @@ export default class Contents extends Component {
       fetch(`${GET_MOVIES_BASIC}${this.props.match.params.id}/user-rate`, {
         method: 'POST',
         headers: {
-          authorization: localStorage.getItem('login-token'), // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjJ9.mXKzpLEKc5mJTCU6dPE60LQiaz0ZLo7pAyQ4zI25fgw',
+          authorization: localStorage.getItem('login-token'),
         },
         body: JSON.stringify({ rate: index }),
       })
@@ -186,7 +186,6 @@ export default class Contents extends Component {
   onLikeClick = comments => {
     const isLiked = this.state.comments.map(message => {
       if (comments.user_name === message.user_name) {
-        console.log(!message.isLiked);
         return { ...message, isLiked: !message.isLiked };
       } else {
         return message;
