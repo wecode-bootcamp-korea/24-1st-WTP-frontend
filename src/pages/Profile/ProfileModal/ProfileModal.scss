@@ -1,0 +1,63 @@
+@import '../../../styles/variables.scss';
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000080;
+  z-index: 10000;
+
+  .modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 380px;
+    height: 900px;
+    background-color: $color-white;
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+
+    .settings {
+      border-bottom: 1px solid #e3e3e3;
+      font-size: 22px;
+      font-weight: 700;
+      width: 100%;
+      padding-left: 15px;
+      padding-bottom: 10px;
+    }
+
+    .settings-detail {
+      border-bottom: 1px solid #e3e3e3;
+      margin-left: 15px;
+      margin-right: 15px;
+      padding-bottom: 15px;
+      font-size: $font-size-huge;
+    }
+
+    .service-settings {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .light-font {
+      color: #a4a4a4;
+    }
+
+    .margin-left {
+      margin-left: 15px;
+    }
+
+    .modal-close {
+      font-size: 30px;
+      margin-bottom: -15px;
+      color: #ff2f6e;
+      cursor: pointer;
+    }
+  }
+}

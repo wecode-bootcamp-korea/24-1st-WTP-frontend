@@ -1,0 +1,63 @@
+.mymovies {
+  margin-top: 51px;
+
+  .movie {
+    font-size: 22px;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3e3e3;
+  }
+
+  .mymovies-container {
+    padding-left: 20px;
+
+    .evaluation {
+      display: flex;
+      align-items: center;
+      margin: 30px 0px 10px 0px;
+      font-size: 19px;
+      font-weight: 700;
+
+      .number-of-movies {
+        margin-left: 5px;
+        font-size: 15px;
+        font-weight: normal;
+        color: #b0b0b0;
+      }
+    }
+    .movie-list {
+      margin-bottom: 30px;
+
+      .movie-wrap {
+        display: inline-block;
+        padding: 7px;
+        margin-top: 15px;
+        cursor: pointer;
+
+        .movie-poster {
+          border: 1px solid #eae9e8;
+          border-radius: 4px;
+          width: 120px;
+          height: 180px;
+        }
+
+        .movie-name {
+          margin: 7px 0px 5px 0px;
+          font-size: 16px;
+          font-weight: 500;
+          width: 120px;
+          padding-top: 2px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .movie-rating {
+          font-size: 13px;
+          color: #ffa136;
+        }
+      }
+    }
+  }
+}

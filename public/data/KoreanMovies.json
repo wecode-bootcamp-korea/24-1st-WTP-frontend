@@ -1,0 +1,60 @@
+{
+  "MOVIE_LIST": [
+    {
+      "country_name": ["한국"],
+      "movie_name": "캐치미",
+      "released_date": "2013-12-18",
+      "average_rating": "4.0",
+      "poster_image": "http://t1.daumcdn.net/cfile/2614494D52A565F20D"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "건축학개론",
+      "released_date": "2012-03-22",
+      "average_rating": "3.6",
+      "poster_image": "http://t1.daumcdn.net/cfile/1141944C4F4B753125"
+    },
+    {
+      "country_name": ["일본"],
+      "movie_name": "지금, 만나러 갑니다",
+      "released_date": "2004-10-30",
+      "average_rating": "3.9",
+      "poster_image": "http://t1.daumcdn.net/movie/6b0595bfd73cdf3d34e54929e1bf01360bde9ac8"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "엽기적인 그녀",
+      "released_date": "2001-07-27",
+      "average_rating": "4.5",
+      "poster_image": "https://t1.daumcdn.net/movie/b3e490cb512acb3b582b97815825eed87bfd45cf"
+    },
+    {
+      "country_name": ["일본"],
+      "movie_name": "러브레터",
+      "released_date": "1999-11-20",
+      "average_rating": "4.0",
+      "poster_image": "https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/rsA/image/irhST_oCcWdkmqoU-3hsjHONgN4.jpg"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "쉬리",
+      "released_date": "1999-02-13",
+      "average_rating": "5.0",
+      "poster_image": "http://t1.daumcdn.net/cfile/12110210A9176D6FEC"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "굿 윌 헌팅",
+      "released_date": "1998-03-21",
+      "average_rating": "4.2",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/f/fd/%EA%B5%BF_%EC%9C%8C_%ED%97%8C%ED%8C%85.jpg"
+    },
+    {
+      "country_name": ["한국"],
+      "movie_name": "8월의 크리스마스",
+      "released_date": "1998-01-24",
+      "average_rating": "4.5",
+      "poster_image": "http://t1.daumcdn.net/cfile/21358D4C52695E1204"
+    }
+  ]
+}

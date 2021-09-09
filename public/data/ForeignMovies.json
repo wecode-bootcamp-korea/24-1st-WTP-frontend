@@ -1,0 +1,102 @@
+{
+  "MOVIE_LIST": [
+    {
+      "country_name": ["미국"],
+      "movie_name": "조커",
+      "released_date": "2019-10-04",
+      "average_rating": "3.9",
+      "poster_image": "https://t1.daumcdn.net/cfile/tistory/994A84365DA09E1208"
+    },
+    {
+      "country_name": ["영국"],
+      "movie_name": "콜드체이싱",
+      "released_date": "2019-02-08",
+      "average_rating": "2.9",
+      "poster_image": "http://t1.daumcdn.net/movie/d35c174b231f4be886f05b889566d34c1551055804076"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "블레이드 러너 2049",
+      "released_date": "2017-10-06",
+      "average_rating": "3.7",
+      "poster_image": "https://post-phinf.pstatic.net/MjAxNzA5MjhfMTI4/MDAxNTA2NTgzOTE5ODAz.Apde24badSiUEajKiEM-Fu1B24gjesJxJUyQOGb9pYsg.YvVqS-fwnXTTV-kEB-eQH0kvLXPOtHnoEvhzAiuJ-Tkg.JPEG/MV5BMjM3NjcxNDM4Ml5BMl5BanBnXkFtZTgwMjI4NDIzMzI._V1_SY1000_CR0%2C0%2C648%2C1000_AL_.jpg?type=w1200"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "라라랜드",
+      "released_date": "2016-12-09",
+      "average_rating": "4.2",
+      "poster_image": "https://mblogthumb-phinf.pstatic.net/MjAxNjEyMTJfMjA3/MDAxNDgxNTIyNjE2Mzky.fY16g8Cdd5bN19zUL3puDwUkD64aCtT_IvZBVEfGIWAg.ojPp0dh9ZvkE82gHCRqckC0w6OfUxSHmHQLs7ayADXIg.JPEG.entombed/2307.jpg?type=w800"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "그래비티",
+      "released_date": "2013-10-17",
+      "average_rating": "4.0",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/2/28/%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "독일", "스페인"],
+      "movie_name": "킹덤 오브 헤븐",
+      "released_date": "2005-05-05",
+      "average_rating": "3.7",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/a/ac/%ED%82%B9%EB%8D%A4%EC%98%A4%EB%B8%8C%ED%97%A4%EB%B8%90_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "헝가리"],
+      "movie_name": "콘스탄틴",
+      "released_date": "2005-02-08",
+      "average_rating": "3.9",
+      "poster_image": "https://mblogthumb-phinf.pstatic.net/MjAxNjEyMTJfMjEw/MDAxNDgxNTM0ODYzOTE0.sGKg-u4ziXkZnknkYo7njulnsMwN41bj3xXv0TwVOG4g.3Pfc4Nwk8u9xXyFEEBlD2GBmykh8PvRCARfsetpfQkYg.JPEG.vegadora/%EC%BD%98%EC%8A%A4%ED%83%84%ED%8B%B4.jpg?type=w800"
+    },
+    {
+      "country_name": ["일본"],
+      "movie_name": "지금, 만나러 갑니다",
+      "released_date": "2004-10-30",
+      "average_rating": "3.9",
+      "poster_image": "http://t1.daumcdn.net/movie/6b0595bfd73cdf3d34e54929e1bf01360bde9ac8"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "해리포터와 아즈카반의 죄수",
+      "released_date": "2004-07-16",
+      "average_rating": "4.1",
+      "poster_image": "https://w.namu.la/s/e3adb04ece82d807ff8a67bcdd7f4fb684dbcd16919abaf4febfe94d1a509506d3bfce10050fce63515ce685d286031d52880a306079b9fbb5d174de43c44afd2731879dccd3c08b814d20fe218a060eb2fea374c3fdf0ba89f068463117b032"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "마이너리티 리포트",
+      "released_date": "2002-07-26",
+      "average_rating": "4.0",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/b/be/%EB%A7%88%EC%9D%B4%EB%84%88%EB%A6%AC%ED%8B%B0_%EB%A6%AC%ED%8F%AC%ED%8A%B8_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국", "영국"],
+      "movie_name": "글래디에이터",
+      "released_date": "2000-06-03",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/7/70/%EA%B8%80%EB%9E%98%EB%94%94%EC%97%90%EC%9D%B4%ED%84%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%EA%B8%80%EB%9E%98%EB%94%94%EC%97%90%EC%9D%B4%ED%84%B0_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["일본"],
+      "movie_name": "러브레터",
+      "released_date": "1999-11-20",
+      "average_rating": "4.0",
+      "poster_image": "https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/rsA/image/irhST_oCcWdkmqoU-3hsjHONgN4.jpg"
+    },
+    {
+      "country_name": ["미국", "독일", "이탙리아"],
+      "movie_name": "파이트클럽",
+      "released_date": "1999-11-13",
+      "average_rating": "4.1",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/thumb/b/bb/%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/220px-%ED%8C%8C%EC%9D%B4%ED%8A%B8%ED%81%B4%EB%9F%BD_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg"
+    },
+    {
+      "country_name": ["미국"],
+      "movie_name": "굿 윌 헌팅",
+      "released_date": "1998-03-21",
+      "average_rating": "4.2",
+      "poster_image": "https://upload.wikimedia.org/wikipedia/ko/f/fd/%EA%B5%BF_%EC%9C%8C_%ED%97%8C%ED%8C%85.jpg"
+    }
+  ]
+}
