@@ -1,1 +1,104 @@
-//안녕하세요
+@import '../../../styles/variables.scss';
+
+.aside-all {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 0;
+  border: 1.5px solid #e3e3e3;
+  border-radius: 5px;
+  background-color: $color-white;
+
+  .gallery {
+    position: relative;
+    width: 323px;
+    overflow: hidden;
+
+    .process-move-arrow {
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 60px;
+      color: #7b7c82;
+      background-color: $color-white;
+      font-size: 20px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 1px 0px;
+      cursor: pointer;
+      opacity: 0.2;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        color: $color-black;
+        opacity: 0.8;
+      }
+    }
+
+    .left-arrow {
+      left: 10px;
+      top: 68px;
+      z-index: 10;
+    }
+
+    .right-arrow {
+      right: 10px;
+      top: 68px;
+    }
+
+    .title {
+      margin: 15px 20px;
+    }
+
+    &::after {
+      &:first-child {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+        border-bottom: 1px solid #f0f0f0;
+      }
+    }
+
+    .gallery-pictures {
+      display: flex;
+      justify-content: flex-start;
+      width: 323px;
+      margin: 10px 0 20px;
+      transition: all 0.8s;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .gallery-picture-sec {
+        position: relative;
+        margin-left: 10px;
+
+        &:first-child {
+          margin-left: 20px;
+        }
+
+        .gallery-picture,
+        .trailer-picture {
+          width: 135px;
+          border-radius: 4px;
+        }
+
+        .fa-play-circle {
+          position: absolute;
+          color: $color-white;
+          right: 45px;
+          top: 25px;
+          font-size: 45px;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}

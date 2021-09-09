@@ -1,0 +1,45 @@
+.similar-things {
+  margin: 10px 0;
+
+  .title {
+    margin: 30px 20px;
+  }
+
+  .similar-content {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 10px;
+
+    .similarcontent-all {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 598px;
+
+      .similarcontent {
+        display: flex;
+        flex-direction: column;
+        margin: 0 5px 20px;
+        cursor: pointer;
+
+        .similarcontent-poster {
+          width: 139px;
+          height: 200px;
+          border-radius: 4px;
+        }
+
+        .similar-title {
+          margin: 7px 0 5px;
+        }
+
+        .similar-star {
+          margin: 2px 0;
+        }
+
+        .similar-genre {
+          margin: 3px 0;
+        }
+      }
+    }
+  }
+}

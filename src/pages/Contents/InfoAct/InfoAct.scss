@@ -1,0 +1,84 @@
+@import '../../../styles/variables.scss';
+
+.info-act {
+  display: flex;
+  align-items: flex-end;
+
+  .star-contents {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    > span {
+      font-size: 13px;
+      color: #787878;
+      margin-bottom: 5px;
+    }
+  }
+  .act.act-button {
+    display: flex;
+    width: 250px;
+    height: 45px;
+    background-color: #fbfbfb;
+    border: 1px solid $color-light-gray;
+    border-radius: 7px;
+    cursor: pointer;
+
+    &:hover {
+      .fa-plus {
+        transform: rotate(90deg);
+      }
+    }
+    .button-contents {
+      margin: auto;
+
+      > i {
+        margin-right: 10px;
+        font-size: 16px;
+        color: $color-pink;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .button-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: $color-light-black;
+      }
+    }
+  }
+
+  .act-button {
+    display: flex;
+    width: 250px;
+    height: 45px;
+    background-color: $color-pink;
+    border-radius: 7px;
+    cursor: pointer;
+
+    &:hover {
+      .fa-plus {
+        transform: rotate(90deg);
+      }
+    }
+
+    .button-contents {
+      margin: auto;
+
+      > i {
+        margin-right: 10px;
+        font-size: 16px;
+        color: $color-white;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .button-text {
+        font-size: 18px;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.disppear {
+  display: none;
+}

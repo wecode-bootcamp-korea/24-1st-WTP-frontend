@@ -1,12 +1,9 @@
-const MOVIES_BASE_URL = 'http://10.58.0.58:8000';
+const MOVIES_INFO = 'http://10.58.2.252:8000';
 
-export const GET_MOVIES_LIST = `${MOVIES_BASE_URL}/movies?`;
-const SMH_URL = 'http://10.58.0.58:8000';
-// const SWJ_URL = 'http://10.58.0.52:8000';
-// const LMH_URL = 'http://10.58.7.127:8000';
-
-// Login, Signup
-export const USERS_LIST = `${SMH_URL}/users`;
-
-// Search
-export const MOVIES_LIST = `${SMH_URL}/movies`;
+export const GET_MOVIES_LIST = `${MOVIES_INFO}/movies?`;
+export const GET_MOVIES_BASIC = `${MOVIES_INFO}/movies/`;
+export const GET_MOVIES_GENRE = `${MOVIES_INFO}/movies/related-movies?id=`;
+//login,signup
+export const USERS_LIST = `${MOVIES_INFO}/users`;
+//search
+export const MOVIES_LIST = `${MOVIES_INFO}/movies`;

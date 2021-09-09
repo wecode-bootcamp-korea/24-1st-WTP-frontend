@@ -1,1 +1,203 @@
-//안녕하세요
+@import '../../styles/variables.scss';
+
+.contents {
+  background-color: $color-background;
+
+  .background {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 400px;
+      top: 0;
+      background: linear-gradient(
+        to right,
+        rgba(34, 34, 34, 1) 0%,
+        rgba(34, 34, 34, 1) 30%,
+        rgba(34, 34, 34, 0.1) 50%,
+        rgba(34, 34, 34, 1) 70%,
+        rgba(34, 34, 34, 1) 100%
+      );
+    }
+
+    .background-image {
+      height: 400px;
+    }
+  }
+
+  .main {
+    position: relative;
+    z-index: 2;
+
+    .main-contents {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      .contents-align {
+        display: flex;
+        flex-direction: column;
+
+        .comment-contents {
+          display: inline-block;
+          margin: 0 5px 15px;
+          padding: 5px 0;
+          border: 1.5px solid #e3e3e3;
+          border-radius: 5px;
+          background-color: $color-white;
+
+          .title {
+            margin: 10px 20px 15px;
+          }
+
+          .comment {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 20px;
+
+            .comment-text {
+              font-size: 16.5px;
+
+              > span {
+                font-weight: 700;
+              }
+            }
+
+            .comment-btn {
+              width: 200px;
+              border: 1px solid #d2d2d2;
+              border-radius: 5px;
+              padding: 10px;
+              font-size: 18px;
+              font-weight: 700;
+              cursor: pointer;
+
+              &:hover {
+                background-color: rgba(240, 240, 240, 0.3);
+                color: rgba(0, 0, 0, 0.8);
+              }
+            }
+            .btns {
+              display: flex;
+              justify-content: space-between;
+
+              .fas {
+                margin-right: 5px;
+              }
+
+              .change-btn {
+                margin-left: 8px;
+                color: #8c8c8c;
+                font-size: 12px;
+                cursor: pointer;
+
+                &::before {
+                  content: '';
+                  padding-left: 20px;
+                  border-left: 1.5px solid #8c8c8c;
+                }
+              }
+
+              .delete-btn {
+                font-size: 12px;
+                color: #8c8c8c;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .modal {
+          display: flex;
+          position: fixed;
+          align-items: center;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.3);
+          animation: modal-bg-show 0.3s;
+          z-index: 1;
+
+          > section {
+            width: 90%;
+            max-width: 550px;
+            margin: 0 auto;
+            border-radius: 0.3rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            background-color: #ffff;
+            animation: modal-show 0.3s;
+
+            .close-modal {
+              font-size: 30px;
+              cursor: pointer;
+              color: $color-pink;
+            }
+
+            > article {
+              text-align: center;
+              margin: 0 0 60px;
+
+              .onestar {
+                margin: 20px 0 30px;
+              }
+
+              p {
+                font-size: 25px;
+                font-weight: 700;
+                margin-top: 10px;
+
+                span {
+                  color: $color-pink;
+                }
+              }
+            }
+          }
+        }
+
+        .contents-all {
+          display: inline-block;
+          margin: 0 5px 20px;
+          padding: 5px 0;
+          border: 1.5px solid #e3e3e3;
+          border-radius: 5px;
+          background-color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modal-close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
