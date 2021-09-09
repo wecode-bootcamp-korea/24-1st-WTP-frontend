@@ -1,11 +1,11 @@
 .moviescarousel {
   width: 100vw;
-  height: 800px;
+  height: 680px;
   overflow: hidden;
 
   .movie-carousel {
     .carousel-container {
-      height: 800px;
+      height: 680px;
       overflow: hidden;
       .carousel-content {
         position: relative;
@@ -18,7 +18,7 @@
 
         .carousel-title {
           position: absolute;
-          top: 260px;
+          top: 270px;
           left: 70px;
           font-size: 75px;
           font-weight: 700;
@@ -28,7 +28,7 @@
 
         .carousel-desc {
           position: absolute;
-          top: 350px;
+          top: 360px;
           left: 100px;
           font-size: 25.5px;
         }
@@ -48,13 +48,13 @@
         .arrow-left {
           position: absolute;
           left: 20px;
-          top: 400px;
+          top: 340px;
         }
 
         .arrow-right {
           position: absolute;
           right: 20px;
-          top: 400px;
+          top: 340px;
         }
       }
     }
