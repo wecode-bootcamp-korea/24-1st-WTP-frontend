@@ -34,7 +34,7 @@ export class SearchInput extends Component {
           name="userInput"
           type="text"
           className="search-input"
-          placeholder="작품 제목, 배우, 감독을 검색해보세요."
+          placeholder="작품 제목을 검색해보세요."
           onClick={handleSearch}
           onChange={searchTitle}
         />
