@@ -26,7 +26,6 @@ export default class Contents extends Component {
   };
 
   componentDidMount() {
-    console.log(12);
     this.getData();
   }
 

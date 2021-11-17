@@ -1,8 +1,30 @@
 import React, { Component } from 'react';
+import { GET_MOVIES_BASIC } from '../../config';
 import FooterData from './FooterData';
 import './Footer.scss';
 
 export default class Footer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      mymovies: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch(`${GET_MOVIES_BASIC}mypage`, {
+      headers: {
+        authorization: localStorage.getItem('login-token'),
+      },
+    })
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          mymovies: res.movies,
+        })
+      );
+  }
+
   render() {
     const FooterList = FooterData.map((list, index) => {
       return (
@@ -13,11 +35,15 @@ export default class Footer extends Component {
       );
     });
 
+    const { mymovies } = this.state;
+
     return (
       <div className="footer">
         <div className="footer-top-star-count-div">
           지금까지
-          <span className="star-count"> ★ 626,921,264 개의 평가가 </span>
+          <span className="star-count">
+            ★ {`${664 + mymovies.length}`}개의 평가가
+          </span>
           쌓였어요.
         </div>
         <div className="footer-bottom-container">

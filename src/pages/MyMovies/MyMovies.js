@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { GET_MOVIES_BASIC } from '../../config';
 import './MyMovies.scss';
 
 export default class MyMovies extends Component {
@@ -9,23 +10,16 @@ export default class MyMovies extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch('http://10.58.1.85:8000/user/1')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         movies: data.RATED_MOVIES,
-  //       });
-  //     });
-  // }
-
-  //mock data
   componentDidMount() {
-    fetch('data/WantSeeMovies.json')
+    fetch(`${GET_MOVIES_BASIC}mypage`, {
+      headers: {
+        authorization: localStorage.getItem('login-token'),
+      },
+    })
       .then(res => res.json())
-      .then(data => {
+      .then(res => {
         this.setState({
-          movies: data.RATED_MOVIES,
+          movies: res.movies,
         });
       });
   }
@@ -47,13 +41,11 @@ export default class MyMovies extends Component {
                 <div className="movie-wrap" key={index}>
                   <img
                     className="movie-poster"
-                    alt={movie.movie_name}
-                    src={movie.poster_image}
+                    alt={movie.title}
+                    src={movie.poster}
                   />
-                  <div className="movie-name">{movie.movie_name}</div>
-                  <div className="movie-rating">
-                    평가함 ★ {movie.movie_rating}
-                  </div>
+                  <div className="movie-name">{movie.title}</div>
+                  <div className="movie-rating">평가함 ★ {movie.rating}</div>
                 </div>
               );
             })}
